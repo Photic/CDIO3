@@ -9,19 +9,5 @@ public class Squire {
 		
 	}
 
-	public Squire getSquire() 
-	{
-		if (squire <= 10)
-		{
-			terretory()
-		}
-		
-	}
-
-	public void setSquire(int squire) 
-	{
-		this.squire = squire;
-	}
-
 	
 }
