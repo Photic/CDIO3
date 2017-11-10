@@ -4,14 +4,18 @@ public class Squire {
 
 	private int squire;
 	
-	public Squire(int squire)
+	public Squire()
 	{
-		this.setSquire(squire);
+		
 	}
 
-	public int getSquire() 
+	public Squire getSquire() 
 	{
-		return squire;
+		if (squire <= 10)
+		{
+			terretory()
+		}
+		
 	}
 
 	public void setSquire(int squire) 
