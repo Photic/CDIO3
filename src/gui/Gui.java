@@ -18,7 +18,7 @@ public class Gui {
 	 * An instance of the player class
 	 */
 	public void defineGUI(Game game, GameBoard gameboard) {
-		Field[] fields = new Field[3];
+		Field[] fields = new Field[5];
 		
 		//gameboard.getField(0).getName()
 		fields[0] = new Street.Builder()
@@ -39,9 +39,22 @@ public class Gui {
 				.setTitle(gameboard.getField(2).getNavn())
 				.setDescription("Take a chance card")
 				.setSubText("")
-				.setBgColor(new Color(208, 251, 230))
+				.setBgColor(new Color(179, 102, 255))
 				.build();
 		
+		fields[3] = new Street.Builder()
+				.setTitle(gameboard.getField(3).getNavn())
+				.setDescription("Take a chance card")
+				.setSubText("")
+				.setBgColor(new Color(179, 102, 255))
+				.build();
+		
+		fields[4] = new Street.Builder()
+				.setTitle(gameboard.getField(4).getNavn())
+				.setDescription("Take a chance card")
+				.setSubText("")
+				.setBgColor(new Color(208, 251, 230))
+				.build();
 		
 		
 		GUI.create(fields);
