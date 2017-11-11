@@ -7,7 +7,8 @@ public class Territory extends Square {
 	private String color;
 	
 	
-	public Territory(String navn, int price, String color) {
+	public Territory(String navn, int price, String color) 
+	{
 		super(navn);
 		this.setPrice(price);
 		this.setColor(color);
@@ -31,7 +32,10 @@ public class Territory extends Square {
 		this.color = color;
 	}
 
-
+	public String getDescription()
+	{
+		return Integer.toString(price);
+	}
 	
 
 	
