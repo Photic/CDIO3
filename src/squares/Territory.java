@@ -1,4 +1,4 @@
-package monopoly_junior;
+package squares;
 
 public class Territory extends Squire {
 
