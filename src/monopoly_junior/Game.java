@@ -1,5 +1,13 @@
 package monopoly_junior;
 
-public class Game {
+import squares.GameBoard;
 
+public class Game {
+	
+	GameBoard gameboard = new GameBoard();
+	
+	
+	
+	
+	
 }

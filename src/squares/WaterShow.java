@@ -1,16 +1,15 @@
 package squares;
 
-public class Territory extends Square {
+public class WaterShow extends Square {
 
 	
 	private int price;
 	private String color;
 	
 	
-	public Territory(String navn, int price, String color) {
+	public WaterShow(String navn, int price) {
 		super(navn);
 		this.price = price;
-		this.color = color;
 		
 	}
 
