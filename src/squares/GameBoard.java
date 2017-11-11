@@ -31,7 +31,7 @@ public class GameBoard {
 		squares[10] = restRoom;
 	}
 	
-	public Square getFierld(int a)
+	public Square getField(int a)
 	{
 		return squares[a];
 	}

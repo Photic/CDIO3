@@ -22,21 +22,21 @@ public class Gui {
 		
 		//gameboard.getField(0).getName()
 		fields[0] = new Street.Builder()
-				.setTitle(gameboard.getFierld(0).getNavn())
+				.setTitle(gameboard.getField(0).getNavn())
 				.setDescription("Recieve 4$ for passing.")
 				.setSubText("")
 				.setBgColor(new Color(208, 251, 230))
 				.build();
 		
 		fields[1] = new Street.Builder()
-				.setTitle(gameboard.getFierld(1).getNavn())
+				.setTitle(gameboard.getField(1).getNavn())
 				.setDescription("Take a chance card")
 				.setSubText("")
 				.setBgColor(new Color(208, 251, 230))
 				.build();
 		
 		fields[2] = new Street.Builder()
-				.setTitle(gameboard.getFierld(2).getNavn())
+				.setTitle(gameboard.getField(2).getNavn())
 				.setDescription("Take a chance card")
 				.setSubText("")
 				.setBgColor(new Color(208, 251, 230))
