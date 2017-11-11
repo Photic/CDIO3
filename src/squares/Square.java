@@ -7,7 +7,6 @@ public class Square {
 	public Square(String navn)
 	{
 		this.navn = navn;
-		
 	}
 
 	
