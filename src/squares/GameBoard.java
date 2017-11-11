@@ -14,6 +14,7 @@ public class GameBoard {
 	Cafe restRoom = new Cafe("REST ROOM");
 	Territory territoryPink1 = new Territory("FERRES WHEEL", 10, "Pink");
 	Territory territoryPink2 = new Territory("CAR RIDE", 15, "Pink");
+	Railway railwayGreen = new Railway("GREEN RAILWAY LINE", "Green");
 	
 	
 	public GameBoard()
@@ -29,6 +30,9 @@ public class GameBoard {
 		squares[8] = fireworks;
 		squares[9] = chance;
 		squares[10] = restRoom;
+		squares[11] = territoryPink1;
+		squares[12] = territoryPink2;
+		squares[13] = railwayGreen;
 	}
 	
 	public Square getFierld(int a)
