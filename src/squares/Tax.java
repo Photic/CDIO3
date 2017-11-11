@@ -2,12 +2,12 @@ package squares;
 
 import java.awt.Color;
 
-public class WaterShow extends Square {
+public class Tax extends Square {
 
-	private final int pay = 2;
+	private final int pay = 3;
 	
 	
-	public WaterShow(String navn, String description, Color color) {
+	public Tax(String navn, String description, Color color) {
 		super(navn, description, color);
 		// TODO Auto-generated constructor stub
 	}

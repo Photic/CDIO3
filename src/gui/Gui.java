@@ -27,7 +27,7 @@ public class Gui {
 		for (int i = 0; i <= gameboard.getSize()-1; i++) {
 			fields[i] = new Street.Builder()
 					.setTitle(gameboard.getField(i).getNavn())
-					.setDescription("")
+					.setDescription(gameboard.getField(i).getNavn())
 					.setSubText(gameboard.getField(i).getDescription())
 					.setBgColor(gameboard.getField(i).getColor())
 					.build();

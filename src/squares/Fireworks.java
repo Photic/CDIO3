@@ -5,7 +5,7 @@ import java.awt.Color;
 public class Fireworks extends Square {
 
 	
-	private int pay;
+	private final int pay = 5;
 	
 	public Fireworks(String navn, String description, Color color) 
 	{
@@ -16,11 +16,6 @@ public class Fireworks extends Square {
 	public int getPay() 
 	{
 		return pay;
-	}
-
-	public void setPay(int pay) 
-	{
-		this.pay = pay;
 	}
 
 }
