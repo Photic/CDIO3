@@ -7,6 +7,12 @@ public class GameBoard {
 	Color standard = new Color(208, 251, 230);
 	Color purple = new Color(179, 102, 255);
 	Color grey = new Color(230, 230, 230);
+	Color pink = new Color(255, 153, 255);
+	Color orange = new Color(255, 117, 26);
+	Color red = new Color(255, 51, 51);
+	Color yellow = new Color(255, 255, 77);
+	Color green = new Color(128, 255, 128);
+	Color blue = new Color(102, 217, 255);
 	
 	
 	Square[] squares = new Square[32];
