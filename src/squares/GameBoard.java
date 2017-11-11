@@ -35,7 +35,7 @@ public class GameBoard {
 		squares[13] = railwayGreen;
 	}
 	
-	public Square getFierld(int a)
+	public Square getField(int a)
 	{
 		return squares[a];
 	}
