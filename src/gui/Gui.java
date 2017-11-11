@@ -8,6 +8,7 @@ import desktop_fields.Street;
 import desktop_resources.GUI;
 import monopoly_junior.Game;
 import squares.GameBoard;
+import squares.Territory;
 
 public class Gui {
 	
@@ -23,7 +24,7 @@ public class Gui {
 		//gameboard.getField(0).getName()
 		fields[0] = new Street.Builder()
 				.setTitle(gameboard.getField(0).getNavn())
-				.setDescription("Recieve 4$ for passing.")
+				.setDescription("")
 				.setSubText("")
 				.setBgColor(new Color(208, 251, 230))
 				.build();
@@ -37,15 +38,15 @@ public class Gui {
 		
 		fields[2] = new Street.Builder()
 				.setTitle(gameboard.getField(2).getNavn())
-				.setDescription("Take a chance card")
-				.setSubText("")
+				.setDescription("Price:")
+				.setSubText(((Territory)gameboard.getField(2)).getDescription() + "$")
 				.setBgColor(new Color(179, 102, 255))
 				.build();
 		
 		fields[3] = new Street.Builder()
 				.setTitle(gameboard.getField(3).getNavn())
-				.setDescription("Take a chance card")
-				.setSubText("")
+				.setDescription("Price:")
+				.setSubText(((Territory)gameboard.getField(3)).getDescription() + "$")
 				.setBgColor(new Color(179, 102, 255))
 				.build();
 		
