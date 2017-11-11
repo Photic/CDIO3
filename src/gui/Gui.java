@@ -2,14 +2,12 @@ package gui;
 
 
 import java.awt.Color;
-
 import desktop_codebehind.Car;
 import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
 import monopoly_junior.Game;
 import squares.GameBoard;
-import squares.Territory;
 
 public class Gui {
 	
@@ -33,8 +31,6 @@ public class Gui {
 					.build();
 		}
 		
-		
-
 		GUI.create(fields);
         Car car = new Car.Builder()
                 .typeRacecar()
