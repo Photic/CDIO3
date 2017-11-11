@@ -19,43 +19,64 @@ public class Gui {
 	 * An instance of the player class
 	 */
 	public void defineGUI(Game game, GameBoard gameboard) {
-		Field[] fields = new Field[5];
+		Field[] fields = new Field[14];
 		
-		//gameboard.getField(0).getName()
-		fields[0] = new Street.Builder()
-				.setTitle(gameboard.getField(0).getNavn())
-				.setDescription("")
-				.setSubText("")
-				.setBgColor(new Color(208, 251, 230))
-				.build();
 		
-		fields[1] = new Street.Builder()
-				.setTitle(gameboard.getField(1).getNavn())
-				.setDescription("Take a chance card")
-				.setSubText("")
-				.setBgColor(new Color(208, 251, 230))
-				.build();
 		
-		fields[2] = new Street.Builder()
-				.setTitle(gameboard.getField(2).getNavn())
-				.setDescription("Price:")
-				.setSubText(((Territory)gameboard.getField(2)).getDescription() + "$")
-				.setBgColor(new Color(179, 102, 255))
-				.build();
 		
-		fields[3] = new Street.Builder()
-				.setTitle(gameboard.getField(3).getNavn())
-				.setDescription("Price:")
-				.setSubText(((Territory)gameboard.getField(3)).getDescription() + "$")
-				.setBgColor(new Color(179, 102, 255))
-				.build();
+		for (int i = 0; i < fields.length-1; i++) {
+			fields[i] = new Street.Builder()
+			.setTitle(gameboard.getField(i).getNavn())
+			.setDescription("")
+			.setSubText(gameboard.getField(i).getDescription())
+			.setBgColor(gameboard.getField(i).getColor())
+			.build();
+		}
 		
-		fields[4] = new Street.Builder()
-				.setTitle(gameboard.getField(4).getNavn())
-				.setDescription("Take a chance card")
-				.setSubText("")
-				.setBgColor(new Color(208, 251, 230))
-				.build();
+		
+//		
+//		//gameboard.getField(0).getName()
+//		fields[0] = new Street.Builder()
+//				.setTitle(gameboard.getField(0).getNavn())
+//				.setDescription("")
+//				.setSubText("")
+//				.setBgColor(gameboard.getField(0).getColor())
+//				.build();
+//		
+//		fields[1] = new Street.Builder()
+//				.setTitle(gameboard.getField(1).getNavn())
+//				.setDescription("Take a chance card")
+//				.setSubText("")
+//				.setBgColor(new Color(208, 251, 230))
+//				.build();
+//		
+//		fields[2] = new Street.Builder()
+//				.setTitle(gameboard.getField(2).getNavn())
+//				.setDescription("Price:")
+//				.setSubText(((Territory)gameboard.getField(2)).getDescription() + "$")
+//				.setBgColor(new Color(179, 102, 255))
+//				.build();
+//		
+//		fields[3] = new Street.Builder()
+//				.setTitle(gameboard.getField(3).getNavn())
+//				.setDescription("Price:")
+//				.setSubText(((Territory)gameboard.getField(3)).getDescription() + "$")
+//				.setBgColor(new Color(179, 102, 255))
+//				.build();
+//		
+//		fields[4] = new Street.Builder()
+//				.setTitle(gameboard.getField(4).getNavn())
+//				.setDescription("Take a chance card")
+//				.setSubText("")
+//				.setBgColor(new Color(208, 251, 230))
+//				.build();
+//		
+		
+		
+		
+		
+		
+		
 		
 		
 		GUI.create(fields);
