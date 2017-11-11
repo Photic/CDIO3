@@ -20,10 +20,10 @@ public class GameBoard {
 	Chance chance = new Chance("Chance");
 	Territory territoryPurple1 = new Territory("BALLOON STAND", "10", purple);
 	Territory territoryPurple2 = new Territory("PUPPET SHOW", "10", purple);
-	Railway railwayYellow = new Railway("YELLOW RAILWAY LINE", "Yellow");
-	Territory territoryGray1 = new Territory("PUPPET SHOW", 20, "Gray");
-	Territory territoryGray2 = new Territory("PUPPET SHOW", 20, "Gray");
-	Fireworks fireworks = new Fireworks("PAY 5$ TO SEE THE FIREWORKS", 5);
+	Railway railwayYellow = new Railway("YELLOW RAILWAY LINE", "Player again", yellow);
+	Territory territoryGray1 = new Territory("PUPPET SHOW", "20", grey);
+	Territory territoryGray2 = new Territory("PUPPET SHOW", "20", grey);
+	Fireworks fireworks = new Fireworks("PAY 5$ TO SEE THE FIREWORKS", "5", standard);
 	Cafe restRoom = new Cafe("REST ROOM");
 	Territory territoryPink1 = new Territory("FERRES WHEEL", 10, "Pink");
 	Territory territoryPink2 = new Territory("CAR RIDE", 15, "Pink");

@@ -1,14 +1,16 @@
 package squares;
 
+import java.awt.Color;
+
 public class Fireworks extends Square {
 
 	
 	private int pay;
 	
-	public Fireworks(String navn, int pay) 
+	public Fireworks(String navn, String description, Color color) 
 	{
-		super(navn);
-		this.setPay(pay);	
+		super(navn, description, color);
+
 	}
 
 	public int getPay() 
