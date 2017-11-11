@@ -16,15 +16,15 @@ public class GameBoard {
 	
 	
 	Square[] squares = new Square[32];
-	Start start = new Start("Start", 10);
-	Chance chance = new Chance("Chance");
+	Start start = new Start("Start", "10", standard);
+	Chance chance = new Chance("Chance", "Pick a chance card", standard);
 	Territory territoryPurple1 = new Territory("BALLOON STAND", "10", purple);
 	Territory territoryPurple2 = new Territory("PUPPET SHOW", "10", purple);
 	Railway railwayYellow = new Railway("YELLOW RAILWAY LINE", "Player again", yellow);
 	Territory territoryGray1 = new Territory("PUPPET SHOW", "20", grey);
 	Territory territoryGray2 = new Territory("PUPPET SHOW", "20", grey);
 	Fireworks fireworks = new Fireworks("PAY 5$ TO SEE THE FIREWORKS", "5", standard);
-	Cafe restRoom = new Cafe("REST ROOM");
+	Cafe restRoom = new Cafe("REST ROOM", "", standard);
 	Territory territoryPink1 = new Territory("FERRES WHEEL", "10", pink);
 	Territory territoryPink2 = new Territory("CAR RIDE", "15", pink);
 	Railway railwayGreen = new Railway("GREEN RAILWAY LINE", "ROLL AGAIN", green);

@@ -1,11 +1,13 @@
 package squares;
 
+import java.awt.Color;
+
 public class Start extends Square {
 
 	private int getMoney;
 	
-	public Start(String navn, int getMoney) {
-		super(navn);
+	public Start(String navn, String description, Color color) {
+		super(navn, description, color);
 		this.setGetMoney(getMoney);
 	}
 

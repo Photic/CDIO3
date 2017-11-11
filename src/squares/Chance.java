@@ -1,10 +1,12 @@
 package squares;
 
+import java.awt.Color;
+
 public class Chance extends Square {
 	
-	public Chance(String navn) 
+	public Chance(String navn, String description, Color color) 
 	{
-		super(navn);
+		super(navn, description, color);
 	}
 
 

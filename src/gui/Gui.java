@@ -24,13 +24,13 @@ public class Gui {
 		
 		
 		
-		for (int i = 0; i < fields.length-1; i++) {
+		for (int i = 0; i <= 13; i++) {
 			fields[i] = new Street.Builder()
-			.setTitle(gameboard.getField(i).getNavn())
-			.setDescription("")
-			.setSubText(gameboard.getField(i).getDescription())
-			.setBgColor(gameboard.getField(i).getColor())
-			.build();
+					.setTitle(gameboard.getField(i).getNavn())
+					.setDescription("")
+					.setSubText(gameboard.getField(i).getDescription())
+					.setBgColor(gameboard.getField(i).getColor())
+					.build();
 		}
 		
 		
