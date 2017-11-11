@@ -25,9 +25,9 @@ public class GameBoard {
 	Territory territoryGray2 = new Territory("PUPPET SHOW", "20", grey);
 	Fireworks fireworks = new Fireworks("PAY 5$ TO SEE THE FIREWORKS", "5", standard);
 	Cafe restRoom = new Cafe("REST ROOM");
-	Territory territoryPink1 = new Territory("FERRES WHEEL", 10, "Pink");
-	Territory territoryPink2 = new Territory("CAR RIDE", 15, "Pink");
-	Railway railwayGreen = new Railway("GREEN RAILWAY LINE", "Green");
+	Territory territoryPink1 = new Territory("FERRES WHEEL", "10", pink);
+	Territory territoryPink2 = new Territory("CAR RIDE", "15", pink);
+	Railway railwayGreen = new Railway("GREEN RAILWAY LINE", "ROLL AGAIN", green);
 	
 	
 	public GameBoard()
