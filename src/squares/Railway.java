@@ -6,6 +6,14 @@ public class Railway extends Square {
 	
 	public Railway(String navn, String color) {
 		super(navn);
+		this.setColor(color);
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
 		this.color = color;
 	}
 	
