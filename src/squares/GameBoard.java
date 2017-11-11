@@ -6,6 +6,7 @@ public class GameBoard {
 
 	Color standard = new Color(208, 251, 230);
 	Color purple = new Color(179, 102, 255);
+	Color grey = new Color(230, 230, 230);
 	
 	
 	Square[] squares = new Square[32];
