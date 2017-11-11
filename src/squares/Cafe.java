@@ -1,8 +1,10 @@
 package squares;
 
-public class Chance extends Square {
+public class Cafe extends Square {
 
-	public Chance(String navn) {
+	
+	
+	public Cafe(String navn) {
 		super(navn);
 		// TODO Auto-generated constructor stub
 	}
