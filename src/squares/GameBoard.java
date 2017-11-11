@@ -15,7 +15,7 @@ public class GameBoard {
 	Color blue = new Color(102, 217, 255);
 	
 	
-	Square[] squares = new Square[32];
+	Square[] squares = new Square[14];
 	Start start = new Start("Start", "10", standard);
 	Chance chance = new Chance("Chance", "Pick a chance card", standard);
 	Territory territoryPurple1 = new Territory("BALLOON STAND", "10", purple);
@@ -51,6 +51,9 @@ public class GameBoard {
 	public Square getField(int a)
 	{
 		return squares[a];
+	}
+	public int getSize() {
+		return squares.length;
 	}
 	
 
