@@ -1,15 +1,7 @@
 package squares;
 
-import java.util.LinkedList;
-
-
-
 public class GameBoard {
-	
-	
-	public LinkedList<Square> squaresLL = new LinkedList<Square>();
 
-	
 	Square[] squares = new Square[32];
 	Start start = new Start("Start", 10);
 	Chance chance = new Chance("Chance");
