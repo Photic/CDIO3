@@ -1,12 +1,18 @@
 package squares;
 
+import java.awt.Color;
+
 public class GameBoard {
 
+	Color standard = new Color(208, 251, 230);
+	Color purple = new Color(179, 102, 255);
+	
+	
 	Square[] squares = new Square[32];
 	Start start = new Start("Start", 10);
 	Chance chance = new Chance("Chance");
-	Territory territoryPurple1 = new Territory("BALLOON STAND", 10, "Purple");
-	Territory territoryPurple2 = new Territory("PUPPET SHOW", 10, "Purple");
+	Territory territoryPurple1 = new Territory("BALLOON STAND", "10", purple);
+	Territory territoryPurple2 = new Territory("PUPPET SHOW", "10", purple);
 	Railway railwayYellow = new Railway("YELLOW RAILWAY LINE", "Yellow");
 	Territory territoryGray1 = new Territory("PUPPET SHOW", 20, "Gray");
 	Territory territoryGray2 = new Territory("PUPPET SHOW", 20, "Gray");
