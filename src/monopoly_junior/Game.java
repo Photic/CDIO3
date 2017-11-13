@@ -9,8 +9,6 @@ public class Game {
 	
 	private Gui gui;
 	
-	//Kommentar
-
 
 
 
