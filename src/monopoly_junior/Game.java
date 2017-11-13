@@ -9,11 +9,7 @@ public class Game {
 	
 	private Gui gui;
 	
-<<<<<<< HEAD
-=======
 
-
->>>>>>> a312aa83e0d3d6f31c766f9beb504dc868f817ce
 
 	public Game() {
 		gui = new Gui();
