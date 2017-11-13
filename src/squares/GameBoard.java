@@ -23,7 +23,7 @@ public class GameBoard {
 	Territory territoryGray1 = new Territory("PUPPET SHOW", "20", grey);
 	Territory territoryGray2 = new Territory("PUPPET SHOW", "20", grey);
 	Fireworks fireworks = new Fireworks("FIREWORKS", "Pay 5$", standard);
-	RestRoom restRoom = new RestRoom("REST ROOM", "", standard);
+	RestRoom restRoom = new RestRoom("REST ROOM", "Wait a turn", standard);
 	Territory territoryPink1 = new Territory("FERRES WHEEL", "10", pink);
 	Territory territoryPink2 = new Territory("CAR RIDE", "15", pink);
 	Railway railwayGreen = new Railway("GREEN RAILWAY", "ROLL AGAIN", green);
