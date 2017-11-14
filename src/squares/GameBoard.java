@@ -14,6 +14,9 @@ public class GameBoard {
 	Color green = new Color(128, 255, 128);
 	Color blue = new Color(102, 217, 255);
 	
+	
+	
+	
 	Square[] squares = new Square[32];
 	Start start = new Start("Start", "Recieve 10$", standard);
 	Chance chance = new Chance("CHANCE", "Pick a chance card", standard);
@@ -29,7 +32,7 @@ public class GameBoard {
 	Railway railwayGreen = new Railway("GREEN RAILWAY", "ROLL AGAIN", green);
 	Territory territoryYellow1 = new Territory("HORROR HOUSE", "15", yellow);
 	Territory territoryYellow2 = new Territory("POPCORN STAND", "15", yellow);
-	Lucky unclePennybag = new Lucky("Uncle pennybags", "0", standard);
+	GiftShop unclePennybag = new GiftShop("Uncle pennybags", "0", standard);
 	Territory territoryRed1 = new Territory("CONVENIENCE STORE", "15", red);
 	Territory territoryRed2 = new Territory("MINI GOLF", "15", red);
 	Railway railwayBlue = new Railway("BLUE RAILWAY", "ROLL AGAIN", blue);

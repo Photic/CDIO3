@@ -2,11 +2,11 @@ package squares;
 
 import java.awt.Color;
 
-public class Lucky extends Square {
+public class GiftShop extends Square {
 	
 	private int prize;
 	
-	public Lucky(String navn, String description, Color color) {
+	public GiftShop(String navn, String description, Color color) {
 		super(navn, description, color);
 		this.prize = Integer.parseInt(description);
 	}
