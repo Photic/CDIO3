@@ -10,6 +10,7 @@ public class Territory extends Square {
 	{
 		super(navn, description, color);
 		this.price = Integer.parseInt(description);
+		
 	}
 
 	public int getPrice() 

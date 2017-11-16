@@ -14,9 +14,6 @@ public class GameBoard {
 	Color green = new Color(128, 255, 128);
 	Color blue = new Color(102, 217, 255);
 	
-	
-	
-	
 	Square[] squares = new Square[32];
 	Start start = new Start("Start", "Recieve 10$", standard);
 	Chance chance = new Chance("CHANCE", "Pick a chance card", standard);
