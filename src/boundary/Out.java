@@ -26,12 +26,15 @@ public class Out {
 		s.println("Ahhh, you are " + n + " players, nice!");
 	}
 	
-	public void askForNames() {
-		s.println("What are your names?");
+	public void askForName(int playerNumber) {
+		s.println("What are player " + playerNumber + "'s name?");
 	}
 	
-	public void printName(String name) {
-		s.println("Ahh, your name is " + name);
+	public void printName(int playerNumber, String name) {
+		s.println("Player " +playerNumber + "'s name is: " + name);
+	}
+	public void printLine() {
+		s.println("");
 	}
 	
 	

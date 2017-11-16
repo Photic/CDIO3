@@ -37,16 +37,16 @@ public class GameController {
 
 
 		//Ask for player names
-
-		out.askForNames();
+		names = new String[playerCount];
+		for (int i = 0; i<playerCount; i++) {
+		out.askForName();
 		do {currentName = keyboard.getString();
 		}
 		while (currentName.length()==0);
 		
 		
-		
-		out.printName(currentName);
-
+		out.printName(i+1, currentName);
+		}
 
 
 
