@@ -8,14 +8,15 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Game game = new Game();
+		RuleBook rules = new RuleBook();
 		GameBoard gameboard = new GameBoard();
+		
 		
 		game.getGui().defineGUI(game, gameboard);
 		GUI.setDice(0, 0);
 		
-		RuleBook rules = new RuleBook();
-	
-		rules.getwhatToDoHere(gameboard, 2);
+		
+		rules.getwhatToDoHere(gameboard, 0);
 		
 	}
 	
