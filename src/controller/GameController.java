@@ -9,6 +9,7 @@ public class GameController {
 	private Out out;
 	private Gui gui;
 	private Keyboard keyboard;
+	private int playerCount;
 	
 	public GameController() 
 	{
@@ -24,6 +25,14 @@ public class GameController {
 		
 		out.welcomeNew();
 		out.howManyPlayers();
+		playerCount = keyboard.getIntRange(2, 6);
+		out.playerCount(playerCount);
+		
+		
+		
+		
+		
+		
 		
 		
 		

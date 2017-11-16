@@ -12,8 +12,8 @@ public class Keyboard {
 	}
 
 	
-	/** Venter på en int. Returnerer først når brugeren indtaster den int der ventes på
-	 * @param ind int der ventes på
+	/** Venter pï¿½ en int. Returnerer fï¿½rst nï¿½r brugeren indtaster den int der ventes pï¿½
+	 * @param ind int der ventes pï¿½
 	 */
 	public void waitForInt(int ind){
 		int temp;
@@ -22,8 +22,16 @@ public class Keyboard {
 			}while (!(ind==temp)); 
 	}
 	
+	public int getIntRange(int min, int max){
+		int temp;
+			do {
+			temp = in.nextInt();
+			}while (temp<min || temp>max); 
+		return temp;
+	}
 	
-	/** Venter på at der tastes ENTER
+	
+	/** Venter pï¿½ at der tastes ENTER
 	 */
 	public void waitForEnter(){
 		in.nextLine();

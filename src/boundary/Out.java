@@ -22,6 +22,10 @@ public class Out {
 		s.println("How many players are you? 2-6");
 	}
 	
+	public void playerCount(int n) {
+		s.println("Ahhh, you are " + n + " players, nice!");
+	}
+	
 	
 	
 	
