@@ -1,18 +1,37 @@
 package controller;
 
 import boundary.Gui;
-import boundary.Printer;
+import boundary.Keyboard;
+import boundary.Out;
 
 public class GameController {
 	
-	private Printer print = new Printer();
+	private Out out;
 	private Gui gui;
+	private Keyboard keyboard;
 	
 	public GameController() 
 	{
 		gui = new Gui();
-		print.welcome();
+		out = new Out();
+		keyboard = new Keyboard();
 	}
+	
+	
+	
+	
+	public void gameControl() {
+		
+		out.welcomeNew();
+		out.howManyPlayers();
+		
+		
+		
+		
+		
+	}
+	
+	
 	
 	public Gui getGui() 
 	{
