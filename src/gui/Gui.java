@@ -6,7 +6,7 @@ import desktop_codebehind.Car;
 import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
-import monopoly_junior.Game;
+import gamelogic.GameController;
 import squares.GameBoard;
 
 public class Gui {
@@ -17,7 +17,7 @@ public class Gui {
 	 * @param game
 	 * An instance of the player class
 	 */
-	public void defineGUI(Game game, GameBoard gameboard) {
+	public void defineGUI(GameController game, GameBoard gameboard) {
 		Field[] fields = new Field[gameboard.getSize()];
 		
 		

@@ -1,7 +1,6 @@
-package monopoly_junior;
+package gamelogic;
 
-import squares.GameBoard;
-import squares.Territory;
+import squares.*;
 
 public class RuleBook {
 	
