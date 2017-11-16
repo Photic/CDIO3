@@ -61,13 +61,11 @@ public class GameController {
 		
 		
 		//Summary on the players participating
-		out.printStraigthLine();
+		out.printStraigthLine(); //------------------------------------------------------
 		out.printLine();
-		
-		out.printPlayerSummary(names);
-		
+		out.printPlayerSummary(names);// Player names
 		out.printLine();
-		out.printStraigthLine();
+		out.printStraigthLine(); //------------------------------------------------------
 		
 		
 		
