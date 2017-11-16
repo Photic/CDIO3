@@ -1,6 +1,7 @@
 package monopoly_junior;
 
 import squares.GameBoard;
+import squares.Territory;
 
 public class RuleBook {
 	
@@ -19,6 +20,13 @@ public class RuleBook {
 		else if (a.getField(b).getClass() == a.getField(2).getClass())
 		{
 			// Some Territory code here.
+			
+			Territory test = (Territory)a.getField(b);
+			
+			test.getRent();
+			
+			test.getPrice();
+			
 		}
 		else if (a.getField(b).getClass() == a.getField(5).getClass())
 		{
