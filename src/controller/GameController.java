@@ -1,7 +1,7 @@
-package gamelogic;
+package controller;
 
-import gui.Gui;
-import monopoly_junior.Printer;
+import boundary.Gui;
+import boundary.Printer;
 
 public class GameController {
 	

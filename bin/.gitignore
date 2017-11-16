@@ -1,5 +1,9 @@
 /Tests/
+/gamelogic/
 /gui/
 /monopoly_junior/
 /squares/
-/gamelogic/
+/entity/
+/main/
+/boundary/
+/controller/

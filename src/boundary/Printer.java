@@ -1,4 +1,4 @@
-package monopoly_junior;
+package boundary;
 
 public class Printer {
 

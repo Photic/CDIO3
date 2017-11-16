@@ -1,6 +1,6 @@
 package gamelogic;
 
-import squares.*;
+import entity.squares.*;
 
 public class RuleBook {
 	

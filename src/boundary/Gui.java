@@ -1,13 +1,14 @@
-package gui;
+package boundary;
 
 
 import java.awt.Color;
+
+import controller.GameController;
 import desktop_codebehind.Car;
 import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
-import gamelogic.GameController;
-import squares.GameBoard;
+import entity.squares.GameBoard;
 
 public class Gui {
 	

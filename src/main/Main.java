@@ -1,9 +1,9 @@
-package monopoly_junior;
+package main;
 
+import controller.GameController;
 import desktop_resources.GUI;
-import gamelogic.GameController;
+import entity.squares.GameBoard;
 import gamelogic.RuleBook;
-import squares.GameBoard;
 
 public class Main {
 
