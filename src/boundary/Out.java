@@ -37,9 +37,19 @@ public class Out {
 		s.println("");
 	}
 	
+	public void printStraigthLine() {
+		s.println("------------------------------------------------------------------------");
+	}
 	
 	
-	
+	public void printPlayerSummary(String[] names) {
+		s.println("The players are:");
+		s.println("");
+		
+		for (int i = 1; i<names.length+1;i++)
+			s.println("Player " + i + ": " + names[i-1]);
+		
+	}
 	
 	
 	

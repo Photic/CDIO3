@@ -33,25 +33,52 @@ public class GameController {
 		out.howManyPlayers();
 		playerCount = keyboard.getIntRange(2, 6);
 		out.playerCount(playerCount);
+		out.printLine();
+		out.printStraigthLine();
 
 
-
-		//Ask for player names
+		//make the names array as long as the number of players.
 		names = new String[playerCount];
+		
+		
+		
+		//Ask for player names.
 		for (int i = 0; i<playerCount; i++) {
-		out.askForName();
+		out.askForName(i+1);
 		do {currentName = keyboard.getString();
 		}
 		while (currentName.length()==0);
 		
-		
+		names[i] = currentName;
 		out.printName(i+1, currentName);
+		out.printLine();
 		}
 
-
-
-		//Using the inputted int to define how many players to create in the player list. 2-6.
-		//playerList = new PlayerList(playerCount);
+		
+		//make the playerlist as long as the number of players, and give them the name, that was inputtet.
+		playerList = new PlayerList(playerCount, names);
+		
+		
+		
+		//Summary on the players participating
+		out.printStraigthLine();
+		out.printLine();
+		
+		out.printPlayerSummary(names);
+		
+		out.printLine();
+		out.printStraigthLine();
+		
+		
+		
+		
+		//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
+		
+		
+		
+		
+		
+		
 
 
 

@@ -12,13 +12,19 @@ public class PlayerList {
 		for (int i = 0;i < antal;i++)
 			players[i]= new Player(names[i]);
 		
-		
 	}
 	
 	
 	
 	
+	public Player getSpecificPlayer(int n) {
+		return players[n];
+	}
 	
+	
+	public int getLength() {
+		return players.length;
+	}
 	
 	
 }
