@@ -31,6 +31,12 @@ public class Keyboard {
 	}
 	
 	
+	public String getString() {
+		return in.nextLine();
+	}
+	
+	
+	
 	/** Venter p� at der tastes ENTER
 	 */
 	public void waitForEnter(){

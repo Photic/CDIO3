@@ -6,8 +6,13 @@ public class PlayerList {
 	Player[] players;
 	
 	
-	public PlayerList(int antal) {
+	public PlayerList(int antal, String[] names) {
 		players = new Player[antal];
+		
+		for (int i = 0;i < antal;i++)
+			players[i]= new Player(names[i]);
+		
+		
 	}
 	
 	
