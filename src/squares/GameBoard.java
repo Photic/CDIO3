@@ -17,7 +17,7 @@ public class GameBoard {
 	Square[] squares = new Square[32];
 	Start start = new Start("Start", "Recieve 10$", standard);
 	Chance chance = new Chance("CHANCE", "Pick a chance card", standard);
-	Territory territoryPurple1 = new Territory("BALLOON STAND", "10", purple, "100");
+	Territory territoryPurple1 = new Territory("BALLOON STAND", "1000", purple, "100");
 	Territory territoryPurple2 = new Territory("PUPPET SHOW", "10", purple, "100");
 	Railway railwayYellow = new Railway("YELLOW RAILWAY", "Player again", yellow);
 	Territory territoryGray1 = new Territory("PUPPET SHOW", "20", grey, "100");

@@ -10,9 +10,12 @@ public class Main {
 		Game game = new Game();
 		GameBoard gameboard = new GameBoard();
 		
-		
 		game.getGui().defineGUI(game, gameboard);
 		GUI.setDice(0, 0);
+		
+		RuleBook rules = new RuleBook();
+	
+		rules.getwhatToDoHere(gameboard, 2);
 		
 	}
 	
