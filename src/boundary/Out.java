@@ -48,7 +48,7 @@ public class Out {
 		String[] welcome = 	
 			{
 				"Welcome to Menopoly Junior", 
-				"Please enter a number fo players from 2-6"
+				"Please enter a number fo players from 2-4"
 			};
 		standardOut(welcome);
 	}
@@ -57,8 +57,8 @@ public class Out {
 	{
 		String[] count =
 			{
-				"Ahhh, you are:"+n,
-				"players, nice!",
+				"Ahhh, you are: "+n +
+				" players, nice!",
 				"Please enter player names"
 			};
 		standardOut(count);

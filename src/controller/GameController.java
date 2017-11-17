@@ -35,11 +35,9 @@ public class GameController {
 
 		//Welcome messages
 		out.welcomeNew();
-		out.howManyPlayers();
-		playerCount = keyboard.getIntRange(2, 6);
+		playerCount = keyboard.getIntRange(2, 4);
 		out.playerCount(playerCount);
 		out.printLine();
-		out.printStraigthLine();
 
 
 		//make the names array as long as the number of players.
@@ -87,11 +85,9 @@ public class GameController {
 
 	private void playerSummary(String[] names) {
 		//Summary on the players participating
-		out.printStraigthLine(); //------------------------------------------------------
 		out.printLine();
 		out.printPlayerSummary(names);// Player names
 		out.printLine();
-		out.printStraigthLine(); //------------------------------------------------------
 	}
 
 	
