@@ -5,9 +5,12 @@ import java.awt.Color;
 
 import controller.GameController;
 import desktop_codebehind.Car;
+import entity.Player;
 import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
+import entity.Die;
+import entity.PlayerList;
 import entity.squares.GameBoard;
 
 public class Gui {
@@ -42,6 +45,20 @@ public class Gui {
             GUI.addPlayer("Mathias", 30000, car);
             
             GUI.displayChanceCard("You have to pay rent. 5$");
+	}
+	
+	
+	
+	public void setDice(Die d1, Die d2) {
+		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
+	}
+	
+	
+	public void setNames(PlayerList playerList) {
+		
+		for (Player p : playerList.getList()) {
+			GUI.addPlayer(p.getName(), p.getMoney());
+		}
 	}
 
 }

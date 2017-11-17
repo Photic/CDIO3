@@ -26,5 +26,8 @@ public class PlayerList {
 		return players.length;
 	}
 	
+	public Player[] getList() {
+		return players;
+	}
 	
 }

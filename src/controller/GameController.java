@@ -43,30 +43,18 @@ public class GameController {
 		
 		
 		//Ask for player names.
-		for (int i = 0; i<playerCount; i++) {
-		out.askForName(i+1);
-		do {currentName = keyboard.getString();
-		}
-		while (currentName.length()==0);
+		askForNames();
 		
-		names[i] = currentName;
-		out.printName(i+1, currentName);
-		out.printLine();
-		}
 
 		
-		//make the playerlist as long as the number of players, and give them the name, that was inputtet.
-		playerList = new PlayerList(playerCount, names);
+		
+		//Summary the players.
+		playerSummary(names);
 		
 		
 		
-		//Summary on the players participating
-		out.printStraigthLine(); //------------------------------------------------------
-		out.printLine();
-		out.printPlayerSummary(names);// Player names
-		out.printLine();
-		out.printStraigthLine(); //------------------------------------------------------
 		
+		//setting up the gui
 		
 		
 		
@@ -87,7 +75,34 @@ public class GameController {
 
 	}
 
-
+	
+	
+	private void playerSummary(String[] names) {
+		//Summary on the players participating
+		out.printStraigthLine(); //------------------------------------------------------
+		out.printLine();
+		out.printPlayerSummary(names);// Player names
+		out.printLine();
+		out.printStraigthLine(); //------------------------------------------------------
+	}
+	
+	private void askForNames() {
+		for (int i = 0; i<playerCount; i++) {
+		out.askForName(i+1);
+		do {currentName = keyboard.getString();
+		}
+		while (currentName.length()==0);
+		
+		names[i] = currentName;
+		out.printName(i+1, currentName);
+		out.printLine();
+		}
+		
+		//make the playerlist as long as the number of players, and give them the name, that was inputtet.
+		playerList = new PlayerList(playerCount, names);
+	}
+	
+	
 
 	public Gui getGui() 
 	{

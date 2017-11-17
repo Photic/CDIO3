@@ -4,14 +4,22 @@ public class Player {
 		
 	
 	private String name;
-	private int score;
-	
+	private int money;
+	private boolean isWinner;
+	private boolean isDead;
+
+
+
+
+
 	private boolean isTurn;
 
 	public Player(String n)
 	{
 		this.name = n;
-		this.score = 0;
+		this.money = 30000;
+		this.isWinner = false;
+		this.isDead = false;
 	}
 
 	
@@ -32,14 +40,14 @@ public class Player {
 		this.name = name;
 	}
 
-	public int getScore() 
+	public int getMoney() 
 	{
-		return score;
+		return money;
 	}
 
-	public void setScore(int score) 
+	public void setMoney(int score) 
 	{
-		this.score = score;
+		this.money = score;
 	}	
 	
 	public boolean isTurn() {
@@ -51,8 +59,23 @@ public class Player {
 		this.isTurn = isTurn;
 	}
 
-	
-	
+	public boolean isWinner() {
+		return isWinner;
+	}
+
+
+	public void setWinner(boolean isWinner) {
+		this.isWinner = isWinner;
+	}
+
+	public boolean isDead() {
+		return isDead;
+	}
+
+
+	public void setDead(boolean isDead) {
+		this.isDead = isDead;
+	}
 	
 }
 
