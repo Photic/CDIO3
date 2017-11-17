@@ -5,6 +5,32 @@ import entity.squares.*;
 public class RuleBook {
 	
 	
+	
+	
+	public int startMoney(int playercount) {
+		
+		int out;
+		
+		switch(playercount) {
+		
+		case 2:
+			out= 20;
+			break;
+		case 3:
+			out= 18;
+			break;
+		case 4:
+			out= 16;
+			break;
+		default:
+			out = 20;
+		}
+		return out;
+	}
+	
+	
+	
+	
 	public void getwhatToDoHere(GameBoard a, int b) 
 	{
 		// Squares Rules
