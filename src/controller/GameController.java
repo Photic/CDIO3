@@ -34,7 +34,7 @@ public class GameController {
 
 
 		//Welcome messages
-		out.welcomeNew(1);
+		out.welcomeNew();
 		playerCount = keyboard.getIntRange(2, 4);
 		out.playerCount(playerCount);
 		out.printLine();

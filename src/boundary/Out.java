@@ -27,6 +27,7 @@ public class Out {
 					case 3:
 						j += a[k].length();
 						System.out.print(a[k]); k++;
+						
 						break;
 					case 55:
 						System.out.print("|");
@@ -36,6 +37,7 @@ public class Out {
 						break;
 					}
 				}
+				System.out.println("");
 			}
 	}
 	
@@ -70,7 +72,7 @@ public class Out {
 			System.out.println(" ------------------------------------------------------ ");
 	}
 	
-	public void welcomeNew(int a) 
+	public void welcomeNew() 
 	{
 		String[] welcome = 	
 			{
@@ -78,7 +80,6 @@ public class Out {
 				"Please enter a number of players from 2-4: "
 			};
 		standardOut(welcome);
-		outWithInput("", a, null);
 	}
 	
 	public void endEntry()
@@ -111,14 +112,14 @@ public class Out {
 	}
 	
 	
-//	public void printPlayerSummary(String[] names) 
-//	{
-//		String[] enterNames = {"Please"}
-//		
-//		for (int i = 1; i<names.length+1;i++)
-//			s.println("Player " + i + ": " + names[i-1]);
-//	}
-//	
+	public void printPlayerSummary(String[] names) 
+	{
+		String[] enterNames = {"Please", "Player"};
+		
+		for (int i = 1; i<names.length+1;i++)
+			s.println("Player " + i + ": " + names[i-1]);
+	}
+	
 	
 	
 	
