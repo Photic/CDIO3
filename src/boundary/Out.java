@@ -1,7 +1,5 @@
 package boundary;
 
-import java.util.Arrays;
-
 public class Out {
 
 
@@ -53,12 +51,6 @@ public class Out {
 			};
 		standardOut(allNameEntrys);
 	}
-
-	public void printLine() 
-	{
-		s.println("");
-	}
-
 
 	public void printPlayerSummary(String[] names) 
 	{
@@ -147,30 +139,13 @@ public class Out {
 
 	public void endEntry()
 	{
-		System.out.println("");
-		System.out.println(" ------------------------------------------------------ ");
+		System.out.print(" ------------------------------------------------------ ");
 	}
-
-	public void endCurrentOutput()
+	
+	public void printLine()
 	{
-		for (int i = 0; i < 30; i++) 
-		{
-			switch (i) {
-			case 1:
-				System.out.print("|");
-				break;
-			default:
-				System.out.print(" ");
-				break;
-			}
-		}
+		System.out.println("");
 	}
-
-
-
-
-
-
 
 	//	
 	//	public void welcome()

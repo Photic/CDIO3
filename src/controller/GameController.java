@@ -58,7 +58,7 @@ public class GameController {
 
 		//Summary the players.
 		playerSummary(names);
-
+		out.endEntry();
 
 
 
