@@ -13,6 +13,7 @@ public class Fireworks extends Square {
 
 	}
 
+	
 	public int getPay() 
 	{
 		return pay;
