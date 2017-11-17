@@ -4,6 +4,7 @@ import boundary.Gui;
 import boundary.Keyboard;
 import boundary.Out;
 import entity.PlayerList;
+import entity.squares.GameBoard;
 
 public class GameController {
 
@@ -13,6 +14,7 @@ public class GameController {
 	private PlayerList playerList;
 	private String currentName;
 	private String[] names;
+	private GameBoard gameboard;
 	private int playerCount;
 
 	public GameController() 
@@ -20,6 +22,7 @@ public class GameController {
 		gui = new Gui();
 		out = new Out();
 		keyboard = new Keyboard();
+		gameboard = new GameBoard();
 	}
 
 
@@ -55,7 +58,10 @@ public class GameController {
 		
 		
 		//setting up the gui
+		gui.defineGUI(gameboard);
 		
+		
+		gui.setNames(playerList);
 		
 		
 		//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!

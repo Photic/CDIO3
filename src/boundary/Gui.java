@@ -21,7 +21,7 @@ public class Gui {
 	 * @param game
 	 * An instance of the player class
 	 */
-	public void defineGUI(GameController game, GameBoard gameboard) {
+	public void defineGUI(GameBoard gameboard) {
 		Field[] fields = new Field[gameboard.getSize()];
 		
 		
@@ -36,15 +36,7 @@ public class Gui {
 		}
 		
 		GUI.create(fields);
-        Car car = new Car.Builder()
-                .typeRacecar()
-                .primaryColor(Color.BLUE)
-                .secondaryColor(Color.RED)
-                .patternDiagonalDualColor()
-                .build();
-            GUI.addPlayer("Mathias", 30000, car);
-            
-            GUI.displayChanceCard("You have to pay rent. 5$");
+		GUI.setDice(1, 1);
 	}
 	
 	
