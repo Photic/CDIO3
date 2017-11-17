@@ -40,7 +40,7 @@ public class GameController {
 		//Welcome messages
 		out.welcomeNew();
 		playerCount = keyboard.getIntRange(2, 4);
-		out.endCurrentOutput();
+//		out.endCurrentOutput();
 		out.setAmountPlayers(playerCount);
 		out.playerCount(playerCount);
 
@@ -127,7 +127,7 @@ public class GameController {
 					}
 				}
 			}
-			out.printName(i+1, currentName);
+	
 		}
 		
 		

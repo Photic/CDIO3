@@ -25,12 +25,6 @@ public class Out {
 		outWithInput(playerCount);
 	}
 
-	public void endEntry()
-	{
-		System.out.println("");
-		System.out.println(" ------------------------------------------------------ ");
-	}
-
 	public void playerCount(int n) 
 	{
 		String[] count =
@@ -51,8 +45,13 @@ public class Out {
 
 	public void printName(int playerNumber, String name) 
 	{
-		s.println("Player " +playerNumber + "'s name is: " + name);
+		String[] allNameEntrys = 
+			{
+				"Player "+playerNumber+": "+name  
+			};
+		standardOut(allNameEntrys);
 	}
+	
 	public void printLine() 
 	{
 		s.println("");
@@ -61,10 +60,8 @@ public class Out {
 
 	public void printPlayerSummary(String[] names) 
 	{
-		String[] enterNames = {"Please", "Player"};
-
-		for (int i = 1; i<names.length+1;i++)
-			s.println("Player " + i + ": " + names[i-1]);
+		String[] current = {"Current players are"};
+		
 	}
 
 	public int getAmountPlayers() 
@@ -95,9 +92,9 @@ public class Out {
 					j += a[k].length();
 					System.out.print(a[k]); k++;
 					break;
-				case 55:
-					System.out.print("|");
-					break;
+//				case 55:
+//					System.out.print("|");
+//					break;
 				default:
 					System.out.print(" ");
 					break;
@@ -136,8 +133,19 @@ public class Out {
 					System.out.print(" ");
 					break;
 				}
-			}	
+			}
 		}
+	}
+	
+	public void startEntry()
+	{
+		System.out.println(" ------------------------------------------------------ ");
+	}
+	
+	public void endEntry()
+	{
+		System.out.println("");
+		System.out.println(" ------------------------------------------------------ ");
 	}
 	
 	public void endCurrentOutput()
