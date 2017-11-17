@@ -2,11 +2,11 @@ package entity.squares;
 
 import java.awt.Color;
 
-public class GiftShop extends Square {
+public class GoToJail extends Square {
 	
 	private int prize;
 	
-	public GiftShop(String navn, String description, Color color) 
+	public GoToJail(String navn, String description, Color color) 
 	{
 		super(navn, description, color);
 	}

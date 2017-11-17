@@ -2,9 +2,9 @@ package entity.squares;
 
 import java.awt.Color;
 
-public class RestRoom extends Square {
+public class FreeParking extends Square {
 
-	public RestRoom(String navn, String description, Color color) {
+	public FreeParking(String navn, String description, Color color) {
 		super(navn, description, color);
 		// TODO Auto-generated constructor stub
 	}
