@@ -14,12 +14,42 @@ public class GameBoard {
 	Color green = new Color(128, 255, 128);
 	Color blue = new Color(102, 217, 255);
 	
-	Square[] squares = new Square[32];
+	Square[] squares = new Square[23];
+	
+	Territory tBurgerJoint = new Territory("BurgerJoint", "1", orange, "1");
+	Territory tPizzaHouse = new Territory("Pizza Place", "1", orange, "1");
+	Territory tCandyStore = new Territory(navn, description, color, rent);
+	//Terr: 16
+	/*
+	 * BurgerJoint 1 - Brun
+	 * PizzaHouse 1 Brun
+	 * candyStore 1 - Tyrkis
+	 * iceCreamShop 1 Tyrkis
+	 * Museum 2 - Lys-Rød
+	 * Library 2 - Lys-Rød
+	 * SkatePark 2 - tisGul
+	 * swimmingPool 2 - tisGul
+	 * gamingHall 3 RødRød
+	 * movieTheater  3 RødRød
+	 * toyStore 3 citronMåneGul
+	 * animalStore 3 - citronMåneGul
+	 * bowlingAlly 4 - Grøn
+	 * theZoo 4- Grøn
+	 * waterPark 4 Blå
+	 * theBeachHouse 4 Blå
+	 * 
+	 * */
+	//chance: 4
+	//goToJoin: 1
+	//beInJailOrVisit: 1
+	//Start: 1
+	//FreeParking: 1
+	
+	
 	Start start = new Start("Start", "Recieve 10$", standard);
 	Chance chance = new Chance("CHANCE", "Pick a chance card", standard);
 	Territory territoryPurple1 = new Territory("BALLOON STAND", "1000", purple, "100");
 	Territory territoryPurple2 = new Territory("PUPPET SHOW", "10", purple, "100");
-	Railway railwayYellow = new Railway("YELLOW RAILWAY", "Player again", yellow);
 	Territory territoryGray1 = new Territory("PUPPET SHOW", "20", grey, "100");
 	Territory territoryGray2 = new Territory("PUPPET SHOW", "20", grey, "100");
 	Fireworks fireworks = new Fireworks("FIREWORKS", "Pay 5$", standard);
@@ -70,14 +100,7 @@ public class GameBoard {
 		squares[21] = railwayBlue;
 		squares[22] = territoryOrange1;
 		squares[23] = territoryOrange2;
-		squares[24] = watershow;
-		squares[25] = chance;
-		squares[26] = tax;
-		squares[27] = territoryGreen1;
-		squares[28] = territoryGreen2;
-		squares[29] = railwayRed;
-		squares[30] = territoryBlue1;
-		squares[31] = territoryBlue2;
+
 	}
 	
 	public Square getField(int a)
