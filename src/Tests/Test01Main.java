@@ -9,7 +9,12 @@ public class Test01Main {
 
 		Keyboard in = new Keyboard();
 		
-		String[] hej = {"Welcome to Menopoly Junior", "Please enter a number of players from 2-6" , "hej"};
+		String[] hej = 	
+			{
+				"Ahhh, you are: 4 players, nice!",
+				"Please enter player names"
+			};
+		
 		outWithInput(hej);
 	}
 
