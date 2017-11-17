@@ -10,71 +10,6 @@ public class Out {
 		s = new Screen();
 	}
 
-	public void standardOut(String[] a)
-	{
-		System.out.println(" ------------------------------------------------------ ");
-		int k = 0;
-
-		for (int i = 0; i < a.length; i++) 
-		{
-			int lengthOfString = 60;
-			for (int j = 0; j < lengthOfString; j++) 
-			{
-				switch (j) 
-				{
-				case 1:
-					System.out.print("|");
-					break;
-				case 3:
-					j += a[k].length();
-					System.out.print(a[k]); k++;
-					break;
-				case 55:
-					System.out.print("|");
-					break;
-				default:
-					System.out.print(" ");
-					break;
-				}
-
-			}
-			if (a.length > k)
-			{
-				System.out.println("");
-			}
-
-		}
-	}
-
-	public void outWithInput(String[] a)
-	{
-
-		System.out.println("");
-		int k = 0;
-		int j = 0;
-
-		for (int i = 0; i < a.length; i++) 
-		{
-			int lengthOfString = 25;
-			for (j = 0; j < lengthOfString; j++) 
-			{
-				switch (j) 
-				{
-				case 1:
-					System.out.print("|");
-					break;
-				case 3:
-					j += a[k].length();
-					System.out.print(a[k]); k++;
-					break;
-				default:
-					System.out.print(" ");
-					break;
-				}
-			}
-		}
-	}
-
 	public void welcomeNew() 
 	{
 		String[] welcome = 	
@@ -142,9 +77,83 @@ public class Out {
 		this.amountOfPlayers = amountPlayers;
 	}
 
+	public void standardOut(String[] a)
+	{
+		System.out.println(" ------------------------------------------------------ ");
+		int k = 0;
 
+		for (int i = 0; i < a.length; i++) 
+		{
+			for (int j = 0; j < 60; j++) 
+			{
+				switch (j) 
+				{
+				case 1:
+					System.out.print("|");
+					break;
+				case 3:
+					j += a[k].length();
+					System.out.print(a[k]); k++;
+					break;
+				case 55:
+					System.out.print("|");
+					break;
+				default:
+					System.out.print(" ");
+					break;
+				}
 
+			}
+			if (a.length > k)
+			{
+				System.out.println("");
+			}
 
+		}
+		System.out.println("");
+	}
+
+	public void outWithInput(String[] a)
+	{
+		int k = 0;
+		int j = 0;
+
+		for (int i = 0; i < a.length; i++) 
+		{
+			int lengthOfString = 25;
+			for (j = 0; j < lengthOfString; j++) 
+			{
+				switch (j) 
+				{
+				case 1:
+					System.out.print("|");
+					break;
+				case 3:
+					j += a[k].length();
+					System.out.print(a[k]); k++;
+					break;
+				default:
+					System.out.print(" ");
+					break;
+				}
+			}	
+		}
+	}
+	
+	public void endCurrentOutput()
+	{
+		for (int i = 0; i < 30; i++) 
+		{
+			switch (i) {
+			case 1:
+				System.out.print("|");
+				break;
+			default:
+				System.out.print(" ");
+				break;
+			}
+		}
+	}
 
 
 

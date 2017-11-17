@@ -40,9 +40,9 @@ public class GameController {
 		//Welcome messages
 		out.welcomeNew();
 		playerCount = keyboard.getIntRange(2, 4);
+		out.endCurrentOutput();
 		out.setAmountPlayers(playerCount);
 		out.playerCount(playerCount);
-		out.printLine();
 
 
 		//make the names array as long as the number of players.
@@ -95,9 +95,7 @@ public class GameController {
 
 	private void playerSummary(String[] names) {
 		//Summary on the players participating
-		out.printLine();
 		out.printPlayerSummary(names);// Player names
-		out.printLine();
 	}
 
 	
