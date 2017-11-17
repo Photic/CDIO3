@@ -1,4 +1,4 @@
-package monopoly_junior;
+package entity;
 
 public class Player {
 		
