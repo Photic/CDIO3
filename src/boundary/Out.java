@@ -40,7 +40,6 @@ public class Out {
 				}
 				System.out.println("");
 			}
-			System.out.println(" ------------------------------------------------------ ");
 	}
 	
 	public void welcomeNew() 
