@@ -5,7 +5,7 @@ public class Test01Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String[] hej = {"Welcome to Menopoly Junior", "Please enter a number of players from 2-6"};
+		String[] hej = {"Welcome to Menopoly Junior", "Please enter a number of players from 2-6" , "hej"};
 		
 		standardOut(hej);
 		
@@ -19,18 +19,19 @@ public class Test01Main {
 			
 			for (int i = 0; i < a.length; i++) 
 			{
-				int lengthOfString = 60;
+				int lengthOfString = 65;
 				for (int j = 0; j < lengthOfString; j++) 
 				{
-					switch (j) {
+					switch (j) 
+					{
 					case 1:
 						System.out.print("|");
 						break;
-					case 5:
+					case 3:
 						System.out.print(a[k]); k++;
-						lengthOfString -= a[k].length();
+						lengthOfString -= a[k-1].length();
 						break;
-					case 29:
+					case 52:
 						System.out.print("|");
 						break;
 					default:
