@@ -13,33 +13,32 @@ public class GameBoard {
 	Color yellow = new Color(255, 255, 77);
 	Color green = new Color(128, 255, 128);
 	Color blue = new Color(102, 217, 255);
+	Color turkies = new Color(31, 94, 90);
 	
 	Square[] squares = new Square[23];
 	
+	//Territory
 	Territory tBurgerJoint = new Territory("BurgerJoint", "1", orange, "1");
 	Territory tPizzaHouse = new Territory("Pizza Place", "1", orange, "1");
-	Territory tCandyStore = new Territory(navn, description, color, rent);
-	//Terr: 16
-	/*
-	 * BurgerJoint 1 - Brun
-	 * PizzaHouse 1 Brun
-	 * candyStore 1 - Tyrkis
-	 * iceCreamShop 1 Tyrkis
-	 * Museum 2 - Lys-Rød
-	 * Library 2 - Lys-Rød
-	 * SkatePark 2 - tisGul
-	 * swimmingPool 2 - tisGul
-	 * gamingHall 3 RødRød
-	 * movieTheater  3 RødRød
-	 * toyStore 3 citronMåneGul
-	 * animalStore 3 - citronMåneGul
-	 * bowlingAlly 4 - Grøn
-	 * theZoo 4- Grøn
-	 * waterPark 4 Blå
-	 * theBeachHouse 4 Blå
-	 * 
-	 * */
-	//chance: 4
+	Territory tCandyStore = new Territory("Candystore", "1", yellow, "1");
+	Territory tIceCreamStore = new Territory("Icecream Store", "1", yellow, "1");
+	Territory tMuseum = new Territory("Museum", "2", pink, "2");
+	Territory tLibrary = new Territory("Library", "2", pink, "2");
+	Territory tSkatePark = new Territory("Skatepark", "2", blue, "2");
+	Territory tSwimmingPool = new Territory("Swimming Pool", "2", blue, "2");
+	Territory tGamingHall = new Territory("Gaming Hall", "3", turkies, "3");
+	Territory tMovies = new Territory("Movie Theater", "3", turkies, "3");
+	Territory tToyStore = new Territory("Toy Store", "3", red, "3");
+	Territory tAnimalStore = new Territory("Animal Store", "3", red, "3");
+	Territory tBowling = new Territory("Bowling Ally", "4", grey, "4");
+	Territory tZoo = new Territory("The Zoo", "4", grey, "4");
+	Territory tWaterPark = new Territory("The Water Park", "4", purple, "4");
+	Territory tBeachHouse = new Territory("The Beach House", "4", purple, "4");
+	
+	//Chance
+	Chance chance = new Chance("CHANCE", "Pick a chance card", standard);
+
+	
 	//goToJoin: 1
 	//beInJailOrVisit: 1
 	//Start: 1
@@ -47,7 +46,7 @@ public class GameBoard {
 	
 	
 	Start start = new Start("Start", "Recieve 10$", standard);
-	Chance chance = new Chance("CHANCE", "Pick a chance card", standard);
+	
 	Territory territoryPurple1 = new Territory("BALLOON STAND", "1000", purple, "100");
 	Territory territoryPurple2 = new Territory("PUPPET SHOW", "10", purple, "100");
 	Territory territoryGray1 = new Territory("PUPPET SHOW", "20", grey, "100");
