@@ -34,7 +34,7 @@ public class GameBoard {
 	Territory tBowling = new Territory("Bowling Ally", "4", grey, "4");
 	Territory tZoo = new Territory("The Zoo", "4", grey, "4");
 	Territory tWaterPark = new Territory("The Water Park", "4", purple, "4");
-	Territory tBeachHouse = new Territory("The Beach House", "4", purple, "4");
+	Territory tBeachPromonade = new Territory("The Beach House", "4", purple, "4");
 	
 	//Chance
 	Chance chance = new Chance("CHANCE", "Pick a chance card", standard);
@@ -77,7 +77,7 @@ public class GameBoard {
 		squares[20] = tZoo;
 		squares[21] = chance;
 		squares[22] = tWaterPark;
-		squares[23] = tBeachHouse;
+		squares[23] = tBeachPromonade;
 
 	}
 	
