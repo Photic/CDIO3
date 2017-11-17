@@ -1,13 +1,6 @@
 /Tests/
-<<<<<<< HEAD
-/monopoly_junior/
-=======
-/gamelogic/
-/gui/
-/monopoly_junior/
-/squares/
-/entity/
-/main/
 /boundary/
 /controller/
->>>>>>> 94b415700e865ad361aeb6c25486db6865f29f1c
+/entity/
+/gamelogic/
+/main/

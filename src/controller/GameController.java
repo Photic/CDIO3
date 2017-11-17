@@ -4,6 +4,7 @@ import boundary.Gui;
 import boundary.Keyboard;
 import boundary.Out;
 import entity.PlayerList;
+import entity.squares.GameBoard;
 
 public class GameController {
 
@@ -13,6 +14,7 @@ public class GameController {
 	private PlayerList playerList;
 	private String currentName;
 	private String[] names;
+	private GameBoard gameboard;
 	private int playerCount;
 
 	public GameController() 
@@ -20,6 +22,7 @@ public class GameController {
 		gui = new Gui();
 		out = new Out();
 		keyboard = new Keyboard();
+		gameboard = new GameBoard();
 	}
 
 
@@ -43,31 +46,22 @@ public class GameController {
 		
 		
 		//Ask for player names.
-		for (int i = 0; i<playerCount; i++) {
-		out.askForName(i+1);
-		do {currentName = keyboard.getString();
-		}
-		while (currentName.length()==0);
+		askForNames();
 		
-		names[i] = currentName;
-		out.printName(i+1, currentName);
-		out.printLine();
-		}
 
 		
-		//make the playerlist as long as the number of players, and give them the name, that was inputtet.
-		playerList = new PlayerList(playerCount, names);
+		
+		//Summary the players.
+		playerSummary(names);
 		
 		
 		
-		//Summary on the players participating
-		out.printStraigthLine(); //------------------------------------------------------
-		out.printLine();
-		out.printPlayerSummary(names);// Player names
-		out.printLine();
-		out.printStraigthLine(); //------------------------------------------------------
+		
+		//setting up the gui
+		gui.defineGUI(gameboard);
 		
 		
+		gui.setNames(playerList);
 		
 		
 		//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
@@ -87,7 +81,34 @@ public class GameController {
 
 	}
 
-
+	
+	
+	private void playerSummary(String[] names) {
+		//Summary on the players participating
+		out.printStraigthLine(); //------------------------------------------------------
+		out.printLine();
+		out.printPlayerSummary(names);// Player names
+		out.printLine();
+		out.printStraigthLine(); //------------------------------------------------------
+	}
+	
+	private void askForNames() {
+		for (int i = 0; i<playerCount; i++) {
+		out.askForName(i+1);
+		do {currentName = keyboard.getString();
+		}
+		while (currentName.length()==0);
+		
+		names[i] = currentName;
+		out.printName(i+1, currentName);
+		out.printLine();
+		}
+		
+		//make the playerlist as long as the number of players, and give them the name, that was inputtet.
+		playerList = new PlayerList(playerCount, names);
+	}
+	
+	
 
 	public Gui getGui() 
 	{
