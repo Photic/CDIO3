@@ -14,9 +14,9 @@ public class GameBoard {
 	Color green = new Color(128, 255, 128);
 	Color blue = new Color(102, 217, 255);
 	Color turkies = new Color(31, 94, 90);
-	Color black = new Color (0,0,0);
+	Color magenta = new Color (229, 70, 0);
 	
-	Square[] squares = new Square[23];
+	Square[] squares = new Square[24];
 	
 	//Territory
 	Territory tBurgerJoint = new Territory("BurgerJoint", "1", orange, "1");
@@ -46,7 +46,7 @@ public class GameBoard {
 	GoToJail goToJail = new GoToJail("GoToJail", "You are goin to jail. Pay a fine next turn to get released", standard);
 	
 	//beInJailOrVisit: 1
-	Jail jail = new Jail("Locked up, or visiting", "You are either in jail, or locked up", black);
+	Jail jail = new Jail("Locked up, or visiting", "You are either in jail, or locked up", standard);
 	
 	//FreeParking: 1
 	FreeParking freeParking = new FreeParking("Free Parking", "Enjoy a relaxed moment", standard);
