@@ -1,10 +1,14 @@
 package Tests;
 
+import boundary.Keyboard;
+
 public class Test01Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		Keyboard in = new Keyboard();
+		
 		String[] hej = {"Welcome to Menopoly Junior", "Please enter a number of players from 2-6" , "hej"};
 		outWithInput(hej);
 	}

@@ -7,6 +7,7 @@ import java.util.Scanner;
  */
 public class Keyboard {
 	private Scanner in;
+	
 	public Keyboard() {
 		in = new Scanner(System.in);
 	}
