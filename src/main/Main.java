@@ -1,9 +1,6 @@
 package main;
 
 import controller.GameController;
-import desktop_resources.GUI;
-import entity.squares.GameBoard;
-import gamelogic.RuleBook;
 
 public class Main {
 

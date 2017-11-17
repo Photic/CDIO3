@@ -14,8 +14,6 @@ public class Out {
 	
 	public void welcomeNew() {
 		s.println("Welcome to the game.");
-		
-		
 	}
 	
 	public void howManyPlayers() {
