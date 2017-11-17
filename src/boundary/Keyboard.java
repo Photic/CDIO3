@@ -13,8 +13,8 @@ public class Keyboard {
 	}
 
 	
-	/** Venter p� en int. Returnerer f�rst n�r brugeren indtaster den int der ventes p�
-	 * @param ind int der ventes p�
+	/** Venter på en int. Returnerer først når brugeren indtaster den int der ventes på
+	 * @param ind int der ventes på
 	 */
 	
 	public void waitForInt(int ind)
