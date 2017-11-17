@@ -4,8 +4,8 @@ public class Out {
 
 
 	Screen s;
-	private int amountPlayers;
-	
+	private int amountOfPlayers;
+
 	public Out() {
 		s = new Screen();
 	}
@@ -36,29 +36,43 @@ public class Out {
 					System.out.print(" ");
 					break;
 				}
-				
+
 			}
 			if (a.length > k)
 			{
 				System.out.println("");
 			}
-			
+
 		}
 	}
 
 	public void outWithInput(String[] a)
 	{
-		
-		int k = 0;
 
-		if (a.length > 1) 
+		System.out.println("");
+		int k = 0;
+		int j = 0;
+
+		for (int i = 0; i < a.length; i++) 
 		{
-			System.out.println(amountPlayers);
+			int lengthOfString = 25;
+			for (j = 0; j < lengthOfString; j++) 
+			{
+				switch (j) 
+				{
+				case 1:
+					System.out.print("|");
+					break;
+				case 3:
+					j += a[k].length();
+					System.out.print(a[k]); k++;
+					break;
+				default:
+					System.out.print(" ");
+					break;
+				}
+			}
 		}
-		else
-			
-			
-		System.out.println(" ------------------------------------------------------ ");
 	}
 
 	public void welcomeNew() 
@@ -66,13 +80,19 @@ public class Out {
 		String[] welcome = 	
 			{
 					"Welcome to Menopoly Junior", 
-					"Please enter a number of players from 2-4: "
+					"Please enter the nunmber of players. "
 			};
 		standardOut(welcome);
+		String[] playerCount =
+			{
+					"Has to be between 2-4: "
+			};
+		outWithInput(playerCount);
 	}
 
 	public void endEntry()
 	{
+		System.out.println("");
 		System.out.println(" ------------------------------------------------------ ");
 	}
 
@@ -88,7 +108,10 @@ public class Out {
 
 	public void askForName(int playerNumber) 
 	{
-		s.println("What are player " + playerNumber + "'s name?");
+		String[] names = {
+				"What is the name of player"+playerNumber+": "
+		};
+		outWithInput(names);
 	}
 
 	public void printName(int playerNumber, String name) 
@@ -111,12 +134,12 @@ public class Out {
 
 	public int getAmountPlayers() 
 	{
-		return amountPlayers;
+		return amountOfPlayers;
 	}
 
 	public void setAmountPlayers(int amountPlayers) 
 	{
-		this.amountPlayers = amountPlayers;
+		this.amountOfPlayers = amountPlayers;
 	}
 
 

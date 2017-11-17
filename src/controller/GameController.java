@@ -120,9 +120,7 @@ public class GameController {
 					}
 				}
 			}
-
 			out.printName(i+1, currentName);
-			out.printLine();
 		}
 		
 		
