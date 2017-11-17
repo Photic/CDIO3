@@ -36,9 +36,7 @@ public class Out {
 						break;
 					}
 				}
-				System.out.println("");
 			}
-			
 	}
 	
 	public void outWithInput(String a, int b, Keyboard input)
