@@ -6,20 +6,17 @@ public class Test01Main {
 		// TODO Auto-generated method stub
 
 		String[] hej = {"Welcome to Menopoly Junior", "Please enter a number of players from 2-6" , "hej"};
-		
-		standardOut(hej);
-		
-		
+		outWithInput(hej);
 	}
 
-	public static void standardOut(String[] a)
+	public static void outWithInput(String[] a)
 	{
 			System.out.println(" ------------------------------------------------------ ");
 			int k = 0;
 			
 			for (int i = 0; i < a.length; i++) 
 			{
-				int lengthOfString = 200;
+				int lengthOfString = 60;
 				for (int j = 0; j < lengthOfString; j++) 
 				{
 					switch (j) 
@@ -41,9 +38,7 @@ public class Test01Main {
 				}
 				System.out.println("");
 			}
-			
 			System.out.println(" ------------------------------------------------------ ");
-			
 	}
 	
 	
