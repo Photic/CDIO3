@@ -89,8 +89,7 @@ public class Out {
 	{
 		String[] count =
 			{
-				"Ahhh, you are: "+n +
-				" players, nice!",
+				"Ahhh, you are: "+n+" players, nice!",
 				"Please enter player names"
 			};
 		standardOut(count);
