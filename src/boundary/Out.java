@@ -1,5 +1,7 @@
 package boundary;
 
+import java.util.Arrays;
+
 public class Out {
 
 
@@ -47,11 +49,11 @@ public class Out {
 	{
 		String[] allNameEntrys = 
 			{
-				"Player "+playerNumber+": "+name  
+					"Player "+playerNumber+": "+name  
 			};
 		standardOut(allNameEntrys);
 	}
-	
+
 	public void printLine() 
 	{
 		s.println("");
@@ -60,8 +62,14 @@ public class Out {
 
 	public void printPlayerSummary(String[] names) 
 	{
-		String[] current = {"Current players are"};
+		String[] infoMessage = new String[names.length+1];
+		infoMessage[0] = "Enterede Players are";
 		
+		for (int i = 1; i < infoMessage.length; i++) 
+		{
+			infoMessage[i] = names[i-1]; 
+		}
+		standardOut(infoMessage);
 	}
 
 	public int getAmountPlayers() 
@@ -92,9 +100,9 @@ public class Out {
 					j += a[k].length();
 					System.out.print(a[k]); k++;
 					break;
-//				case 55:
-//					System.out.print("|");
-//					break;
+					//				case 55:
+					//					System.out.print("|");
+					//					break;
 				default:
 					System.out.print(" ");
 					break;
@@ -136,18 +144,13 @@ public class Out {
 			}
 		}
 	}
-	
-	public void startEntry()
-	{
-		System.out.println(" ------------------------------------------------------ ");
-	}
-	
+
 	public void endEntry()
 	{
 		System.out.println("");
 		System.out.println(" ------------------------------------------------------ ");
 	}
-	
+
 	public void endCurrentOutput()
 	{
 		for (int i = 0; i < 30; i++) 
