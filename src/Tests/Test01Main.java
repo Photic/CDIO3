@@ -19,7 +19,7 @@ public class Test01Main {
 			
 			for (int i = 0; i < a.length; i++) 
 			{
-				int lengthOfString = 65;
+				int lengthOfString = 200;
 				for (int j = 0; j < lengthOfString; j++) 
 				{
 					switch (j) 
@@ -28,10 +28,10 @@ public class Test01Main {
 						System.out.print("|");
 						break;
 					case 3:
+						j += a[k].length();
 						System.out.print(a[k]); k++;
-						lengthOfString -= a[k-1].length();
 						break;
-					case 52:
+					case 55:
 						System.out.print("|");
 						break;
 					default:
@@ -41,6 +41,8 @@ public class Test01Main {
 				}
 				System.out.println("");
 			}
+			
+			System.out.println(" ------------------------------------------------------ ");
 			
 	}
 	
