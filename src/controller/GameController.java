@@ -5,8 +5,11 @@ import java.util.Arrays;
 import boundary.Gui;
 import boundary.Keyboard;
 import boundary.Out;
+import entity.Die;
 import entity.PlayerList;
 import entity.squares.GameBoard;
+import gamelogic.GameLogic;
+import gamelogic.RuleBook;
 
 public class GameController {
 
@@ -17,14 +20,25 @@ public class GameController {
 	private String currentName;
 	private String[] names;
 	private GameBoard gameboard;
-	private int playerCount;
+	private RuleBook rulebook;
+	private GameLogic gamelogic;
+	private Die d1, d2;
+	private int playerCount, newPosition;
 
+	
+	
+	
 	public GameController() 
 	{
 		gui = new Gui();
 		out = new Out();
 		keyboard = new Keyboard();
 		gameboard = new GameBoard();
+		rulebook = new RuleBook();
+		d1 = new Die();
+		d2 = new Die();
+		gamelogic = new GameLogic();
+		
 	}
 
 
@@ -36,8 +50,9 @@ public class GameController {
 		//Welcome messages
 		out.welcomeNew();
 		playerCount = keyboard.getIntRange(2, 4);
+//		out.endCurrentOutput();
+		out.setAmountPlayers(playerCount);
 		out.playerCount(playerCount);
-		out.printLine();
 
 
 		//make the names array as long as the number of players.
@@ -48,12 +63,13 @@ public class GameController {
 		//Ask for player names.
 		askForNames();
 
-
+		
+		playerList = new PlayerList(playerCount, names, rulebook.startMoney(playerCount));
 
 
 		//Summary the players.
 		playerSummary(names);
-
+		out.endEntry();
 
 
 
@@ -65,10 +81,20 @@ public class GameController {
 		
 		
 		//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
+		
+		
+		//Calculates the new position for the player.
+		newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(0).getPosition(), playerList.getSpecificPlayer(0).rollDice(d1, d2), gameboard.getSize());
+		playerList.getSpecificPlayer(0).setPosition(newPosition);
+		
+		
+		
+		//get the current field on the gameboard, based on the player position
+		gameboard.getField(playerList.getSpecificPlayer(0).getPosition());
+		
 
 
-
-
+		
 
 
 
@@ -85,9 +111,7 @@ public class GameController {
 
 	private void playerSummary(String[] names) {
 		//Summary on the players participating
-		out.printLine();
 		out.printPlayerSummary(names);// Player names
-		out.printLine();
 	}
 
 	
@@ -119,9 +143,7 @@ public class GameController {
 					}
 				}
 			}
-
-			out.printName(i+1, currentName);
-			out.printLine();
+	
 		}
 		
 		
@@ -133,7 +155,7 @@ public class GameController {
 		
 		
 		//make the playerlist as long as the number of players, and give them the name, that was inputtet.
-		playerList = new PlayerList(playerCount, names);
+
 	}
 
 

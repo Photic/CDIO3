@@ -1,5 +1,6 @@
 package entity;
 
+
 public class Player {
 		
 	
@@ -7,23 +8,22 @@ public class Player {
 	private int money;
 	private boolean isWinner;
 	private boolean isDead;
-
-
-
+	private int position;
 
 
 	private boolean isTurn;
 
-	public Player(String n)
+	public Player(String n, int startMoney)
 	{
 		this.name = n;
-		this.money = 30000;
+		this.money = startMoney;
 		this.isWinner = false;
 		this.isDead = false;
+		this.position = 0;
 	}
 
 	
-	public int playTurn(Die d1, Die d2) 
+	public int rollDice(Die d1, Die d2) 
 	{
 		d1.rollDie();
 		d2.rollDie();
@@ -75,6 +75,14 @@ public class Player {
 
 	public void setDead(boolean isDead) {
 		this.isDead = isDead;
+	}
+	public int getPosition() {
+		return position;
+	}
+
+
+	public void setPosition(int position) {
+		this.position = position;
 	}
 	
 }

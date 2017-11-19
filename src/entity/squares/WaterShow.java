@@ -2,26 +2,37 @@ package entity.squares;
 
 import java.awt.Color;
 
-<<<<<<< HEAD:src/entity/squares/FreeParking.java
-public class FreeParking extends Square {
-=======
 import desktop_codebehind.Player;
 
-public class RestRoom extends Square {
->>>>>>> master:src/entity/squares/RestRoom.java
+public class WaterShow extends Square {
 
-	public FreeParking(String navn, String description, Color color) {
+	private final int pay = 2;
+	
+	
+	public WaterShow(String navn, String description, Color color) {
 		super(navn, description, color);
 		// TODO Auto-generated constructor stub
 	}
+
+	
+	public int getPay() {
+		return pay;
+	}
+
 
 	@Override
 	public void whatToDoOnSquare(Player p) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	
 
 
+	
+	
+	
+
+	
+	
 }
