@@ -53,7 +53,8 @@ public class GameController {
 		//Ask for player names.
 		askForNames();
 
-
+		
+		playerList = new PlayerList(playerCount, names, rulebook.startMoney(playerCount));
 
 
 		//Summary the players.
@@ -139,7 +140,7 @@ public class GameController {
 		
 		
 		//make the playerlist as long as the number of players, and give them the name, that was inputtet.
-		playerList = new PlayerList(playerCount, names);
+
 	}
 
 

@@ -38,7 +38,7 @@ public class Out {
 	public void askForName(int playerNumber) 
 	{
 		String[] names = {
-				"What is the name of player"+playerNumber+": "
+				"What is the name of player "+playerNumber+": "
 		};
 		outWithInput(names);
 	}
@@ -55,7 +55,7 @@ public class Out {
 	public void printPlayerSummary(String[] names) 
 	{
 		String[] infoMessage = new String[names.length+1];
-		infoMessage[0] = "Enterede Players are";
+		infoMessage[0] = "Enterede Players are: ";
 		
 		for (int i = 1; i < infoMessage.length; i++) 
 		{

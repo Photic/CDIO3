@@ -14,10 +14,10 @@ public class Player {
 
 	private boolean isTurn;
 
-	public Player(String n)
+	public Player(String n, int startMoney)
 	{
 		this.name = n;
-		this.money = 30000;
+		this.money = startMoney;
 		this.isWinner = false;
 		this.isDead = false;
 	}
