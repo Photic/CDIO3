@@ -1,7 +1,5 @@
 package entity;
 
-import entity.squares.GameBoard;
-import entity.squares.Square;
 
 public class Player {
 		
@@ -11,12 +9,6 @@ public class Player {
 	private boolean isWinner;
 	private boolean isDead;
 	private int position;
-
-
-
-
-
-
 
 
 	private boolean isTurn;

@@ -2,7 +2,9 @@ package entity.squares;
 
 import java.awt.Color;
 
-public class Square {
+import desktop_codebehind.Player;
+
+public abstract class Square {
 
 	private String navn;
 	private String description;
@@ -38,6 +40,8 @@ public class Square {
 	public void setColor(Color color) {
 		this.color = color;
 	}
+
+	public abstract void doPlayerHitSquare(Player p);
 
 	
 }
