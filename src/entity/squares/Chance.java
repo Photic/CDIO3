@@ -12,10 +12,9 @@ public class Chance extends Square {
 	}
 
 	@Override
-	public void doPlayerHitSquare(Player p) 
+	public void whatToDoOnSquare(Player p) 
 	{
 		// Change logic here
-		
 	}
 
 

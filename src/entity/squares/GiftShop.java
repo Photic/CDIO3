@@ -2,6 +2,8 @@ package entity.squares;
 
 import java.awt.Color;
 
+import desktop_codebehind.Player;
+
 public class GiftShop extends Square {
 	
 	private int prize;
@@ -19,6 +21,12 @@ public class GiftShop extends Square {
 	public void setPrize(int a)
 	{
 		this.prize += a;
+	}
+
+	@Override
+	public void whatToDoOnSquare(Player p) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

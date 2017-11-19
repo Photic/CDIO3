@@ -41,7 +41,7 @@ public abstract class Square {
 		this.color = color;
 	}
 
-	public abstract void doPlayerHitSquare(Player p);
+	public abstract void whatToDoOnSquare(Player p);
 
 	
 }

@@ -8,8 +8,8 @@ public class RuleBook {
 	
 	
 	
-	public int startMoney(int playercount) {
-		
+	public int startMoney(int playercount) 
+	{	
 		int out;
 		
 		switch(playercount) {
@@ -25,6 +25,7 @@ public class RuleBook {
 			break;
 		default:
 			out = 20;
+			break;
 		}
 		return out;
 	}
@@ -32,7 +33,7 @@ public class RuleBook {
 	
 	public void playerLands(GameBoard a, Player b, int squareNum)
 	{
-		a.getField(squareNum).doPlayerHitSquare(b);
+		a.getField(squareNum).whatToDoOnSquare(b);
 	}
 	
 	

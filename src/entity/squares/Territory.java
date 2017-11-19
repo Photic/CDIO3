@@ -2,6 +2,8 @@ package entity.squares;
 
 import java.awt.Color;
 
+import desktop_codebehind.Player;
+
 public class Territory extends Square {
 	
 	private int price;
@@ -22,6 +24,12 @@ public class Territory extends Square {
 	public String getRent()
 	{
 		return rent;
+	}
+
+	@Override
+	public void whatToDoOnSquare(Player p) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
