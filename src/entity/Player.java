@@ -1,5 +1,6 @@
 package entity;
 
+import entity.squares.Territory;
 
 public class Player {
 		
@@ -8,6 +9,8 @@ public class Player {
 	private int money;
 	private int position;
 	private boolean getAnotherTurn;
+	private Territory[] ownedSquares;
+	private int amountOfSquaresOwned = 0;
 
 	public Player(String n, int startMoney)
 	{
@@ -16,7 +19,6 @@ public class Player {
 		this.position = 0;
 	}
 
-	
 	public int rollDice(Die d1, Die d2) 
 	{
 		d1.rollDie();
@@ -49,22 +51,39 @@ public class Player {
 		return position;
 	}
 
-
 	public void setPosition(int position) 
 	{
 		this.position = position;
 	}
-
 
 	public boolean isGetAnotherTurn() 
 	{
 		return getAnotherTurn;
 	}
 
-
 	public void setGetAnotherTurn(boolean getAnotherTurn) 
 	{
 		this.getAnotherTurn = getAnotherTurn;
+	}
+
+	public Territory[] getOwnedSquares() 
+	{
+		return ownedSquares;
+	}
+
+	public void setOwnedSquares(Territory[] ownedSquares) 
+	{
+		this.ownedSquares = ownedSquares;
+	}
+
+	public int getAmountOfSquaresOwned() 
+	{
+		return amountOfSquaresOwned;
+	}
+
+	public void setAmountOfSquaresOwned(int amountOfSquaresOwned) 
+	{
+		this.amountOfSquaresOwned = amountOfSquaresOwned;
 	}
 	
 }

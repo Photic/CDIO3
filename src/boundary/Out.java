@@ -10,6 +10,8 @@ public class Out {
 		s = new Screen();
 	}
 
+
+	// Welcome to the game message.
 	public void welcomeNew() 
 	{
 		String[] welcome = 	
@@ -25,6 +27,7 @@ public class Out {
 		outWithInput(playerCount);
 	}
 
+	// Gives a message, telling the user to enter the names of the players playing.
 	public void playerCount(int n) 
 	{
 		String[] count =
@@ -35,6 +38,8 @@ public class Out {
 		standardOut(count);
 	}
 
+
+	// Message for actually asking for names.
 	public void askForName(int playerNumber) 
 	{
 		String[] names = {
@@ -43,6 +48,20 @@ public class Out {
 		outWithInput(names);
 	}
 
+	// Shows a list of all the enterede player names.
+	public void printPlayerSummary(String[] names) 
+	{
+		String[] infoMessage = new String[names.length+1];
+		infoMessage[0] = "Enterede Players are: ";
+
+		for (int i = 1; i < infoMessage.length; i++) 
+		{
+			infoMessage[i] = names[i-1]; 
+		}
+		standardOut(infoMessage);
+	}
+
+	// Prints a player name. 
 	public void printName(int playerNumber, String name) 
 	{
 		String[] allNameEntrys = 
@@ -52,28 +71,19 @@ public class Out {
 		standardOut(allNameEntrys);
 	}
 
-	public void printPlayerSummary(String[] names) 
+	public void playerChoice(int buy)
 	{
-		String[] infoMessage = new String[names.length+1];
-		infoMessage[0] = "Enterede Players are: ";
-		
-		for (int i = 1; i < infoMessage.length; i++) 
-		{
-			infoMessage[i] = names[i-1]; 
-		}
-		standardOut(infoMessage);
+		String[] choice = 
+			{
+					"This square is not owned by anyone",
+					"Do you want to buy it ? y/n"
+			};
+		outWithInput(choice);
 	}
 
-	public int getAmountPlayers() 
-	{
-		return amountOfPlayers;
-	}
 
-	public void setAmountPlayers(int amountPlayers) 
-	{
-		this.amountOfPlayers = amountPlayers;
-	}
 
+	// Output Logic. 
 	public void standardOut(String[] a)
 	{
 		System.out.println(" ------------------------------------------------------ ");
@@ -141,16 +151,20 @@ public class Out {
 	{
 		System.out.print(" ------------------------------------------------------ ");
 	}
-	
+
 	public void printLine()
 	{
 		System.out.println("");
 	}
 
-	//	
-	//	public void welcome()
-	//	{
-	//		String[] welcome = {"Welcome","To"};
-	//		printer(welcome);
-	//	}
+	public int getAmountPlayers() 
+	{
+		return amountOfPlayers;
+	}
+
+	public void setAmountPlayers(int amountPlayers) 
+	{
+		this.amountOfPlayers = amountPlayers;
+	}
+
 }

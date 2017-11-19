@@ -8,6 +8,8 @@ public class Territory extends Square {
 	
 	private int price;
 	private String rent;
+	private Player owner;
+	private boolean owned;
 	
 	public Territory(String navn, String description, Color color, String rent) 
 	{
@@ -25,14 +27,29 @@ public class Territory extends Square {
 	{
 		return rent;
 	}
-
+	
 	@Override
-	public void whatToDoOnSquare(Player p, Player[] players) {
-		// TODO Auto-generated method stub
+	public void whatToDoOnSquare(Player p, Player[] players) 
+	{
+		if (owned == true)
+		{
+			for (int i = 0; i < players.length; i++) 
+			{
+				
+			}
+		}
+		
+		else if (owned == false)
+		{
+			
+		}
 		
 	}
 	
-	
+	public void buySquare()
+	{
+		
+	}
 
 
 	

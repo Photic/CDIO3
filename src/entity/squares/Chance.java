@@ -6,6 +6,8 @@ import entity.Player;
 
 public class Chance extends Square {
 	
+	String[] cards = {};
+	
 	public Chance(String navn, String description, Color color) 
 	{
 		super(navn, description, color);
