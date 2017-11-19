@@ -5,8 +5,10 @@ import java.util.Arrays;
 import boundary.Gui;
 import boundary.Keyboard;
 import boundary.Out;
+import entity.Die;
 import entity.PlayerList;
 import entity.squares.GameBoard;
+import gamelogic.GameLogic;
 import gamelogic.RuleBook;
 
 public class GameController {
@@ -19,8 +21,13 @@ public class GameController {
 	private String[] names;
 	private GameBoard gameboard;
 	private RuleBook rulebook;
-	private int playerCount;
+	private GameLogic gamelogic;
+	private Die d1, d2;
+	private int playerCount, newPosition;
 
+	
+	
+	
 	public GameController() 
 	{
 		gui = new Gui();
@@ -28,6 +35,9 @@ public class GameController {
 		keyboard = new Keyboard();
 		gameboard = new GameBoard();
 		rulebook = new RuleBook();
+		d1 = new Die();
+		d2 = new Die();
+		gamelogic = new GameLogic();
 		
 	}
 
@@ -73,9 +83,14 @@ public class GameController {
 		//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 		
 		
+		//Calculates the new position for the player.
+		newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(0).getPosition(), playerList.getSpecificPlayer(0).rollDice(d1, d2), gameboard.getSize());
+		playerList.getSpecificPlayer(0).setPosition(newPosition);
 		
 		
 		
+		//get the current field on the gameboard, based on the player position
+		gameboard.getField(playerList.getSpecificPlayer(0).getPosition());
 		
 
 

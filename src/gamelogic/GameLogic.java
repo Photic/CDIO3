@@ -25,7 +25,7 @@ public class GameLogic {
 	 * 
 	 */
 	
-	public int fieldBoundary(int currentField, int faceValues, int fieldCount) {
+	public int newPosition(int currentField, int faceValues, int fieldCount) {
 		if (currentField+faceValues > fieldCount) {
 			return (currentField+faceValues)-fieldCount;
 		} else {

@@ -1,5 +1,8 @@
 package entity;
 
+import entity.squares.GameBoard;
+import entity.squares.Square;
+
 public class Player {
 		
 	
@@ -7,6 +10,10 @@ public class Player {
 	private int money;
 	private boolean isWinner;
 	private boolean isDead;
+	private int position;
+
+
+
 
 
 
@@ -20,10 +27,11 @@ public class Player {
 		this.money = startMoney;
 		this.isWinner = false;
 		this.isDead = false;
+		this.position = 0;
 	}
 
 	
-	public int playTurn(Die d1, Die d2) 
+	public int rollDice(Die d1, Die d2) 
 	{
 		d1.rollDie();
 		d2.rollDie();
@@ -75,6 +83,14 @@ public class Player {
 
 	public void setDead(boolean isDead) {
 		this.isDead = isDead;
+	}
+	public int getPosition() {
+		return position;
+	}
+
+
+	public void setPosition(int position) {
+		this.position = position;
 	}
 	
 }
