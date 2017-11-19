@@ -13,71 +13,72 @@ public class GameBoard {
 	Color yellow = new Color(255, 255, 77);
 	Color green = new Color(128, 255, 128);
 	Color blue = new Color(102, 217, 255);
+	Color turkies = new Color(31, 94, 90);
+	Color magenta = new Color (229, 70, 0);
 	
-	Square[] squares = new Square[32];
-	Start start = new Start("Start", "Recieve 10$", standard);
+	Square[] squares = new Square[24];
+	
+	//Territory
+	Territory tBurgerJoint = new Territory("BurgerJoint", "1", orange, "1");
+	Territory tPizzaHouse = new Territory("Pizza Place", "1", orange, "1");
+	Territory tCandyStore = new Territory("Candystore", "1", yellow, "1");
+	Territory tIceCreamStore = new Territory("Icecream Store", "1", yellow, "1");
+	Territory tMuseum = new Territory("Museum", "2", pink, "2");
+	Territory tLibrary = new Territory("Library", "2", pink, "2");
+	Territory tSkatePark = new Territory("Skatepark", "2", blue, "2");
+	Territory tSwimmingPool = new Territory("Swimming Pool", "2", blue, "2");
+	Territory tGamingHall = new Territory("Gaming Hall", "3", turkies, "3");
+	Territory tMovies = new Territory("Movie Theater", "3", turkies, "3");
+	Territory tToyStore = new Territory("Toy Store", "3", red, "3");
+	Territory tAnimalStore = new Territory("Animal Store", "3", red, "3");
+	Territory tBowling = new Territory("Bowling Ally", "4", grey, "4");
+	Territory tZoo = new Territory("The Zoo", "4", grey, "4");
+	Territory tWaterPark = new Territory("The Water Park", "4", purple, "4");
+	Territory tBeachPromonade = new Territory("The Beach House", "4", purple, "4");
+	
+	//Chance
 	Chance chance = new Chance("CHANCE", "Pick a chance card", standard);
-	Territory territoryPurple1 = new Territory("BALLOON STAND", "1000", purple, "100");
-	Territory territoryPurple2 = new Territory("PUPPET SHOW", "10", purple, "100");
-	Railway railwayYellow = new Railway("YELLOW RAILWAY", "Player again", yellow);
-	Territory territoryGray1 = new Territory("PUPPET SHOW", "20", grey, "100");
-	Territory territoryGray2 = new Territory("PUPPET SHOW", "20", grey, "100");
-	Fireworks fireworks = new Fireworks("FIREWORKS", "Pay 5$", standard);
-	RestRoom restRoom = new RestRoom("REST ROOM", "Wait a turn", standard);
-	Territory territoryPink1 = new Territory("FERRES WHEEL", "10", pink, "100");
-	Territory territoryPink2 = new Territory("CAR RIDE", "15", pink, "100");
-	Railway railwayGreen = new Railway("GREEN RAILWAY", "ROLL AGAIN", green);
-	Territory territoryYellow1 = new Territory("HORROR HOUSE", "15", yellow, "100");
-	Territory territoryYellow2 = new Territory("POPCORN STAND", "15", yellow, "100");
-	GiftShop unclePennybag = new GiftShop("Uncle pennybags", "0", standard);
-	Territory territoryRed1 = new Territory("CONVENIENCE STORE", "15", red, "100");
-	Territory territoryRed2 = new Territory("MINI GOLF", "15", red, "100");
-	Railway railwayBlue = new Railway("BLUE RAILWAY", "ROLL AGAIN", blue);
-	Territory territoryOrange1 = new Territory("LOOP THE LOOP", "15", orange, "100");
-	Territory territoryOrange2 = new Territory("ROLLER COASTER", "15", orange, "100");
-	WaterShow watershow = new WaterShow("WATER SHOW", "Pay 2$", standard);
-	Tax tax = new Tax("TAX TO RESTROOM", "Pay 3$ to the restroom", standard);
-	Territory territoryGreen1 = new Territory("MAGIC SHOW", "15", green, "100");
-	Territory territoryGreen2 = new Territory("OCTUPUS RIDE", "15", green, "100");
-	Railway railwayRed = new Railway("RED RAILWAY", "ROLL AGAIN", red);
-	Territory territoryBlue1 = new Territory("MOVIE HOUSE", "15", blue, "100");
-	Territory territoryBlue2 = new Territory("CHANGE STAGE", "15", blue, "100");
 
+	//Start
+	Start start = new Start("Start", "Recieve 10$", standard);
 	
+	//goToJail: 1
+	GoToJail goToJail = new GoToJail("GoToJail", "You are goin to jail. Pay a fine next turn to get released", standard);
+	
+	//beInJailOrVisit: 1
+	Jail jail = new Jail("Locked up, or visiting", "You are either in jail, or locked up", standard);
+	
+	//FreeParking: 1
+	FreeParking freeParking = new FreeParking("Free Parking", "Enjoy a relaxed moment", standard);
+	
+
 	public GameBoard()
 	{	
 		squares[0] = start;
-		squares[1] = chance;
-		squares[2] = territoryPurple1;
-		squares[3] = territoryPurple2;
-		squares[4] = chance;
-		squares[5] = railwayYellow;
-		squares[6] = territoryGray1;
-		squares[7] = territoryGray2;
-		squares[8] = fireworks;
+		squares[1] = tBurgerJoint;
+		squares[2] = tPizzaHouse;
+		squares[3] = chance;
+		squares[4] = tCandyStore;
+		squares[5] = tIceCreamStore;
+		squares[6] = jail;
+		squares[7] = tMuseum;
+		squares[8] = tLibrary;
 		squares[9] = chance;
-		squares[10] = restRoom;
-		squares[11] = territoryPink1;
-		squares[12] = territoryPink2;
-		squares[13] = railwayGreen;
-		squares[14] = territoryYellow1;
-		squares[15] = territoryYellow2;
-		squares[16] = unclePennybag;
-		squares[17] = chance;
-		squares[18] = territoryRed1;
-		squares[19] = territoryRed2;
-		squares[20] = chance;
-		squares[21] = railwayBlue;
-		squares[22] = territoryOrange1;
-		squares[23] = territoryOrange2;
-		squares[24] = watershow;
-		squares[25] = chance;
-		squares[26] = tax;
-		squares[27] = territoryGreen1;
-		squares[28] = territoryGreen2;
-		squares[29] = railwayRed;
-		squares[30] = territoryBlue1;
-		squares[31] = territoryBlue2;
+		squares[10] = tSkatePark;
+		squares[11] = tSwimmingPool;
+		squares[12] = freeParking;
+		squares[13] = tGamingHall;
+		squares[14] = tMovies;
+		squares[15] = chance;
+		squares[16] = tToyStore;
+		squares[17] = tAnimalStore;
+		squares[18] = goToJail;
+		squares[19] = tBowling;
+		squares[20] = tZoo;
+		squares[21] = chance;
+		squares[22] = tWaterPark;
+		squares[23] = tBeachPromonade;
+
 	}
 	
 	public Square getField(int a)

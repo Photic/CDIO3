@@ -2,13 +2,17 @@ package entity.squares;
 
 import java.awt.Color;
 
+<<<<<<< HEAD:src/entity/squares/GoToJail.java
+public class GoToJail extends Square {
+=======
 import desktop_codebehind.Player;
 
 public class GiftShop extends Square {
+>>>>>>> master:src/entity/squares/GiftShop.java
 	
 	private int prize;
 	
-	public GiftShop(String navn, String description, Color color) 
+	public GoToJail(String navn, String description, Color color) 
 	{
 		super(navn, description, color);
 	}

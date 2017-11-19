@@ -2,11 +2,15 @@ package entity.squares;
 
 import java.awt.Color;
 
+<<<<<<< HEAD:src/entity/squares/FreeParking.java
+public class FreeParking extends Square {
+=======
 import desktop_codebehind.Player;
 
 public class RestRoom extends Square {
+>>>>>>> master:src/entity/squares/RestRoom.java
 
-	public RestRoom(String navn, String description, Color color) {
+	public FreeParking(String navn, String description, Color color) {
 		super(navn, description, color);
 		// TODO Auto-generated constructor stub
 	}
