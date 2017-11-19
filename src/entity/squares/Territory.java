@@ -2,7 +2,7 @@ package entity.squares;
 
 import java.awt.Color;
 
-import desktop_codebehind.Player;
+import entity.Player;
 
 public class Territory extends Square {
 	
@@ -27,7 +27,7 @@ public class Territory extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p) {
+	public void whatToDoOnSquare(Player p, Player[] players) {
 		// TODO Auto-generated method stub
 		
 	}

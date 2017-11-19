@@ -2,7 +2,8 @@ package entity.squares;
 
 import java.awt.Color;
 
-import desktop_codebehind.Player;
+import entity.Player;
+
 
 public abstract class Square {
 
@@ -41,7 +42,7 @@ public abstract class Square {
 		this.color = color;
 	}
 
-	public abstract void whatToDoOnSquare(Player p);
+	public abstract void whatToDoOnSquare(Player p, Player[] players);
 
 	
 }

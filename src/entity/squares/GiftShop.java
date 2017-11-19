@@ -1,32 +1,27 @@
 package entity.squares;
 
 import java.awt.Color;
-
-import desktop_codebehind.Player;
+import entity.Player;
 
 public class GiftShop extends Square {
 	
-	private int prize;
+	private PrizePool prizepool;
 	
-	public GiftShop(String navn, String description, Color color) 
+	public GiftShop(String navn, String description, Color color, PrizePool prizepool) 
 	{
 		super(navn, description, color);
-	}
-
-	public int getPrize() 
-	{
-		return prize;
-	}
-	
-	public void setPrize(int a)
-	{
-		this.prize += a;
+		this.prizepool = prizepool;
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p) {
-		// TODO Auto-generated method stub
-		
+	public String getDescription() {
+		return super.getDescription() + ": " + prizepool.getPrize();
+	}
+	@Override
+	public void whatToDoOnSquare(Player p, Player[] players) 
+	{
+		p.setBalance(p.getBalance()+prizepool.getPrize());
+		prizepool.setPrize(0);
 	}
 	
 }

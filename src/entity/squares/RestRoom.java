@@ -1,8 +1,8 @@
 package entity.squares;
 
 import java.awt.Color;
+import entity.Player;
 
-import desktop_codebehind.Player;
 
 public class RestRoom extends Square {
 
@@ -12,7 +12,7 @@ public class RestRoom extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p) {
+	public void whatToDoOnSquare(Player p, Player[] players) {
 		// TODO Auto-generated method stub
 		
 	}

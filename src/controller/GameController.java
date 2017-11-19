@@ -24,9 +24,6 @@ public class GameController {
 	private GameLogic gamelogic;
 	private Die d1, d2;
 	private int playerCount, newPosition;
-
-	
-	
 	
 	public GameController() 
 	{
@@ -41,16 +38,11 @@ public class GameController {
 		
 	}
 
-
-
-
-	public void gameControl() {
-
-
+	public void gameControl() 
+	{
 		//Welcome messages
 		out.welcomeNew();
 		playerCount = keyboard.getIntRange(2, 4);
-//		out.endCurrentOutput();
 		out.setAmountPlayers(playerCount);
 		out.playerCount(playerCount);
 

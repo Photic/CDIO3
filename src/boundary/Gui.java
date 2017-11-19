@@ -1,10 +1,5 @@
 package boundary;
 
-
-import java.awt.Color;
-
-import controller.GameController;
-import desktop_codebehind.Car;
 import entity.Player;
 import desktop_fields.Field;
 import desktop_fields.Street;
@@ -49,7 +44,7 @@ public class Gui {
 	public void setNames(PlayerList playerList) {
 		
 		for (Player p : playerList.getList()) {
-			GUI.addPlayer(p.getName(), p.getMoney());
+			GUI.addPlayer(p.getName(), p.getBalance());
 		}
 	}
 
