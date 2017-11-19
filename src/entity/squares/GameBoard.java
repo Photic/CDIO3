@@ -20,7 +20,7 @@ public class GameBoard {
 	final Square[] squares = new Square[] {
 			new Start("Start", "Recieve 10$", standard),
 			new Chance("CHANCE", "Pick a chance card", standard),
-			new Territory("BALLOON STAND", "1000", purple, "100"),
+			new Territory("BALLOON STAND", "10", purple, "100"),
 			new Territory("PUPPET SHOW", "10", purple, "100"),
 			new Railway("YELLOW RAILWAY", "Player again", yellow),
 			new Territory("PUPPET SHOW", "20", grey, "100"),

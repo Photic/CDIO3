@@ -16,8 +16,6 @@ public class Tax extends Square {
 		this.prizePool = prizepool;
 	}
 	
-	
-	
 	@Override
 	public void whatToDoOnSquare(Player p, Player[] players) 
 	{

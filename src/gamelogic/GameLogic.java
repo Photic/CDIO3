@@ -25,7 +25,8 @@ public class GameLogic {
 	 * 
 	 */
 	
-	public int newPosition(int currentField, int faceValues, int fieldCount) {
+	public int newPosition(int currentField, int faceValues, int fieldCount) 
+	{
 		if (currentField+faceValues > fieldCount) {
 			return (currentField+faceValues)-fieldCount;
 		} else {
@@ -43,7 +44,8 @@ public class GameLogic {
 	 * the player
 	 * 
 	 */
-	public static void checkIfDead(int newMoney, Player player) {
+	public static void checkIfDead(int newMoney, Player player) 
+	{
 		player.setBalance(player.getBalance() + newMoney);
 		if (player.getBalance() <= DEATH_POINT) {
 //			player.setDead(true);
