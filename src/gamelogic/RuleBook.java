@@ -6,7 +6,14 @@ import entity.squares.*;
 public class RuleBook {
 	
 	
-	
+	/**
+	 * This method that determines how much money the players will recieve at the beginning of the game, based on the number of players. 
+	 * @param playercount
+	 * The amount of people playing the game. 
+	 * @return
+	 * Returns an integer descriping how much money each player will start with. 
+	 * 
+	 */
 	
 	public int startMoney(int playercount) 
 	{	
