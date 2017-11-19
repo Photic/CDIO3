@@ -28,9 +28,6 @@ public class RuleBook {
 		return out;
 	}
 	
-	
-	
-	
 	public void getwhatToDoHere(GameBoard a, int b) 
 	{
 		// Squares Rules
