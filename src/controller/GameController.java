@@ -83,18 +83,18 @@ public class GameController {
 		//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 		
 		
-		//Calculates the new position for the player.
-		newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(0).getPosition(), playerList.getSpecificPlayer(0).rollDice(d1, d2), gameboard.getSize());
-		playerList.getSpecificPlayer(0).setPosition(newPosition);
-		
-		
-		
-		//get the current field on the gameboard, based on the player position
-		gameboard.getField(playerList.getSpecificPlayer(0).getPosition());
+//		//Calculates the new position for the player.
+//		newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(0).getPosition(), playerList.getSpecificPlayer(0).rollDice(d1, d2), gameboard.getSize());
+//		playerList.getSpecificPlayer(0).setPosition(newPosition);
+//		
+//		
+//		
+//		//get the current field on the gameboard, based on the player position
+//		gameboard.getField(playerList.getSpecificPlayer(0).getPosition());
 		
 
 
-		
+		rulebook.getSquareLogic(gameboard, playerList.getSpecificPlayer(0).getPosition());
 
 
 
