@@ -84,7 +84,7 @@ public class GameController {
 
 
 				//Wait for the player to press 5 to roll the dice.
-				out.wantToRoll();
+				out.wantToRoll(playerList.getSpecificPlayer(i));
 				keyboard.waitForInt(5);
 
 
@@ -192,6 +192,7 @@ public class GameController {
 		if (answer == 1) {
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i).getName());
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwned(true);
+			out.playerNowOwns(playerList.getSpecificPlayer(i), gameboard);
 		} else {
 			out.notBuying();
 		}

@@ -13,7 +13,7 @@ public class Out {
 		s = new Screen();
 	}
 
-	
+
 	// Post a Welcome message at the start of the game.
 	public void welcomeNew() 
 	{
@@ -30,7 +30,7 @@ public class Out {
 		outWithInput(playerCount);
 	}
 
-	
+
 	// Ask the player for the number if players playing.
 	public void playerCount(int n) 
 	{
@@ -42,7 +42,7 @@ public class Out {
 		standardOut(count);
 	}
 
-	
+
 	// As the user to enter player names.
 	public void askForName(int playerNumber) 
 	{
@@ -52,7 +52,7 @@ public class Out {
 		outWithInput(names);
 	}
 
-	
+
 	// Print the players name.
 	public void printName(int playerNumber, String name) 
 	{
@@ -62,8 +62,8 @@ public class Out {
 			};
 		standardOut(allNameEntrys);
 	}
-	
-	
+
+
 	public void printOwner(String name, int rent) 
 	{
 		String[] allNameEntrys = 
@@ -75,20 +75,20 @@ public class Out {
 		standardOut(allNameEntrys);
 	}
 
-	
+
 	// Print a list of 
 	public void printPlayerSummary(String[] names) 
 	{
 		String[] infoMessage = new String[names.length+1];
 		infoMessage[0] = "Enterede Players are: ";
-		
+
 		for (int i = 1; i < infoMessage.length; i++) 
 		{
 			infoMessage[i] = names[i-1]; 
 		}
 		standardOut(infoMessage);
 	}
-	
+
 	// Does the player want to buy a square ?
 	public void playerWantToBuy(int price)
 	{
@@ -104,25 +104,50 @@ public class Out {
 		standardOut(playerWant);
 		outWithInput(askPlayer);
 	}
-	
-	public void wantToRoll() {
+
+	/**
+	 *  Telling the player it is their turn to roll
+	 */
+	public void wantToRoll(Player p) {
+		
+		String[] isIsNow = {
+				"It is now "+p.getName()+"'s turn"
+		};
+		
 		String[] askPlayer = 
 			{
-					"Press 5 to roll the dice."
+					"Press 5 to roll the dice: "
 			};
-		
+		standardOut(isIsNow);
 		outWithInput(askPlayer);
 	}
-	
-	
+
+	/**
+	 * Telling the users that the player has bough the Territory
+	 */
+	public void playerNowOwns(Player p, GameBoard gameboard)
+	{
+		String[] owner = 
+			{
+				p.getName() + " is now the owner of the "+ gameboard.getField(p.getPosition()).getNavn()
+			};
+		standardOut(owner);
+	}
+
+	/**
+	 * If the player says no.
+	 */
 	public void notBuying() {
 		String[] outprint = {
 				"You decided not to buy the square."
 		};
 		standardOut(outprint);
 	}
-	
-	// Use in the code to display the amount of players.
+
+	/**
+	 *  Use in the code to display the amount of players.
+	 *  @return
+	 */
 	public int getAmountPlayers() 
 	{
 		return amountOfPlayers;
@@ -133,7 +158,7 @@ public class Out {
 		this.amountOfPlayers = amountPlayers;
 	}
 
-	
+
 	// Standard output, use for tekst field that does not require an output.
 	public void standardOut(String[] a)
 	{
@@ -170,8 +195,8 @@ public class Out {
 		}
 		System.out.println("");
 	}
-	
-	
+
+
 	// Output with a field for players to input to the system.
 	public void outWithInput(String[] a)
 	{
@@ -199,9 +224,9 @@ public class Out {
 			}
 		}
 	}
-	
-	
-	
+
+
+
 	public void payRent(Player owner, int rent) {
 		String[] outString = 
 			{
@@ -209,7 +234,7 @@ public class Out {
 			};
 		standardOut(outString);
 	}
-	
+
 	public void wantToBuy(String name, int price) {
 		String[] outString = 
 			{
@@ -218,34 +243,34 @@ public class Out {
 			};
 		standardOut(outString);
 	}
-	
-	
-	
-	
+
+
+
+
 	public void evaluateDice(String name, int sum) {
 		String[] outString = 
 			{
-				name + " rolled the dice and the sum is: " +sum
+					name + " rolled the dice and the sum is: " +sum
 			};
 		standardOut(outString);
 	}
-	
+
 	public void evaluateNewPos(int newPosition, GameBoard gameboard) {
-		
+
 		String[] outString = 
 			{
-				"You landed on " +gameboard.getField(newPosition).getNavn()
+					"You landed on " +gameboard.getField(newPosition).getNavn()
 			};
 		standardOut(outString);
-		
+
 	}
-	
-	
+
+
 	public void endEntry()
 	{
 		System.out.print(" ------------------------------------------------------ ");
 	}
-	
+
 	public void printLine()
 	{
 		System.out.println("");
