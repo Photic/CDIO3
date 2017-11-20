@@ -34,7 +34,7 @@ public class Out {
 
 
 	/**
-	 *  Ask the player for the number if players playing.
+	 * Ask the player for the number if players playing.
 	 * @param n
 	 */
 	public void playerCount(int n) 
@@ -48,7 +48,10 @@ public class Out {
 	}
 
 
-	// As the user to enter player names.
+	/**
+	 * As the user to enter player names.
+	 * @param playerNumber
+	 */
 	public void askForName(int playerNumber) 
 	{
 		String[] names = {
@@ -71,6 +74,7 @@ public class Out {
 			};
 		standardOut(allNameEntrys);
 	}
+
 
 	/**
 	 * Telling the users that a field is already owned.
@@ -105,6 +109,7 @@ public class Out {
 		standardOut(infoMessage);
 	}
 
+
 	/**
 	 *  Does the player want to buy a square ?
 	 *  @param price
@@ -124,15 +129,16 @@ public class Out {
 		outWithInput(askPlayer);
 	}
 
+
 	/**
 	 *  Telling the player it is their turn to roll
 	 */
 	public void wantToRoll(Player p) {
-		
+
 		String[] isIsNow = {
 				"It is now "+p.getName()+"'s turn"
 		};
-		
+
 		String[] askPlayer = 
 			{
 					"Press 5 to roll the dice: "
@@ -141,6 +147,7 @@ public class Out {
 		outWithInput(askPlayer);
 	}
 
+
 	/**
 	 * Telling the users that the player has bough the Territory
 	 */
@@ -148,9 +155,23 @@ public class Out {
 	{
 		String[] owner = 
 			{
-				p.getName() + " is now the owner of the "+ gameboard.getField(p.getPosition()).getNavn()
+					p.getName() + " is now the owner of the "+ gameboard.getField(p.getPosition()).getNavn()
 			};
 		standardOut(owner);
+	}
+
+	public void announceWinner(Player p)
+	{
+		String[] winner = 
+			{
+				"***********************",
+				"Congratulations " + p,
+				"You are the winner of",
+				"Monopoly Junior EXTREME!!",
+				"**********************"
+			};
+		standardOut(winner);
+		endEntry();
 	}
 
 	/**
@@ -181,7 +202,6 @@ public class Out {
 	}
 
 
-
 	/**
 	 * Telling the users what have been rolled.
 	 * @param name
@@ -204,8 +224,8 @@ public class Out {
 			};
 		standardOut(outString);
 	}
-	
-	
+
+
 	/**
 	 *  Use in the code to display the amount of players.
 	 *  @return

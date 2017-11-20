@@ -78,7 +78,15 @@ public class GameController {
 		gui.setNames(playerList);
 		//
 
-		while(true) {
+		while(true) 
+		{
+			// If there is only 1 player left, the winner is announced.
+			if (playerList.getLength() == 1)
+			{
+				out.announceWinner(playerList.getSpecificPlayer(0));
+				break;
+			}
+			
 			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 			for (int i = 0; i<playerList.getLength(); i++) {
 
@@ -112,11 +120,6 @@ public class GameController {
 
 				}
 
-
-//				gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getBalance(), playerList.getSpecificPlayer(i));
-
-
-
 				//Update the balance of the players on the gui.
 				for (int j = 0; j<playerList.getLength(); j++) {
 					gui.updateBalance(playerList.getSpecificPlayer(j));
@@ -125,7 +128,6 @@ public class GameController {
 			}
 		}
 
-		//test
 
 
 
