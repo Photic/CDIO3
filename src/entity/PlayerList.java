@@ -14,8 +14,16 @@ public class PlayerList {
 			players[i]= new Player(names[i], startMoney);	
 	}
 	
-	
-	
+	public void playerHasLost(Player p)
+	{
+		for (int i = 0; i < players.length; i++) 
+		{
+			if (p == getSpecificPlayer(i))
+			{
+				
+			}
+		}
+	}
 	
 	public Player getSpecificPlayer(int n) {
 		return players[n];
