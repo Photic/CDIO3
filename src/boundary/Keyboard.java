@@ -46,6 +46,9 @@ public class Keyboard {
 	 */
 	public void waitForEnter()
 	{
-		in.next();
+		String temp;
+		do {
+		temp = in.next();
+		}while (temp != ""); 
 	}
 }

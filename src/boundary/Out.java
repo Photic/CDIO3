@@ -105,6 +105,15 @@ public class Out {
 		outWithInput(askPlayer);
 	}
 	
+	public void wantToRoll() {
+		String[] askPlayer = 
+			{
+					"Press 5 to roll the dice."
+			};
+		
+		outWithInput(askPlayer);
+	}
+	
 	
 	public void notBuying() {
 		String[] outprint = {
