@@ -79,7 +79,6 @@ public class GameController {
 //
 
 
-		while (true) {
 			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 			for (int i = 0; i<playerList.getLength(); i++) {
 				
@@ -114,9 +113,6 @@ public class GameController {
 				gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getMoney(), playerList.getSpecificPlayer(i));
 				
 				
-				if (playerList.getSpecificPlayer(i).isDead() == true) {
-					break;
-				}
 				
 				//Update the balance of the players on the gui.
 				for (int j = 0; j<playerList.getLength(); j++) {
@@ -124,10 +120,6 @@ public class GameController {
 				}
 
 			}
-
-
-		}
-
 
 
 
