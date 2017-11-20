@@ -43,9 +43,9 @@ public class GameLogic {
 	 * the player
 	 * 
 	 */
-	public void checkIfDead(int newMoney, Player player) {
-		player.setMoney(player.getMoney() + newMoney);
-		if (player.getMoney() <= DEATH_POINT) {
+	public static void checkIfDead(int newMoney, Player player) {
+		player.setBalance(player.getBalance() + newMoney);
+		if (player.getBalance() <= DEATH_POINT) {
 			player.setDead(true);
 		}
 	}

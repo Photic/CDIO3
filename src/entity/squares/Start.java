@@ -12,7 +12,7 @@ public class Start extends Square {
 	
 	public Start(String navn, String description, Color color) {
 		super(navn, description, color);
-		this.setGetMoney(getMoney);
+		this.getMoney = Integer.parseInt(description);
 	}
 
 	public int getGetMoney() {
@@ -24,9 +24,9 @@ public class Start extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
-		// TODO Auto-generated method stub
-		
+	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
+	{
+		p.setBalance(p.getBalance()+getMoney);
 	}
 
 	

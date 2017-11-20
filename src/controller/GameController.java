@@ -110,7 +110,7 @@ public class GameController {
 				}
 				
 				
-				gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getMoney(), playerList.getSpecificPlayer(i));
+				gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getBalance(), playerList.getSpecificPlayer(i));
 				
 				
 				
