@@ -185,9 +185,9 @@ public class GameController {
 
 
 
-	public void territorySituation(int i) {
-		int answer;
-		answer = keyboard.getIntRange(0, 1);
+	public void territorySituation(int i) 
+	{
+		int answer = keyboard.getIntRange(0, 1);
 
 		if (answer == 1) {
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i).getName());
