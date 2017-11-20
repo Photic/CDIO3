@@ -37,9 +37,8 @@ public class Keyboard {
 	
 	public String getString() 
 	{
-		return in.next();
+		return in.nextLine();
 	}
-	
 	
 	
 	/** Venter p� at der tastes ENTER

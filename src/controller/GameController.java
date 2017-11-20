@@ -78,54 +78,66 @@ public class GameController {
 		gui.setNames(playerList);
 		//
 
-		while(true) {
+		while(true) 
+		{
+			// If there is only 1 player left, the winner is announced.
+			if (playerList.getLength() == 1)
+			{
+				out.announceWinner(playerList.getSpecificPlayer(0));
+				break;
+			}
+
+
+
 			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 			for (int i = 0; i<playerList.getLength(); i++) {
+				
+				//First check if the player is in jail.
+				if(playerList.getSpecificPlayer(i).isInJail()) {
+					playerList.getSpecificPlayer(i).setInJail(false);
+				} else {
+
+					//Wait for the player to press 5 to roll the dice.
+					out.wantToRoll(playerList.getSpecificPlayer(i));
+					keyboard.waitForInt(5);
 
 
-				//Wait for the player to press 5 to roll the dice.
-				out.wantToRoll();
-				keyboard.waitForInt(5);
+
+					diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2);
+					out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
+
+					//Calculates the new position for the player.
+					newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
+					out.evaluateNewPos(newPosition, gameboard);
+
+					playerList.getSpecificPlayer(i).setPosition(newPosition);
 
 
+					//get the current field on the gameboard, based on the player position
+					rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
 
-				diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2);
-				out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
+					//If it is a territory field
+					if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
+					{
+						if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getOwner().length() <= 0) 
+						{
+							territorySituation(i);	
+						}
 
-				//Calculates the new position for the player.
-				newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
-				out.evaluateNewPos(newPosition, gameboard);
-
-				playerList.getSpecificPlayer(i).setPosition(playerList.getSpecificPlayer(i).getPosition());
-
-
-				//get the current field on the gameboard, based on the player position
-				rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
-
-
-				//If it is a territory field
-				if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) {
-
-					if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getOwner().length() <=0) {
-						territorySituation(i);	
 					}
 
+					//Update the balance of the players on the gui.
+					for (int j = 0; j<playerList.getLength(); j++) {
+						gui.updateBalance(playerList.getSpecificPlayer(j));
+					}
+					
+					//Check if the current player died.
+					gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
+
 				}
-
-
-				gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getBalance(), playerList.getSpecificPlayer(i));
-
-
-
-				//Update the balance of the players on the gui.
-				for (int j = 0; j<playerList.getLength(); j++) {
-					gui.updateBalance(playerList.getSpecificPlayer(j));
-				}
-
 			}
 		}
 
-		//test
 
 
 
@@ -184,14 +196,20 @@ public class GameController {
 	}
 
 
-
-	public void territorySituation(int i) {
-		int answer;
-		answer = keyboard.getIntRange(0, 1);
+	/**
+	 * This method checks if the player wants to buy a free territory.
+	 * @param i
+	 * the current iterations variable, to determine player.
+	 */
+	public void territorySituation(int i) 
+	{
+		int answer = keyboard.getIntRange(0, 1);
 
 		if (answer == 1) {
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i).getName());
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwned(true);
+			out.playerNowOwns(playerList.getSpecificPlayer(i), gameboard);
+			playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - ((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getPrice());
 		} else {
 			out.notBuying();
 		}

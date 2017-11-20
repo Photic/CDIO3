@@ -13,8 +13,10 @@ public class Out {
 		s = new Screen();
 	}
 
-	
-	// Post a Welcome message at the start of the game.
+
+	/**
+	 *  Post a Welcome message at the start of the game.
+	 */
 	public void welcomeNew() 
 	{
 		String[] welcome = 	
@@ -31,7 +33,35 @@ public class Out {
 	}
 
 	
-	// Ask the player for the number if players playing.
+	/**
+	 * This prints a message for the freeParking square.
+	 */
+	public void freeParking() {
+		
+		String[] outString =
+			{
+					"You park freely, but nothing else happens."
+			};
+		standardOut(outString);
+		
+	}
+	
+	/**
+	 * Go to jail print
+	 */
+	public void goToJail() {
+		String[] outString =
+			{
+					"You are getting locked up in Jail.",
+					"You are moved to the jail square."
+			};
+		standardOut(outString);
+	}
+
+	/**
+	 * Ask the player for the number if players playing.
+	 * @param n
+	 */
 	public void playerCount(int n) 
 	{
 		String[] count =
@@ -42,8 +72,11 @@ public class Out {
 		standardOut(count);
 	}
 
-	
-	// As the user to enter player names.
+
+	/**
+	 * As the user to enter player names.
+	 * @param playerNumber
+	 */
 	public void askForName(int playerNumber) 
 	{
 		String[] names = {
@@ -52,8 +85,12 @@ public class Out {
 		outWithInput(names);
 	}
 
-	
-	// Print the players name.
+
+	/**
+	 *  Print the players name.
+	 * @param playerNumber
+	 * @param name
+	 */
 	public void printName(int playerNumber, String name) 
 	{
 		String[] allNameEntrys = 
@@ -62,8 +99,13 @@ public class Out {
 			};
 		standardOut(allNameEntrys);
 	}
-	
-	
+
+
+	/**
+	 * Telling the users that a field is already owned.
+	 * @param name
+	 * @param rent
+	 */
 	public void printOwner(String name, int rent) 
 	{
 		String[] allNameEntrys = 
@@ -75,21 +117,28 @@ public class Out {
 		standardOut(allNameEntrys);
 	}
 
-	
-	// Print a list of 
+
+	/**
+	 * Print a list of 
+	 * @param names
+	 */
 	public void printPlayerSummary(String[] names) 
 	{
 		String[] infoMessage = new String[names.length+1];
 		infoMessage[0] = "Enterede Players are: ";
-		
+
 		for (int i = 1; i < infoMessage.length; i++) 
 		{
 			infoMessage[i] = names[i-1]; 
 		}
 		standardOut(infoMessage);
 	}
-	
-	// Does the player want to buy a square ?
+
+
+	/**
+	 *  Does the player want to buy a square ?
+	 *  @param price
+	 */
 	public void playerWantToBuy(int price)
 	{
 		String[] playerWant = 
@@ -104,25 +153,108 @@ public class Out {
 		standardOut(playerWant);
 		outWithInput(askPlayer);
 	}
-	
-	public void wantToRoll() {
+
+
+	/**
+	 *  Telling the player it is their turn to roll
+	 */
+	public void wantToRoll(Player p) {
+
+		String[] isIsNow = {
+				"It is now "+p.getName()+"'s turn"
+		};
+
 		String[] askPlayer = 
 			{
-					"Press 5 to roll the dice."
+					"Press 5 to roll the dice: "
 			};
-		
+		standardOut(isIsNow);
 		outWithInput(askPlayer);
 	}
-	
-	
+
+
+	/**
+	 * Telling the users that the player has bough the Territory
+	 */
+	public void playerNowOwns(Player p, GameBoard gameboard)
+	{
+		String[] owner = 
+			{
+					p.getName() + " is now the owner of the "+ gameboard.getField(p.getPosition()).getNavn()
+			};
+		standardOut(owner);
+	}
+
+	public void announceWinner(Player p)
+	{
+		String[] winner = 
+			{
+				"***********************",
+				"Congratulations " + p,
+				"You are the winner of",
+				"Monopoly Junior EXTREME!!",
+				"**********************"
+			};
+		standardOut(winner);
+		endEntry();
+	}
+
+	/**
+	 * If the player says no.
+	 */
 	public void notBuying() {
 		String[] outprint = {
 				"You decided not to buy the square."
 		};
 		standardOut(outprint);
 	}
-	
-	// Use in the code to display the amount of players.
+
+	public void payRent(Player owner, int rent) {
+		String[] outString = 
+			{
+					"You pay "+rent + " int rent to "+owner.getName() 
+			};
+		standardOut(outString);
+	}
+
+	public void wantToBuy(String name, int price) {
+		String[] outString = 
+			{
+					name + " is for sale. The price is: " + price,
+					"Do you wanna buy it? Y/N"
+			};
+		standardOut(outString);
+	}
+
+
+	/**
+	 * Telling the users what have been rolled.
+	 * @param name
+	 * @param sum
+	 */
+	public void evaluateDice(String name, int sum) 
+	{
+		String[] outString = 
+			{
+					name + " rolled the dice and the sum is: " +sum
+			};
+		standardOut(outString);
+	}
+
+	public void evaluateNewPos(int newPosition, GameBoard gameboard)
+	{
+		String[] outString = 
+			{
+					"You landed on " +gameboard.getField(newPosition).getNavn()
+			};
+		standardOut(outString);
+	}
+
+
+	/**
+	 *  Use in the code to display the amount of players.
+	 *  @return
+	 */
 	public int getAmountPlayers() 
 	{
 		return amountOfPlayers;
@@ -133,8 +265,10 @@ public class Out {
 		this.amountOfPlayers = amountPlayers;
 	}
 
-	
-	// Standard output, use for tekst field that does not require an output.
+	/**
+	 * Standard output, use for tekst field that does not require an output.
+	 * @param a
+	 */
 	public void standardOut(String[] a)
 	{
 		System.out.println(" ------------------------------------------------------ ");
@@ -170,9 +304,12 @@ public class Out {
 		}
 		System.out.println("");
 	}
-	
-	
-	// Output with a field for players to input to the system.
+
+
+	/**
+	 * Output with a field for players to input to the system.
+	 * @param a
+	 */
 	public void outWithInput(String[] a)
 	{
 		int k = 0;
@@ -199,62 +336,16 @@ public class Out {
 			}
 		}
 	}
-	
-	
-	
-	public void payRent(Player owner, int rent) {
-		String[] outString = 
-			{
-					"You pay "+rent + " int rent to "+owner.getName() 
-			};
-		standardOut(outString);
-	}
-	
-	public void wantToBuy(String name, int price) {
-		String[] outString = 
-			{
-					name + " is for sale. The price is: " + price,
-					"Do you wanna buy it? Y/N"
-			};
-		standardOut(outString);
-	}
-	
-	
-	
-	
-	public void evaluateDice(String name, int sum) {
-		String[] outString = 
-			{
-				name + " rolled the dice and the sum is: " +sum
-			};
-		standardOut(outString);
-	}
-	
-	public void evaluateNewPos(int newPosition, GameBoard gameboard) {
-		
-		String[] outString = 
-			{
-				"You landed on " +gameboard.getField(newPosition).getNavn()
-			};
-		standardOut(outString);
-		
-	}
-	
+
 	
 	public void endEntry()
 	{
 		System.out.print(" ------------------------------------------------------ ");
 	}
-	
+
 	public void printLine()
 	{
 		System.out.println("");
 	}
 
-	//	
-	//	public void welcome()
-	//	{
-	//		String[] welcome = {"Welcome","To"};
-	//		printer(welcome);
-	//	}
 }

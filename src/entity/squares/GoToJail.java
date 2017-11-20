@@ -19,6 +19,10 @@ public class GoToJail extends Square {
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
 	{
 		
+		out.goToJail();
+		p.setPosition(6);
+		p.setInJail(true);
+		
 	}
 
 

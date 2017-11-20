@@ -1,6 +1,7 @@
 package gamelogic;
 
 import entity.Player;
+import entity.PlayerList;
 
 public class GameLogic {
 
@@ -41,12 +42,14 @@ public class GameLogic {
 	 * The new money.
 	 * @param player
 	 * the player
+	 * @param playerlist TODO
 	 * 
 	 */
-	public static void checkIfDead(int newMoney, Player player) {
-		player.setBalance(player.getBalance() + newMoney);
+	public void checkIfDead(Player player, PlayerList playerlist) 
+	{
 		if (player.getBalance() <= DEATH_POINT) {
 			player.setDead(true);
+			playerlist.playerHasLost(player);
 		}
 	}
 	

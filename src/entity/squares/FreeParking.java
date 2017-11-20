@@ -18,7 +18,10 @@ public class FreeParking extends Square {
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
 	{
-		// Her skal der ikke være noget kode, da der ikke sker noget på free parking.	
+		
+		out.freeParking();
+		
+		
 	}
 	
 }
