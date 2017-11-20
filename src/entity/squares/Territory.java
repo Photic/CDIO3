@@ -28,7 +28,7 @@ public class Territory extends Square {
 		this.rent = rent;
 		this.rentInt = Integer.parseInt(rent);
 		this.isOwned = false;
-		this.owner = "None";
+		this.owner = "";
 	}
 
 	public int getPrice() 

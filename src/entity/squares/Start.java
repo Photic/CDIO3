@@ -25,7 +25,7 @@ public class Start extends Square {
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
 	{
-		p.setBalance(p.getBalance()+getMoney);
+		//p.setBalance(p.getBalance()+getMoney);
 	}
 
 	

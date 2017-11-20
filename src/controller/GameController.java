@@ -78,49 +78,51 @@ public class GameController {
 		gui.setNames(playerList);
 		//
 
-
-		//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
-		for (int i = 0; i<playerList.getLength(); i++) {
-
-			
-			
-			out.wantToRoll();
-			keyboard.waitForInt(5);
-			
-
-			diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2);
-			out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
-
-			//Calculates the new position for the player.
-			newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
-			out.evaluateNewPos(newPosition, gameboard);
-
-			playerList.getSpecificPlayer(i).setPosition(playerList.getSpecificPlayer(i).getPosition());
+		while(true) {
+			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
+			for (int i = 0; i<playerList.getLength(); i++) {
 
 
-			//get the current field on the gameboard, based on the player position
-			rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
+				//Wait for the player to press 5 to roll the dice.
+				out.wantToRoll();
+				keyboard.waitForInt(5);
 
 
-			//If it is a territory field
-			if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) {
 
-				if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getOwner() == "None") {
-					territorySituation(i);	
+				diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2);
+				out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
+
+				//Calculates the new position for the player.
+				newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
+				out.evaluateNewPos(newPosition, gameboard);
+
+				playerList.getSpecificPlayer(i).setPosition(playerList.getSpecificPlayer(i).getPosition());
+
+
+				//get the current field on the gameboard, based on the player position
+				rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
+
+
+				//If it is a territory field
+				if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) {
+
+					if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getOwner().length() <=0) {
+						territorySituation(i);	
+					}
+
+				}
+
+
+				gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getBalance(), playerList.getSpecificPlayer(i));
+
+
+
+				//Update the balance of the players on the gui.
+				for (int j = 0; j<playerList.getLength(); j++) {
+					gui.updateBalance(playerList.getSpecificPlayer(j));
 				}
 
 			}
-
-
-			gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getBalance(), playerList.getSpecificPlayer(i));
-
-
-
-			//Update the balance of the players on the gui.
-			for (int j = 0; j<playerList.getLength(); j++) {
-				gui.updateBalance(playerList.getSpecificPlayer(j));
-			}
-
 		}
 
 		//test
