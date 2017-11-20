@@ -26,9 +26,9 @@ public class GameController {
 	private Die d1, d2;
 	private int playerCount, newPosition;
 
-	
-	
-	
+
+
+
 	public GameController() 
 	{
 		gui = new Gui();
@@ -39,7 +39,7 @@ public class GameController {
 		d1 = new Die();
 		d2 = new Die();
 		gamelogic = new GameLogic();
-		
+
 	}
 
 
@@ -51,7 +51,7 @@ public class GameController {
 		//Welcome messages
 		out.welcomeNew();
 		playerCount = keyboard.getIntRange(2, 4);
-//		out.endCurrentOutput();
+		//		out.endCurrentOutput();
 		out.setAmountPlayers(playerCount);
 		out.playerCount(playerCount);
 
@@ -64,7 +64,7 @@ public class GameController {
 		//Ask for player names.
 		askForNames();
 
-		
+
 		playerList = new PlayerList(playerCount, names, rulebook.startMoney(playerCount));
 
 
@@ -78,30 +78,40 @@ public class GameController {
 		gui.setNames(playerList);
 
 
-		
-		
-		//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
-		
-		
-		//Calculates the new position for the player.
-		newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(0).getPosition(), playerList.getSpecificPlayer(0).rollDice(d1, d2), gameboard.getSize());
-		playerList.getSpecificPlayer(0).setPosition(1);
-		
 
-		
-		//get the current field on the gameboard, based on the player position
-		rulebook.playerLands(gameboard, playerList.getSpecificPlayer(0), playerList, out);
-		
-		if (gameboard.getField(playerList.getSpecificPlayer(0).getPosition()).getClass() == gameboard.getField(1).getClass()) {
-			territorySituation();	
+		while (true) {
+			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
+			for (int i = 0; i<playerList.getLength(); i++) {
+				gui.updateBalance(playerList.getSpecificPlayer(i));
+
+
+
+				//Calculates the new position for the player.
+				newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), playerList.getSpecificPlayer(i).rollDice(d1, d2), gameboard.getSize());
+				
+				
+				playerList.getSpecificPlayer(i).setPosition(playerList.getSpecificPlayer(i).getPosition());
+
+
+				//get the current field on the gameboard, based on the player position
+				rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
+				
+				
+				//If it is a territory field
+				if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) {
+					territorySituation();	
+				}
+				
+				
+				//Update the balance of the players on the gui.
+				for (int j = 0; j<playerList.getLength(); j++) {
+					gui.updateBalance(playerList.getSpecificPlayer(j));
+				}
+
+			}
+
+
 		}
-		
-		
-			
-		
-
-
-
 
 
 
@@ -118,7 +128,7 @@ public class GameController {
 		out.printPlayerSummary(names);// Player names
 	}
 
-	
+
 	/**
 	 * This method asks for players names, and adds iditifiers if the names are the same.
 	 * 
@@ -131,7 +141,7 @@ public class GameController {
 			}
 			while (currentName.length()==0);
 
-			
+
 			if (!(Arrays.asList(names).contains(currentName))) {
 				names[i] = currentName;
 			} else {
@@ -147,23 +157,23 @@ public class GameController {
 					}
 				}
 			}
-	
+
 		}
-		
-		
-		
-		
 
 
-		
-		
-		
+
+
+
+
+
+
+
 		//make the playerlist as long as the number of players, and give them the name, that was inputtet.
 
 	}
 
 
-	
+
 	public void territorySituation() {
 		int answer;
 		answer = keyboard.getIntRange(0, 1);
@@ -175,7 +185,7 @@ public class GameController {
 			out.notBuying();
 		}
 	}
-	
+
 
 	public Gui getGui() 
 	{

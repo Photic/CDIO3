@@ -40,6 +40,10 @@ public class Gui {
 	}
 	
 	
+	public void updateBalance(Player player) {
+		GUI.setBalance(player.getName(), player.getMoney());
+	}
+	
 	
 	public void setDice(Die d1, Die d2) {
 		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());

@@ -67,6 +67,7 @@ public class Out {
 	{
 		String[] allNameEntrys = 
 			{
+					"This square is already owned.",
 					"The owner is " + name,
 					"You pay " +rent+ " in rent."
 			};

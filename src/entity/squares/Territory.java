@@ -44,10 +44,26 @@ public class Territory extends Square {
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
 		
-
+		Player playerOwner = null;
+		
 		
 		if (isOwned == true) {
 			out.printOwner(owner, rentInt);
+			
+			for (int i = 0; i<playerlist.getLength(); i++) {
+				if (playerlist.getSpecificPlayer(i).getName() == owner){
+					playerOwner = playerlist.getSpecificPlayer(i);
+				}
+			}
+			
+			//Increase the owners money
+			playerOwner.setMoney(playerOwner.getMoney() + rentInt);
+			
+			
+			//decrease the landers money.
+			p.setMoney(p.getMoney() - rentInt);
+			
+			
 			
 		}
 		else {
