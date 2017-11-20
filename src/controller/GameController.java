@@ -103,7 +103,8 @@ public class GameController {
 
 
 
-					diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2);
+					diceSum = playerList.getSpecificPlayer(i).rollDice();
+					gui.setDice(playerList.getSpecificPlayer(i).getD1(), playerList.getSpecificPlayer(i).getD2());
 					out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
 
 					//Calculates the new position for the player.
