@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import entity.Player;
 import gamelogic.GameLogic;
 
 public class Test_Gamelogik {
@@ -19,6 +20,16 @@ public class Test_Gamelogik {
 		assertTrue(gl.newPosition(23, 6, 24) == 5); //Tester for at nå max antal felter, at gå tilbage til 1 og fortsætte derfra
 	}
 	
+	@Test
+	public void deadPlayer_Test(){
+		boolean expected = true;
+		boolean actual;
+		GameLogic g1 = new GameLogic();
+		Player player = new Player("Name", 5);
+		g1.checkIfDead(-5, player);
+		actual = player.isDead();
+		assertTrue(actual == expected);
+	}
 	
 	
 }

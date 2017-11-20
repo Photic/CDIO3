@@ -95,8 +95,9 @@ public class GameController {
 		
 		if (gameboard.getField(playerList.getSpecificPlayer(0).getPosition()).getClass() == gameboard.getField(1).getClass()) {
 			territorySituation();
+			
 		}
-		
+		System.out.println(((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).getOwner());
 			
 		
 
@@ -165,14 +166,14 @@ public class GameController {
 
 	
 	public void territorySituation() {
-		String answer;
-		do {answer = keyboard.getString();
-		}
-		while (answer.length()==0);
+		int answer;
+		answer = keyboard.getIntRange(4, 5);
 
-		if (answer.toLowerCase() == "y") {
+		if (answer == 4) {
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).setOwner(playerList.getSpecificPlayer(0).getName());
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).setOwned(true);
+		} else {
+			//print message for not buying.
 		}
 	}
 	
