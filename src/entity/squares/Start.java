@@ -12,7 +12,7 @@ public class Start extends Square {
 	
 	public Start(String navn, String description, Color color) {
 		super(navn, description, color);
-		this.setGetMoney(getMoney);
+		this.getMoney = Integer.parseInt(description);
 	}
 
 	public int getGetMoney() {
