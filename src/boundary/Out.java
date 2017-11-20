@@ -93,11 +93,13 @@ public class Out {
 	{
 		String[] playerWant = 
 			{
-					"The Square is not owned"
+					"The Square is not owned",
+					"The price is "
 			};
 		String[] askPlayer = 
 			{
-					"Do you want to buy it? 1=Yes, 0=No "
+					"Do you want to buy it? 1=Yes, 0=No ",
+					"Do you want to buy it? 0 for no, 1 for yes: "
 			};
 		standardOut(playerWant);
 		outWithInput(askPlayer);
