@@ -1,6 +1,7 @@
 package boundary;
 
 import entity.Player;
+import entity.squares.GameBoard;
 
 public class Out {
 
@@ -218,6 +219,16 @@ public class Out {
 				name + " rolled the dice and the sum is: " +sum
 			};
 		standardOut(outString);
+	}
+	
+	public void evaluateNewPos(int newPosition, GameBoard gameboard) {
+		
+		String[] outString = 
+			{
+				"You landed on " +gameboard.getField(newPosition).getNavn()
+			};
+		standardOut(outString);
+		
 	}
 	
 	
