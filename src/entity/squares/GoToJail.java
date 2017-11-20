@@ -2,13 +2,11 @@ package entity.squares;
 
 import java.awt.Color;
 
-<<<<<<< HEAD:src/entity/squares/GoToJail.java
-public class GoToJail extends Square {
-=======
-import desktop_codebehind.Player;
+import entity.Player;
 
-public class GiftShop extends Square {
->>>>>>> master:src/entity/squares/GiftShop.java
+
+public class GoToJail extends Square {
+
 	
 	private int prize;
 	

@@ -2,7 +2,7 @@ package entity.squares;
 
 import java.awt.Color;
 
-import desktop_codebehind.Player;
+import entity.Player;
 
 public abstract class Square {
 

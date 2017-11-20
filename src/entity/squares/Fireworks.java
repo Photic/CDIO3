@@ -2,8 +2,6 @@ package entity.squares;
 
 import java.awt.Color;
 
-import desktop_codebehind.Player;
-
 public class Fireworks extends Square {
 
 	private final int pay = 5;
@@ -20,10 +18,8 @@ public class Fireworks extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p) 
-	{
+	public void whatToDoOnSquare(entity.Player p) {
 		// TODO Auto-generated method stub
 		
 	}
-
 }

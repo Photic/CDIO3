@@ -1,7 +1,7 @@
 package gamelogic;
 
-import desktop_codebehind.Player;
-import entity.squares.*;
+import entity.Player;
+import entity.squares.GameBoard;
 
 public class RuleBook {
 	
