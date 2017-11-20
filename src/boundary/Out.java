@@ -32,6 +32,19 @@ public class Out {
 		outWithInput(playerCount);
 	}
 
+	
+	/**
+	 * This prints a message for the freeParking square.
+	 */
+	public void freeParking() {
+		
+		String[] outString =
+			{
+					"You park freely, but nothing else happens."
+			};
+		standardOut(outString);
+		
+	}
 
 	/**
 	 * Ask the player for the number if players playing.
@@ -312,6 +325,7 @@ public class Out {
 		}
 	}
 
+	
 	public void endEntry()
 	{
 		System.out.print(" ------------------------------------------------------ ");
@@ -322,10 +336,4 @@ public class Out {
 		System.out.println("");
 	}
 
-	//	
-	//	public void welcome()
-	//	{
-	//		String[] welcome = {"Welcome","To"};
-	//		printer(welcome);
-	//	}
 }
