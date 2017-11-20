@@ -18,7 +18,7 @@ public class PlayerList {
 	{
 		Player[] playersLeft = new Player[getLength()-1];
 		
-		for (int i = 0; i < getLength(); i++) 
+		for (int i = 0; i < getLength()-1; i++) 
 		{
 			if (p != getSpecificPlayer(i))
 			{
