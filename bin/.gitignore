@@ -1,11 +1,6 @@
 /entity/
 /gamelogic/
-<<<<<<< HEAD
+/controller/
+/boundary/
 /Tests/
-/boundary/
-/controller/
 /main/
-=======
-/controller/
-/boundary/
->>>>>>> 37a5e20c9fe2c156dffbfc0dc85ad12b80265b06

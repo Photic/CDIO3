@@ -65,7 +65,17 @@ public class Out {
 		}
 		standardOut(infoMessage);
 	}
-
+	
+	public void playerWantToBuy()
+	{
+		String[] playerWant = 
+			{
+					"The Square is not owned",
+					"Do you want to buy it? y/n: "
+			};
+		outWithInput(playerWant);
+	}
+	
 	public int getAmountPlayers() 
 	{
 		return amountOfPlayers;
