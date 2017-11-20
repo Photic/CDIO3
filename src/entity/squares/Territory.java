@@ -47,7 +47,7 @@ public class Territory extends Square {
 
 		
 		if (isOwned == true) {
-			
+			out.printOwner(owner, rentInt);
 			
 		}
 		else {

@@ -70,7 +70,6 @@ public class GameController {
 
 		//Summary the players.
 		playerSummary(names);
-		out.endEntry();
 
 
 
@@ -94,10 +93,10 @@ public class GameController {
 		rulebook.playerLands(gameboard, playerList.getSpecificPlayer(0), playerList, out);
 		
 		if (gameboard.getField(playerList.getSpecificPlayer(0).getPosition()).getClass() == gameboard.getField(1).getClass()) {
-			territorySituation();
-			
+			territorySituation();	
 		}
-		System.out.println(((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).getOwner());
+		
+		
 			
 		
 
@@ -167,13 +166,13 @@ public class GameController {
 	
 	public void territorySituation() {
 		int answer;
-		answer = keyboard.getIntRange(4, 5);
+		answer = keyboard.getIntRange(0, 1);
 
-		if (answer == 4) {
+		if (answer == 1) {
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).setOwner(playerList.getSpecificPlayer(0).getName());
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).setOwned(true);
 		} else {
-			//print message for not buying.
+			out.notBuying();
 		}
 	}
 	

@@ -61,6 +61,17 @@ public class Out {
 			};
 		standardOut(allNameEntrys);
 	}
+	
+	
+	public void printOwner(String name, int rent) 
+	{
+		String[] allNameEntrys = 
+			{
+					"The owner is " + name,
+					"You pay " +rent+ " in rent."
+			};
+		standardOut(allNameEntrys);
+	}
 
 	
 	// Print a list of 
@@ -85,12 +96,19 @@ public class Out {
 			};
 		String[] askPlayer = 
 			{
-					"Do you want to buy it? y/n: "
+					"Do you want to buy it? 1=Yes, 0=No "
 			};
 		standardOut(playerWant);
 		outWithInput(askPlayer);
 	}
 	
+	
+	public void notBuying() {
+		String[] outprint = {
+				"You decided not to buy the square."
+		};
+		standardOut(outprint);
+	}
 	
 	// Use in the code to display the amount of players.
 	public int getAmountPlayers() 
