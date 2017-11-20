@@ -68,7 +68,7 @@ public class Territory extends Square {
 		}
 		else {
 			
-			out.playerWantToBuy(price);
+			out.playerWantToBuy(price);//test
 			
 			
 		}
