@@ -90,17 +90,16 @@ public class Out {
 	}
 	
 	// Does the player want to buy a square ?
-	public void playerWantToBuy()
+	public void playerWantToBuy(int price)
 	{
 		String[] playerWant = 
 			{
 					"The Square is not owned",
-					"The price is "
+					"The price is "+price
 			};
 		String[] askPlayer = 
 			{
-					"Do you want to buy it? 1=Yes, 0=No ",
-					"Do you want to buy it? 0 for no, 1 for yes: "
+					"Do you want to buy it? 1=Yes, 0=No "
 			};
 		standardOut(playerWant);
 		outWithInput(askPlayer);
