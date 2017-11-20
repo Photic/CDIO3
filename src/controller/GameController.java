@@ -24,7 +24,7 @@ public class GameController {
 	private RuleBook rulebook;
 	private GameLogic gamelogic;
 	private Die d1, d2;
-	private int playerCount, newPosition;
+	private int playerCount, newPosition, diceSum;
 
 
 
@@ -85,9 +85,11 @@ public class GameController {
 				gui.updateBalance(playerList.getSpecificPlayer(i));
 
 
-
+				diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2);
+				out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
+				
 				//Calculates the new position for the player.
-				newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), playerList.getSpecificPlayer(i).rollDice(d1, d2), gameboard.getSize());
+				newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
 				
 				
 				playerList.getSpecificPlayer(i).setPosition(playerList.getSpecificPlayer(i).getPosition());
@@ -99,7 +101,7 @@ public class GameController {
 				
 				//If it is a territory field
 				if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) {
-					territorySituation();	
+					territorySituation(i);	
 				}
 				
 				
@@ -174,13 +176,13 @@ public class GameController {
 
 
 
-	public void territorySituation() {
+	public void territorySituation(int i) {
 		int answer;
 		answer = keyboard.getIntRange(0, 1);
 
 		if (answer == 1) {
-			((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).setOwner(playerList.getSpecificPlayer(0).getName());
-			((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).setOwned(true);
+			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(0).getName());
+			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwned(true);
 		} else {
 			out.notBuying();
 		}

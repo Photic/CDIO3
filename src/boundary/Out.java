@@ -212,6 +212,16 @@ public class Out {
 	
 	
 	
+	
+	public void evaluateDice(String name, int sum) {
+		String[] outString = 
+			{
+				name + " rolled the dice and the sum is: " +sum
+			};
+		standardOut(outString);
+	}
+	
+	
 	public void endEntry()
 	{
 		System.out.print(" ------------------------------------------------------ ");
