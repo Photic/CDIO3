@@ -23,11 +23,11 @@ public class Test_Gamelogic {
 	
 	@Test
 	public void deadPlayer_Test(){
-		boolean expected = true;
+		boolean expected = false;
 		boolean actual;
 		GameLogic g1 = new GameLogic();
 		Player player = new Player("Name", 5);
-		g1.checkIfDead(-5, player, null);
+		g1.checkIfDead(player, null);
 		actual = player.isDead();
 		assertTrue(actual == expected);
 	}
@@ -38,7 +38,7 @@ public class Test_Gamelogic {
 		boolean actual;
 		GameLogic g1 = new GameLogic();
 		Player player = new Player("Name", 6);
-		g1.checkIfDead(-5, player, null);
+		g1.checkIfDead(player, null);
 		actual = player.isDead();
 		assertTrue(actual == expected);
 	}	
