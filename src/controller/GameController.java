@@ -88,13 +88,16 @@ public class GameController {
 		newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(0).getPosition(), playerList.getSpecificPlayer(0).rollDice(d1, d2), gameboard.getSize());
 		playerList.getSpecificPlayer(0).setPosition(1);
 		
-		
-		
-		//get the current field on the gameboard, based on the player position
-		rulebook.playerLands(gameboard, playerList.getSpecificPlayer(0), playerList);
-		
 
 		
+		//get the current field on the gameboard, based on the player position
+		rulebook.playerLands(gameboard, playerList.getSpecificPlayer(0), playerList, out);
+		
+		if (gameboard.getField(playerList.getSpecificPlayer(0).getPosition()).getClass() == gameboard.getField(1).getClass()) {
+			territorySituation();
+		}
+		
+			
 		
 
 
@@ -160,6 +163,19 @@ public class GameController {
 	}
 
 
+	
+	public void territorySituation() {
+		String answer;
+		do {answer = keyboard.getString();
+		}
+		while (answer.length()==0);
+
+		if (answer.toLowerCase() == "y") {
+			((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).setOwner(playerList.getSpecificPlayer(0).getName());
+			((Territory)gameboard.getField(playerList.getSpecificPlayer(0).getPosition())).setOwned(true);
+		}
+	}
+	
 
 	public Gui getGui() 
 	{
