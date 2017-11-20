@@ -2,16 +2,28 @@ package entity.squares;
 
 import java.awt.Color;
 
+import entity.Player;
+import entity.PlayerList;
+
 public class Territory extends Square {
 	
-	private int price;
+	private int price, rentInt;
 	private String rent;
+	private boolean isOwned;
 	
-	public Territory(String navn, String description, Color color, String rent) 
+
+
+
+
+
+
+	public Territory(String name, String description, Color color, String rent) 
 	{
-		super(navn, description, color);
+		super(name, description, color);
 		this.price = Integer.parseInt(description);
 		this.rent = rent;
+		this.rentInt = Integer.parseInt(rent);
+		this.isOwned = false;
 	}
 
 	public int getPrice() 
@@ -25,13 +37,20 @@ public class Territory extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(entity.Player p) {
-		// TODO Auto-generated method stub
+	public void whatToDoOnSquare(Player p, PlayerList playerlist) {
+		
+		
+		
 		
 	}
 	
-	
+	public boolean isOwned() {
+		return isOwned;
+	}
 
+	public void setOwned(boolean isOwned) {
+		this.isOwned = isOwned;
+	}
 
 	
 	

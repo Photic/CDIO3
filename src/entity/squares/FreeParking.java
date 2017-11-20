@@ -1,7 +1,9 @@
 package entity.squares;
 
 import java.awt.Color;
+
 import entity.Player;
+import entity.PlayerList;
 
 
 public class FreeParking extends Square {
@@ -13,10 +15,12 @@ public class FreeParking extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p) {
+	public void whatToDoOnSquare(Player p, PlayerList playerlist) {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 	
 

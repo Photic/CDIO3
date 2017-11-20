@@ -2,6 +2,9 @@ package entity.squares;
 
 import java.awt.Color;
 
+import entity.Player;
+import entity.PlayerList;
+
 public class Chance extends Square {
 	
 	public Chance(String navn, String description, Color color) 
@@ -10,10 +13,12 @@ public class Chance extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(entity.Player p) {
+	public void whatToDoOnSquare(Player p, PlayerList playerlist) {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 
 
