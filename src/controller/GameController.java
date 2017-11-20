@@ -82,7 +82,9 @@ public class GameController {
 		while (true) {
 			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 			for (int i = 0; i<playerList.getLength(); i++) {
-				gui.updateBalance(playerList.getSpecificPlayer(i));
+				
+				
+				
 
 
 				diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2);
@@ -90,7 +92,7 @@ public class GameController {
 				
 				//Calculates the new position for the player.
 				newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
-				
+				out.evaluateNewPos(newPosition, gameboard);
 				
 				playerList.getSpecificPlayer(i).setPosition(playerList.getSpecificPlayer(i).getPosition());
 
@@ -101,9 +103,20 @@ public class GameController {
 				
 				//If it is a territory field
 				if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) {
-					territorySituation(i);	
+					
+					if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getOwner() == "None") {
+						territorySituation(i);	
+					}
+
 				}
 				
+				
+				gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getMoney(), playerList.getSpecificPlayer(i));
+				
+				
+				if (playerList.getSpecificPlayer(i).isDead() == true) {
+					break;
+				}
 				
 				//Update the balance of the players on the gui.
 				for (int j = 0; j<playerList.getLength(); j++) {
@@ -181,7 +194,7 @@ public class GameController {
 		answer = keyboard.getIntRange(0, 1);
 
 		if (answer == 1) {
-			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(0).getName());
+			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i).getName());
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwned(true);
 		} else {
 			out.notBuying();
