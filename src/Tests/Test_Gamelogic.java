@@ -9,7 +9,7 @@ import org.junit.Test;
 import entity.Player;
 import gamelogic.GameLogic;
 
-public class Test_Gamelogik {
+public class Test_Gamelogic {
 
 
 	// Her testes metoden til at rykke fra et felt til et andet. 
@@ -30,6 +30,19 @@ public class Test_Gamelogik {
 		actual = player.isDead();
 		assertTrue(actual == expected);
 	}
+	
+	@Test
+	public void notDeadPlayer_Test(){
+		boolean expected = false;
+		boolean actual;
+		GameLogic g1 = new GameLogic();
+		Player player = new Player("Name", 6);
+		g1.checkIfDead(-5, player);
+		actual = player.isDead();
+		assertTrue(actual == expected);
+	}	
+		
+	
 	
 	
 }
