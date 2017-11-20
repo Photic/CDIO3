@@ -8,7 +8,12 @@ public class Player {
 	private int money;
 	private boolean isWinner;
 	private boolean isDead;
+	private boolean inJail;
+
+
+
 	private int position;
+	
 
 
 	private boolean isTurn;
@@ -19,6 +24,7 @@ public class Player {
 		this.money = startMoney;
 		this.isWinner = false;
 		this.isDead = false;
+		this.inJail = false;
 		this.position = 0;
 	}
 
@@ -83,6 +89,14 @@ public class Player {
 
 	public void setPosition(int position) {
 		this.position = position;
+	}
+	public boolean isInJail() {
+		return inJail;
+	}
+
+
+	public void setInJail(boolean inJail) {
+		this.inJail = inJail;
 	}
 	
 }

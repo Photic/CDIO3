@@ -19,7 +19,6 @@ public class FreeParking extends Square {
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
 	{
 		
-		
 		out.freeParking();
 		
 		

@@ -45,6 +45,18 @@ public class Out {
 		standardOut(outString);
 		
 	}
+	
+	/**
+	 * Go to jail print
+	 */
+	public void goToJail() {
+		String[] outString =
+			{
+					"You are getting locked up in Jail.",
+					"You are moved to the jail square."
+			};
+		standardOut(outString);
+	}
 
 	/**
 	 * Ask the player for the number if players playing.

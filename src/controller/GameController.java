@@ -124,6 +124,7 @@ public class GameController {
 				for (int j = 0; j<playerList.getLength(); j++) {
 					gui.updateBalance(playerList.getSpecificPlayer(j));
 				}
+				
 
 			}
 		}
