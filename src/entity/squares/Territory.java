@@ -44,21 +44,20 @@ public class Territory extends Square {
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
 		
-//
-//		
-//		if (isOwned == true) {
-//			
-//			
-//		}
-//		else {
-//			
-//			out.playerWantToBuy();
-//			
-//			
-//		}
+
+		
+		if (isOwned == true) {
+			
+			
+		}
+		else {
+			
+			out.playerWantToBuy();
+			
+			
+		}
 		
 		
-		out.playerWantToBuy();
 	}
 	
 	public boolean isOwned() {

@@ -10,7 +10,7 @@ import gamelogic.RuleBook;
 
 public class RuleBook_Test {
 
-	
+	//Her testes for alle de inkluderede statements i switch casen
 	@Test
 	public void rBookStartMoney(){
 		RuleBook rulebook = new RuleBook();
@@ -20,9 +20,7 @@ public class RuleBook_Test {
 		assertTrue(rulebook.startMoney(387) == 20);
 		}
 	
-	@Test public void newTest(){
-		
-		
+	@Test public void newTest(){	
 	}	
 	
 	
