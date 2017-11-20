@@ -8,11 +8,10 @@ import entity.PlayerList;
 
 public class Start extends Square {
 
-	private int getMoney;
+	private int getMoney = 10;
 	
 	public Start(String navn, String description, Color color) {
 		super(navn, description, color);
-		this.getMoney = Integer.parseInt(description);
 	}
 
 	public int getGetMoney() {
