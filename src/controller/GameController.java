@@ -76,7 +76,7 @@ public class GameController {
 		//setting up the gui
 		gui.defineGUI(gameboard);
 		gui.setNames(playerList);
-
+//
 
 
 		while (true) {
