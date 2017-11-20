@@ -81,12 +81,14 @@ public class Out {
 	{
 		String[] playerWant = 
 			{
-					"The Square is not owned",
+					"The Square is not owned"
+			};
+		String[] askPlayer = 
+			{
 					"Do you want to buy it? y/n: "
 			};
-		outWithInput(playerWant);
-		
-		
+		standardOut(playerWant);
+		outWithInput(askPlayer);
 	}
 	
 	
