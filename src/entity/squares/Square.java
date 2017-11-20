@@ -2,27 +2,28 @@ package entity.squares;
 
 import java.awt.Color;
 
+import boundary.Out;
 import entity.Player;
 
 public abstract class Square {
 
-	private String navn;
+	private String name;
 	private String description;
 	private Color color;
 	
 	public Square(String navn, String description, Color color)
 	{
-		this.navn = navn;
+		this.name = navn;
 		this.description = description;
 		this.color = color;
 	}
 
 	public String getNavn() {
-		return navn;
+		return name;
 	}
 
 	public void setNavn(String navn) {
-		this.navn = navn;
+		this.name = navn;
 	}
 
 	public String getDescription() {
@@ -41,7 +42,7 @@ public abstract class Square {
 		this.color = color;
 	}
 
-	public abstract void whatToDoOnSquare(Player p);
+	public abstract void whatToDoOnSquare(Player p, Out out);
 
 	
 }

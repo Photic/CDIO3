@@ -2,6 +2,9 @@ package entity.squares;
 
 import java.awt.Color;
 
+import boundary.Out;
+import entity.Player;
+
 public class Start extends Square {
 
 	private int getMoney;
@@ -20,10 +23,13 @@ public class Start extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(entity.Player p) {
+	public void whatToDoOnSquare(Player p, Out out) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
+	
 
 
 

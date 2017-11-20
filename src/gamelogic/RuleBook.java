@@ -1,5 +1,6 @@
 package gamelogic;
 
+import boundary.Out;
 import entity.Player;
 import entity.squares.GameBoard;
 
@@ -38,9 +39,9 @@ public class RuleBook {
 	}
 	
 	
-	public void playerLands(GameBoard a, Player b, int squareNum)
+	public void playerLands(GameBoard gameboard, Player player, int squareNum, Out out)
 	{
-		a.getField(squareNum).whatToDoOnSquare(b);
+		gameboard.getField(squareNum).whatToDoOnSquare(player, out);
 	}
 	
 	

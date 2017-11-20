@@ -1,5 +1,7 @@
 package boundary;
 
+import entity.Player;
+
 public class Out {
 
 
@@ -136,7 +138,28 @@ public class Out {
 			}
 		}
 	}
-
+	
+	
+	
+	public void payRent(Player owner, int rent) {
+		String[] outString = 
+			{
+					"You pay "+rent + " int rent to "+owner.getName() 
+			};
+		standardOut(outString);
+	}
+	
+	public void wantToBuy(String name, int price) {
+		String[] outString = 
+			{
+					name + " is for sale. The price is: " + price,
+					"Do you wanna buy it? Y/N"
+			};
+		standardOut(outString);
+	}
+	
+	
+	
 	public void endEntry()
 	{
 		System.out.print(" ------------------------------------------------------ ");

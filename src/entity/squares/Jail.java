@@ -2,6 +2,7 @@ package entity.squares;
 
 import java.awt.Color;
 
+import boundary.Out;
 import entity.Player;
 
 public class Jail extends Square {
@@ -11,11 +12,12 @@ public class Jail extends Square {
 		super(navn, description, color);
 	}
 
-	@Override
-	public void whatToDoOnSquare(Player p) {
+	public void whatToDoOnSquare(Player p, Out out) {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 }
 	

@@ -8,6 +8,7 @@ import boundary.Out;
 import entity.Die;
 import entity.PlayerList;
 import entity.squares.GameBoard;
+import entity.squares.Territory;
 import gamelogic.GameLogic;
 import gamelogic.RuleBook;
 
@@ -85,15 +86,17 @@ public class GameController {
 		
 		//Calculates the new position for the player.
 		newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(0).getPosition(), playerList.getSpecificPlayer(0).rollDice(d1, d2), gameboard.getSize());
-		playerList.getSpecificPlayer(0).setPosition(newPosition);
+		playerList.getSpecificPlayer(0).setPosition(1);
 		
 		
 		
 		//get the current field on the gameboard, based on the player position
-		gameboard.getField(playerList.getSpecificPlayer(0).getPosition());
+		
+		rulebook.playerLands(gameboard, playerList.getSpecificPlayer(0), 1, out);
+		
 		
 
-
+		
 		
 
 
