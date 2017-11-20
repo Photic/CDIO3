@@ -2,6 +2,7 @@ package entity.squares;
 
 import java.awt.Color;
 
+import boundary.Out;
 import entity.Player;
 import entity.PlayerList;
 
@@ -10,7 +11,10 @@ public class Territory extends Square {
 	private int price, rentInt;
 	private String rent;
 	private boolean isOwned;
+	public String owner;
 	
+
+
 
 
 
@@ -24,6 +28,7 @@ public class Territory extends Square {
 		this.rent = rent;
 		this.rentInt = Integer.parseInt(rent);
 		this.isOwned = false;
+		this.owner = "None";
 	}
 
 	public int getPrice() 
@@ -37,16 +42,23 @@ public class Territory extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist) {
+	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
 		
-		if (isOwned) {
-			
-		}
-		else {
-			
-		}
+//
+//		
+//		if (isOwned == true) {
+//			
+//			
+//		}
+//		else {
+//			
+//			out.playerWantToBuy();
+//			
+//			
+//		}
 		
 		
+		out.playerWantToBuy();
 	}
 	
 	public boolean isOwned() {
@@ -56,7 +68,13 @@ public class Territory extends Square {
 	public void setOwned(boolean isOwned) {
 		this.isOwned = isOwned;
 	}
+	public String getOwner() {
+		return owner;
+	}
 
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
 	
 	
 	

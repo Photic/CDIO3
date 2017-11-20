@@ -91,7 +91,7 @@ public class GameController {
 		
 		
 		//get the current field on the gameboard, based on the player position
-		rulebook.playerLands(gameboard, playerList.getSpecificPlayer(0), playerList);
+		rulebook.playerLands(gameboard, playerList.getSpecificPlayer(0), playerList, out);
 		
 
 		

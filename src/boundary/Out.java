@@ -74,6 +74,8 @@ public class Out {
 					"Do you want to buy it? y/n: "
 			};
 		outWithInput(playerWant);
+		
+		
 	}
 	
 	public int getAmountPlayers() 
