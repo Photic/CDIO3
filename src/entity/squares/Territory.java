@@ -39,7 +39,12 @@ public class Territory extends Square {
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist) {
 		
-		
+		if (isOwned) {
+			
+		}
+		else {
+			
+		}
 		
 		
 	}
