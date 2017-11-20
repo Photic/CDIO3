@@ -24,9 +24,9 @@ public class Start extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
-		// TODO Auto-generated method stub
-		
+	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
+	{
+		p.setBalance(p.getBalance()+getMoney);
 	}
 
 	

@@ -41,7 +41,7 @@ public class Gui {
 	
 	
 	public void updateBalance(Player player) {
-		GUI.setBalance(player.getName(), player.getMoney());
+		GUI.setBalance(player.getName(), player.getBalance());
 	}
 	
 	
@@ -53,7 +53,7 @@ public class Gui {
 	public void setNames(PlayerList playerList) {
 		
 		for (Player p : playerList.getList()) {
-			GUI.addPlayer(p.getName(), p.getMoney());
+			GUI.addPlayer(p.getName(), p.getBalance());
 		}
 	}
 

@@ -10,20 +10,15 @@ import entity.PlayerList;
 public class FreeParking extends Square {
 
 
-	public FreeParking(String navn, String description, Color color) {
+	public FreeParking(String navn, String description, Color color) 
+	{
 		super(navn, description, color);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
-		// TODO Auto-generated method stub
-		
+	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
+	{
+		// Her skal der ikke være noget kode, da der ikke sker noget på free parking.	
 	}
-
-
-
 	
-
-	//test
 }

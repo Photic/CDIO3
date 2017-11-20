@@ -40,12 +40,12 @@ public class Player {
 		this.name = name;
 	}
 
-	public int getMoney() 
+	public int getBalance() 
 	{
 		return money;
 	}
 
-	public void setMoney(int score) 
+	public void setBalance(int score) 
 	{
 		this.money = score;
 	}	

@@ -57,11 +57,11 @@ public class Territory extends Square {
 			}
 			
 			//Increase the owners money
-			playerOwner.setMoney(playerOwner.getMoney() + rentInt);
+			playerOwner.setBalance(playerOwner.getBalance() + rentInt);
 			
 			
 			//decrease the landers money.
-			p.setMoney(p.getMoney() - rentInt);
+			p.setBalance(p.getBalance() - rentInt);
 			
 			
 			
