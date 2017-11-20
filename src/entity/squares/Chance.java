@@ -14,9 +14,9 @@ public class Chance extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
-		// TODO Auto-generated method stub
-		
+	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
+	{
+		// Wait for chance cards.
 	}
 
 
