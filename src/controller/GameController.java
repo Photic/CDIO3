@@ -195,6 +195,11 @@ public class GameController {
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i).getName());
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwned(true);
 			out.playerNowOwns(playerList.getSpecificPlayer(i), gameboard);
+			playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - ((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getPrice());
+			
+			
+			
+			
 		} else {
 			out.notBuying();
 		}
