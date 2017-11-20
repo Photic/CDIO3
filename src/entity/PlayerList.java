@@ -16,17 +16,16 @@ public class PlayerList {
 	
 	public void playerHasLost(Player p)
 	{
-		String[] playersLeft = new String[players.length-1];
+		Player[] playersLeft = new Player[getLength()-1];
 		
-		for (int i = 0; i < players.length; i++) 
+		for (int i = 0; i < getLength(); i++) 
 		{
 			if (p != getSpecificPlayer(i))
 			{
-				playersLeft[i] = getSpecificPlayer(i).getName();
+				playersLeft[i] = getSpecificPlayer(i);
 			}
 		}
-		
-		
+		players = playersLeft;
 	}
 	
 	public Player getSpecificPlayer(int n) {
