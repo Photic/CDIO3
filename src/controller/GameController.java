@@ -130,6 +130,9 @@ public class GameController {
 					for (int j = 0; j<playerList.getLength(); j++) {
 						gui.updateBalance(playerList.getSpecificPlayer(j));
 					}
+					
+					//Check if the current player died.
+					gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
 
 				}
 			}

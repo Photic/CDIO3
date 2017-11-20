@@ -45,9 +45,8 @@ public class GameLogic {
 	 * @param playerlist TODO
 	 * 
 	 */
-	public static void checkIfDead(int newMoney, Player player, PlayerList playerlist) 
+	public void checkIfDead(Player player, PlayerList playerlist) 
 	{
-		player.setBalance(player.getBalance() + newMoney);
 		if (player.getBalance() <= DEATH_POINT) {
 			player.setDead(true);
 			playerlist.playerHasLost(player);
