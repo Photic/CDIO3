@@ -96,24 +96,24 @@ public class GameController {
 				newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
 				out.evaluateNewPos(newPosition, gameboard);
 
-				playerList.getSpecificPlayer(i).setPosition(playerList.getSpecificPlayer(i).getPosition());
+				playerList.getSpecificPlayer(i).setPosition(newPosition);
 
 
 				//get the current field on the gameboard, based on the player position
 				rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
 
-
 				//If it is a territory field
-				if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) {
-
-					if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getOwner().length() <=0) {
+				if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
+				{
+					if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getOwner().length() <= 0) 
+					{
 						territorySituation(i);	
 					}
 
 				}
 
 
-				gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getBalance(), playerList.getSpecificPlayer(i));
+//				gamelogic.checkIfDead(playerList.getSpecificPlayer(i).getBalance(), playerList.getSpecificPlayer(i));
 
 
 
