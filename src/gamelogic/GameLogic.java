@@ -49,10 +49,26 @@ public class GameLogic {
 	{
 		if (player.getBalance() <= DEATH_POINT) {
 			player.setDead(true);
-			playerlist.playerHasLost(player);
+			//playerlist.playerHasLost(player);
 		}
 	}
 	
+	public void checkWin(PlayerList playerlist) {
+		int count = 0;
+		for (int i = 0; i<playerlist.getLength(); i++) {
+			if (playerlist.getSpecificPlayer(i).isDead()) {
+				count++;
+			}
+		}
+		
+		if (playerlist.getLength() - count == 1) {
+			for (int i = 0; i<playerlist.getLength(); i++) {
+				if (playerlist.getSpecificPlayer(i).isDead() == false) {
+					playerlist.getSpecificPlayer(i).setWinner(true);
+				}
+			}
+		}
+	}
 	
 	
 	
