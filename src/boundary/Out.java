@@ -2,13 +2,13 @@ package boundary;
 
 public class Out {
 
-
-	Screen s;
 	private int amountOfPlayers;
-
-	public Out() {
-		s = new Screen();
-	}
+//	Screen s;
+//	
+//
+//	public Out() {
+//		s = new Screen();
+//	}
 
 
 	// Welcome to the game message.
