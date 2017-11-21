@@ -59,6 +59,21 @@ public class Out {
 	}
 
 	
+	
+	public void moveManuallyCard() {
+		String[] outString =
+			{
+					"You can now choose to move between 1 and 5 squares.",
+			};
+		standardOut(outString);
+		String[] playerChoice =
+			{
+					"Enter a number between 1 and 5: "
+			};
+		outWithInput(playerChoice);
+	}
+	
+	
 	/**
 	 * You passed start message
 	 */
