@@ -9,16 +9,8 @@ public class Player {
 	private boolean isWinner;
 	private boolean isDead;
 	private boolean inJail;
-	private Die d1, d2;
 	private int walkedSquares;
-
-
-
-
 	private int position;
-	
-
-
 	private boolean isTurn;
 
 	public Player(String n, int startMoney)
@@ -29,13 +21,11 @@ public class Player {
 		this.isDead = false;
 		this.inJail = false;
 		this.position = 0;
-		this.d1 = new Die();
-		this.d2 = new Die();
 		this.walkedSquares = 0;
 	}
 
 	
-	public int rollDice() 
+	public int rollDice(Die d1, Die d2) 
 	{
 		d1.rollDie();
 		d2.rollDie();
@@ -105,25 +95,6 @@ public class Player {
 	public void setInJail(boolean inJail) {
 		this.inJail = inJail;
 	}
-	public Die getD1() {
-		return d1;
-	}
-
-
-	public void setD1(Die d1) {
-		this.d1 = d1;
-	}
-
-
-	public Die getD2() {
-		return d2;
-	}
-
-
-	public void setD2(Die d2) {
-		this.d2 = d2;
-	}
-	
 
 	public int getWalkedSquares() {
 		return walkedSquares;
