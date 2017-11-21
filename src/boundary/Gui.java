@@ -34,7 +34,8 @@ public class Gui {
 					.setBgColor(gameboard.getField(i).getColor())
 					.build();
 		}
-		
+            
+       
 		GUI.create(fields);
 		GUI.setDice(1, 1);
 	}
@@ -57,9 +58,30 @@ public class Gui {
 	
 	
 	public void setNames(PlayerList playerList) {
+        Car blue = new Car.Builder()
+        		.typeUfo()
+                .primaryColor(Color.BLUE)
+                .build();
+        Car red = new Car.Builder()
+        		.typeUfo()
+                .primaryColor(Color.RED)
+                .build();
+        Car yellow = new Car.Builder()
+        		.typeUfo()
+                .primaryColor(Color.YELLOW)
+                .build();
+        Car green = new Car.Builder()
+        		.typeUfo()
+                .primaryColor(Color.GREEN)
+                .build();
+        
+        Car[] cars = {blue, red, yellow, green};
+
 		
+		int count = 0;
 		for (Player p : playerList.getList()) {
-			GUI.addPlayer(p.getName(), p.getBalance());
+			GUI.addPlayer(p.getName(), p.getBalance(), cars[count]);
+			count++;
 		}
 	}
 
@@ -72,5 +94,8 @@ public class Gui {
 	public void setOwner(Player p) {
 		GUI.setOwner(p.getPosition()+1, p.getName());
 	}
+	
+	
+	
 	
 }
