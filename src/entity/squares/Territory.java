@@ -7,12 +7,12 @@ import entity.Player;
 import entity.PlayerList;
 
 public class Territory extends Square {
-	
+
 	private int price, rentInt;
 	private String rent;
 	private boolean isOwned;
 	public String owner;
-	
+
 
 
 
@@ -35,7 +35,7 @@ public class Territory extends Square {
 	{
 		return price;
 	}
-	
+
 	public String getRent()
 	{
 		return rent;
@@ -43,39 +43,45 @@ public class Territory extends Square {
 
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
-		
+
 		Player playerOwner = null;
-		
-		
+
+
 		if (isOwned == true) {
-			out.printOwner(owner, rentInt);
-			
+
+
 			for (int i = 0; i<playerlist.getLength(); i++) {
 				if (playerlist.getSpecificPlayer(i).getName() == owner){
 					playerOwner = playerlist.getSpecificPlayer(i);
 				}
 			}
-			
+
+			if (playerOwner.getName() == p.getName()) {
+				out.printSelfOwner(p.getName());
+			} else {
+				out.printOwner(owner, rentInt);
+			}
+
 			//Increase the owners money
 			playerOwner.setBalance(playerOwner.getBalance() + rentInt);
-			
-			
+
+
 			//decrease the landers money.
 			p.setBalance(p.getBalance() - rentInt);
-			
-			
-			
+
+
+
 		}
 		else {
-			
+
 			out.playerWantToBuy(price);
-			
-			
+
+
 		}
-		
-		
+
+
 	}
-	
+
 	public boolean isOwned() {
 		return isOwned;
 	}
@@ -90,10 +96,10 @@ public class Territory extends Square {
 	public void setOwner(String owner) {
 		this.owner = owner;
 	}
-	
-	
-	
 
-	
-	
+
+
+
+
+
 }
