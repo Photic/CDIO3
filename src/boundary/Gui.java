@@ -85,15 +85,18 @@ public class Gui {
 		}
 	}
 
-	public void movePlayer(Player p, int newPosition) {
-		GUI.removeCar(p.getPosition()+1, p.getName());
-		GUI.setCar(newPosition+1, p.getName());
+	public void movePlayer(Player p) {
+		GUI.removeAllCars(p.getName());
+		GUI.setCar(p.getPosition()+1, p.getName());
 	}
 	
 	
 	public void setOwner(Player p) {
 		GUI.setOwner(p.getPosition()+1, p.getName());
 	}
+	
+	
+	
 	
 	
 	
