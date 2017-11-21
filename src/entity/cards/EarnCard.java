@@ -1,5 +1,7 @@
 package entity.cards;
 
+import boundary.Keyboard;
+import boundary.Out;
 import entity.Player;
 
 public class EarnCard extends Card{
@@ -10,7 +12,12 @@ public class EarnCard extends Card{
 		
 	}
 	
+	Out out = new Out();
+	Keyboard keyboard = new Keyboard();
+	
 	public void execute(Player p) {
+		
+		out.earnCardText();
 		p.setBalance(p.getBalance() + amount);
 	}
 	
