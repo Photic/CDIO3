@@ -1,17 +1,17 @@
 package entity.cards;
 
-import entity.Player;
 import boundary.Keyboard;
 import boundary.Out;
+import entity.Player;
 
 public class MoveManuallyCard extends Card{
-
-	private Out out;
-	private Keyboard keyboard;
 	
 	public MoveManuallyCard() {
-		
+		super();
 	}
+	
+	Out out = new Out();
+	Keyboard keyboard = new Keyboard();
 	
 	public void execute(Player p) {
 		out.moveManuallyCard();
