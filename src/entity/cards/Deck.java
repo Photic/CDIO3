@@ -39,6 +39,7 @@ public class Deck {
 	public void next(Player p) {
 		Card storage = cards[currentCard]; 
 		
+		//Fejl her, spiller altid det første kort pga currentCard=0
 		cards[currentCard].useCard(p);
 		currentCard++; 
 		
