@@ -1,10 +1,10 @@
 package entity.squares;
 
 import java.awt.Color;
-
 import boundary.Out;
 import entity.Player;
 import entity.PlayerList;
+import entity.cards.*;
 
 public class Chance extends Square {
 	
@@ -16,7 +16,13 @@ public class Chance extends Square {
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
 	{
-		// Wait for chance cards.
+		Deck deck = new Deck(); 
+		
+		deck.shuffle(); 
+		out.chanceText();
+		deck.next(p);
+		
+		
 	}
 
 

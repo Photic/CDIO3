@@ -15,7 +15,7 @@ public class PayCard extends Card{
 		
 	}
 	
-	public void execute(Player p) {
+	public void useCard(Player p) {
 		out.payCardText();
 		p.setBalance(p.getBalance() + amount);
 	}

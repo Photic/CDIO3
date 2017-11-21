@@ -15,8 +15,7 @@ public class EarnCard extends Card{
 	Out out = new Out();
 	Keyboard keyboard = new Keyboard();
 	
-	public void execute(Player p) {
-		
+	public void useCard(Player p) {
 		out.earnCardText();
 		p.setBalance(p.getBalance() + amount);
 	}
