@@ -130,6 +130,19 @@ public class Out {
 			};
 		standardOut(allNameEntrys);
 	}
+	
+	
+	
+	
+	public void printSelfOwner(String name) 
+	{
+		String[] allNameEntrys = 
+			{
+					"This square is already owned by " + name,
+					name + " stays for free."
+			};
+		standardOut(allNameEntrys);
+	}
 
 
 	/**
