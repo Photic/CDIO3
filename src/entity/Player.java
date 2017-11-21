@@ -10,9 +10,7 @@ public class Player {
 	private boolean isDead;
 	private boolean inJail;
 	private Die d1, d2;
-	
-
-
+	private int walkedSquares;
 
 
 
@@ -33,6 +31,7 @@ public class Player {
 		this.position = 0;
 		this.d1 = new Die();
 		this.d2 = new Die();
+		this.walkedSquares = 0;
 	}
 
 	
@@ -40,6 +39,7 @@ public class Player {
 	{
 		d1.rollDie();
 		d2.rollDie();
+		setWalkedSquares(walkedSquares + (d1.getFaceValue()+d2.getFaceValue()));
 		return d1.getFaceValue()+d2.getFaceValue();
 	}
 	
@@ -122,6 +122,16 @@ public class Player {
 
 	public void setD2(Die d2) {
 		this.d2 = d2;
+	}
+	
+
+	public int getWalkedSquares() {
+		return walkedSquares;
+	}
+
+
+	public void setWalkedSquares(int walkedSquares) {
+		this.walkedSquares = walkedSquares;
 	}
 	
 }

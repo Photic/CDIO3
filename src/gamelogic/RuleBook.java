@@ -40,6 +40,16 @@ public class RuleBook {
 	}
 	
 	
+	public boolean checkIfPassedStart(Player player, GameBoard gameboard) {
+		if (player.getWalkedSquares() > gameboard.getSize()) {
+			player.setWalkedSquares(player.getWalkedSquares() - gameboard.getSize());
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	
 	public void playerLands(GameBoard gameboard, Player player, PlayerList playerlist, Out out)
 	{
 		gameboard.getField(player.getPosition()).whatToDoOnSquare(player, playerlist, out);
