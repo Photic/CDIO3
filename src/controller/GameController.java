@@ -26,9 +26,7 @@ public class GameController {
 	private Die d1, d2;
 	private int playerCount, newPosition, diceSum;
 
-
-
-
+	// Creates the entire game environment.
 	public GameController() 
 	{
 		gui = new Gui();
@@ -40,30 +38,23 @@ public class GameController {
 		d2 = new Die();
 		gamelogic = new GameLogic();
 	}
-
-
-
-
-	public void gameControl() {
-
-
+	
+	// Controls the game.
+	public void gameControl() 
+	{
 		//Welcome messages
 		out.welcomeNew();
 		playerCount = keyboard.getIntRange(2, 4);
-		//		out.endCurrentOutput();
 		out.setAmountPlayers(playerCount);
 		out.playerCount(playerCount);
-
 
 		//make the names array as long as the number of players.
 		names = new String[playerCount];
 
-
-
 		//Ask for player names.
 		askForNames();
 
-
+		// Creates an array of players
 		playerList = new PlayerList(playerCount, names, rulebook.startMoney(playerCount));
 
 
