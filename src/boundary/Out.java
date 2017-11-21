@@ -74,6 +74,26 @@ public class Out {
 	}
 	
 	
+	public void payCardText() {
+		String[] outString =
+			{
+					"You ate too much candy.",
+					"Pay $2 to the bank."
+			};
+		standardOut(outString);
+	}
+
+	
+	public void earnCardText() {
+		String[] outString =
+			{
+					"You finally finished all of your homework!",
+					"Recieve $2."
+			};
+		standardOut(outString);
+	}
+	
+	
 	/**
 	 * You passed start message
 	 */
