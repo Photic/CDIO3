@@ -39,7 +39,6 @@ public class GameController {
 		d1 = new Die();
 		d2 = new Die();
 		gamelogic = new GameLogic();
-
 	}
 
 
