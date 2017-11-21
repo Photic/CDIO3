@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.event.KeyEvent;
 import java.util.Arrays;
 
 import boundary.Gui;
@@ -68,6 +69,7 @@ public class GameController {
 		// Keeps playing the game untill someone dies.
 		while(true) 
 		{
+			
 			// If there is only 1 player left, the winner is announced.
 			if (playerList.getLength() == 1)
 			{
