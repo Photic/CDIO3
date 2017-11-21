@@ -57,18 +57,15 @@ public class GameController {
 		// Creates an array of players
 		playerList = new PlayerList(playerCount, names, rulebook.startMoney(playerCount));
 
-
-		//Summary the players.
+		// Showing a summary the players in the TUI.
 		playerSummary(names);
-
-
 
 		//setting up the gui
 		gui.defineGUI(gameboard);
 		gui.setNames(playerList);
 		gui.placePlayers(playerList);
 
-
+		// Keeps playing the game untill someone dies.
 		while(true) 
 		{
 			// If there is only 1 player left, the winner is announced.
@@ -76,10 +73,7 @@ public class GameController {
 			{
 				out.announceWinner(playerList.getSpecificPlayer(0));
 				break;
-				// Lister remove player
 			}
-
-
 
 			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 			for (int i = 0; i<playerList.getLength(); i++) {
@@ -99,8 +93,8 @@ public class GameController {
 
 
 					// ændre rolldice til gamecontroller
-					diceSum = playerList.getSpecificPlayer(i).rollDice(); 
-					gui.setDice(playerList.getSpecificPlayer(i).getD1(), playerList.getSpecificPlayer(i).getD2());
+					diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2); 
+					gui.setDice(this.d1, this.d2);
 					out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
 
 					//Calculates the new position for the player.
