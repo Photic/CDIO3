@@ -2,10 +2,13 @@ package entity.cards;
 
 import java.util.Random;
 
+import entity.Player;
+
 public class Deck {
 
 	private Card[] cards = new Card[3]; 
 	private int total; 
+	private int currentCard = 0; 
 	
 	public Deck() {
 		this.cards[0] = new PayCard(); 
@@ -28,6 +31,20 @@ public class Deck {
 			// Swaps the cards. 
 			cards[Card1]=cards[Card2]; 
 			cards[Card2]=storage; 
+		}
+		
+	}
+	
+	// Draws and plays the next card, as well as placing the card at the bottom of the deck. 
+	public void next(Player p) {
+		Card storage = cards[currentCard]; 
+		
+		cards[currentCard].execute(p);
+		currentCard++; 
+		
+		// Resets the deck if the last card i drawn. 
+		if (currentCard == total) {
+			currentCard = 0; 
 		}
 		
 	}
