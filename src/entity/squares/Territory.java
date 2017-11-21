@@ -42,38 +42,30 @@ public class Territory extends Square {
 	}
 
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
-		
+	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
+	{
 		Player playerOwner = null;
 		
-		
-		if (isOwned == true) {
+		if (isOwned == true)
+		{
 			out.printOwner(owner, rentInt);
 			
-			for (int i = 0; i<playerlist.getLength(); i++) {
-				if (playerlist.getSpecificPlayer(i).getName() == owner){
+			for (int i = 0; i<playerlist.getLength(); i++) 
+			{
+				if (playerlist.getSpecificPlayer(i).getName() == owner)
 					playerOwner = playerlist.getSpecificPlayer(i);
-				}
 			}
 			
 			//Increase the owners money
 			playerOwner.setBalance(playerOwner.getBalance() + rentInt);
 			
-			
 			//decrease the landers money.
-			p.setBalance(p.getBalance() - rentInt);
-			
-			
-			
+			p.setBalance(p.getBalance() - rentInt);	
 		}
-		else {
-			
+		else 
+		{	
 			out.playerWantToBuy(price);
-			
-			
 		}
-		
-		
 	}
 	
 	public boolean isOwned() {

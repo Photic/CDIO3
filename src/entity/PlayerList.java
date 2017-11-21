@@ -23,9 +23,7 @@ public class PlayerList {
 		for (int i = 0; i < players.length; i++) 
 		{
 			if (p != playerList.getSpecificPlayer(i))
-			{
 				removeDeads[j] = playerList.getSpecificPlayer(i);
-			}
 		}
 		setList(removeDeads);
 	}

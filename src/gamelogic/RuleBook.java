@@ -21,8 +21,8 @@ public class RuleBook {
 	{	
 		int out;
 		
-		switch(playercount) {
-		
+		switch(playercount)
+		{
 		case 2:
 			out= 20;
 			break;
