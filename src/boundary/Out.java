@@ -84,6 +84,15 @@ public class Out {
 	}
 
 	
+	public void earnCardText() {
+		String[] outString =
+			{
+					"You finally finished all of your homework!",
+					"Recieve $2."
+			};
+		standardOut(outString);
+	}
+	
 	
 	/**
 	 * You passed start message
