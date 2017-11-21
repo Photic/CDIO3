@@ -118,47 +118,55 @@ public class GameController {
 					playerList.getSpecificPlayer(i).setPosition(newPosition);
 
 
+				}
+				if (newPosition == 18) { //If the player is being put into jail
+					gui.movePlayer(playerList.getSpecificPlayer(i), 6);
+				} else {
+					gui.movePlayer(playerList.getSpecificPlayer(i), newPosition);
+					playerList.getSpecificPlayer(i).setPosition(newPosition);
+				}
 
-					//get the current field on the gameboard, based on the player position
-					rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
+
+				//get the current field on the gameboard, based on the player position
+				rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
 
 
 
-					//HVIS TID - SMID I EN METODE 
-					//If it is a territory field
-					if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
+				//HVIS TID - SMID I EN METODE 
+				//If it is a territory field
+				if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
+				{
+					if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getOwner().length() <= 0) 
 					{
-						if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getOwner().length() <= 0) 
-						{
-							territorySituation(i);	
-						}
-
+						territorySituation(i);	
 					}
-
-					//Update the balance of the players on the gui.
-					for (int j = 0; j<playerList.getLength(); j++) {
-						gui.updateBalance(playerList.getSpecificPlayer(j));
-					}
-
-					//Check if the current player died.
-					gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
-
-					//Remove all dead players.
-					if (playerList.getSpecificPlayer(i).isDead() == true)
-					{
-						playerList.removePlayerIfDead(playerList.getSpecificPlayer(i), playerList);
-					}
-
 
 				}
+
+				//Update the balance of the players on the gui.
+				for (int j = 0; j<playerList.getLength(); j++) {
+					gui.updateBalance(playerList.getSpecificPlayer(j));
+				}
+
+				//Check if the current player died.
+				gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
+
+				//Remove all dead players.
+				if (playerList.getSpecificPlayer(i).isDead() == true)
+				{
+					playerList.removePlayerIfDead(playerList.getSpecificPlayer(i), playerList);
+				}
+
+
 			}
 		}
-
-
-
-
-
 	}
+
+
+
+
+
+
 
 
 
