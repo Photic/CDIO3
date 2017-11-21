@@ -38,7 +38,7 @@ public class GameController {
 		d2 = new Die();
 		gamelogic = new GameLogic();
 	}
-	
+
 	// Controls the game.
 	public void gameControl() 
 	{
@@ -99,20 +99,20 @@ public class GameController {
 					newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
 					out.evaluateNewPos(newPosition, gameboard);
 
-					
-					
+
+
 					//check if the player passed start
 					if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
 
-						
+
 						//the player recieves $10 and a message is presented.
 						playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 10);
 						out.passedStart(playerList.getSpecificPlayer(i));
-						
+
 						//Update the players balance on the gui.
 						gui.updateBalance(playerList.getSpecificPlayer(i));
-						
-						
+
+
 					}
 					gui.movePlayer(playerList.getSpecificPlayer(i), newPosition);
 					playerList.getSpecificPlayer(i).setPosition(newPosition);
@@ -122,8 +122,8 @@ public class GameController {
 					//get the current field on the gameboard, based on the player position
 					rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
 
-					
-					
+
+
 					//HVIS TID - SMID I EN METODE 
 					//If it is a territory field
 					if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
@@ -142,13 +142,13 @@ public class GameController {
 
 					//Check if the current player died.
 					gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
-					
+
 					//Remove all dead players.
 					if (playerList.getSpecificPlayer(i).isDead() == true)
 					{
 						playerList.removePlayerIfDead(playerList.getSpecificPlayer(i), playerList);
 					}
-					
+
 
 				}
 			}
