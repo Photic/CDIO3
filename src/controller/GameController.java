@@ -159,6 +159,13 @@ public class GameController {
 
 					//Check if the current player died.
 					gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
+					
+					//Remove all dead players.
+					if (playerList.getSpecificPlayer(i).isDead() == true)
+					{
+						playerList.removePlayerIfDead(playerList.getSpecificPlayer(i), playerList);
+					}
+					
 
 				}
 			}
