@@ -11,7 +11,7 @@ public class Territory extends Square {
 	private int price, rentInt;
 	private String rent;
 	private boolean isOwned;
-	public String owner;
+	private Player owner;
 
 	public Territory(String name, String description, Color color, String rent) 
 	{
@@ -20,7 +20,6 @@ public class Territory extends Square {
 		this.rent = rent;
 		this.rentInt = Integer.parseInt(rent);
 		this.isOwned = false;
-		this.owner = "";
 	}
 
 	public int getPrice() 
@@ -36,46 +35,22 @@ public class Territory extends Square {
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
 	{
-		Player playerOwner = null;
-
 		if (isOwned == true)
 		{
-			out.printOwner(owner, rentInt);
-
-			for (int i = 0; i<playerlist.getLength(); i++) 
-			{
-				if (playerlist.getSpecificPlayer(i).getName() == owner)
-					playerOwner = playerlist.getSpecificPlayer(i);
-			}
-
-			if (playerOwner.getName() == p.getName()) {
+			if (owner.getName() == p.getName()) {
 				out.printSelfOwner(p.getName());
 			} else {
-				out.printOwner(owner, rentInt);
+				out.printOwner(owner.getName(), rentInt);
 			}
-
+			
 			//Increase the owners money
-			playerOwner.setBalance(playerOwner.getBalance() + rentInt);
-
-			//decrease the landers money.
-			p.setBalance(p.getBalance() - rentInt);	
-
-
-
-
-			if (playerOwner.getName() == p.getName()) {
-				out.printSelfOwner(p.getName());
-			} else {
-				out.printOwner(owner, rentInt);
-			}
-
-			//Increase the owners money
-			playerOwner.setBalance(playerOwner.getBalance() + rentInt);
+			owner.setBalance(owner.getBalance() + rentInt);
 
 			//decrease the landers money.
 			p.setBalance(p.getBalance() - rentInt);
 
-		} else 
+		} 
+		else 
 		{	
 			out.playerWantToBuy(price);
 		}
@@ -92,11 +67,11 @@ public class Territory extends Square {
 	public void setOwned(boolean isOwned) {
 		this.isOwned = isOwned;
 	}
-	public String getOwner() {
+	public Player getOwner() {
 		return owner;
 	}
 
-	public void setOwner(String owner) {
+	public void setOwner(Player owner) {
 		this.owner = owner;
 	}
 
