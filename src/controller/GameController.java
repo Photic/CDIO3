@@ -75,7 +75,8 @@ public class GameController {
 		//setting up the gui
 		gui.defineGUI(gameboard);
 		gui.setNames(playerList);
-		//
+		gui.placePlayers(playerList);
+
 
 		while(true) 
 		{
@@ -115,6 +116,8 @@ public class GameController {
 					newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
 					out.evaluateNewPos(newPosition, gameboard);
 
+					
+					
 					//check if the player passed start
 					if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
 
@@ -128,8 +131,9 @@ public class GameController {
 						
 						
 					}
-					
+					gui.movePlayer(playerList.getSpecificPlayer(i), newPosition);
 					playerList.getSpecificPlayer(i).setPosition(newPosition);
+
 
 
 					//get the current field on the gameboard, based on the player position
@@ -235,6 +239,7 @@ public class GameController {
 		int answer = keyboard.getIntRange(0, 1);
 
 		if (answer == 1) {
+			gui.setOwner(playerList.getSpecificPlayer(i));
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i).getName());
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwned(true);
 			out.playerNowOwns(playerList.getSpecificPlayer(i), gameboard);
