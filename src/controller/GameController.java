@@ -93,7 +93,7 @@ public class GameController {
 			for (int i = 0; i<playerList.getLength(); i++) {
 
 				//First check if the player is in jail.
-				if(playerList.getSpecificPlayer(i).isDead() == false) {
+				if(playerList.getSpecificPlayer(i).isDead() == true) {
 
 				}
 				else if(playerList.getSpecificPlayer(i).isInJail()) {
