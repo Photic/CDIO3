@@ -58,6 +58,20 @@ public class Out {
 		standardOut(outString);
 	}
 
+	
+	/**
+	 * You passed start message
+	 */
+	public void passedStart(Player p) {
+		
+		String[] outString =
+			{
+					p.getName() + " passed start and recieves $10"
+			};
+		standardOut(outString);
+		
+	}
+	
 	/**
 	 * Ask the player for the number if players playing.
 	 * @param n

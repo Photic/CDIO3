@@ -115,6 +115,20 @@ public class GameController {
 					newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
 					out.evaluateNewPos(newPosition, gameboard);
 
+					//check if the player passed start
+					if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
+
+						
+						//the player recieves $10 and a message is presented.
+						playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 10);
+						out.passedStart(playerList.getSpecificPlayer(i));
+						
+						//Update the players balance on the gui.
+						gui.updateBalance(playerList.getSpecificPlayer(i));
+						
+						
+					}
+					
 					playerList.getSpecificPlayer(i).setPosition(newPosition);
 
 

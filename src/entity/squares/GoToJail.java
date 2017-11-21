@@ -21,6 +21,7 @@ public class GoToJail extends Square {
 		
 		out.goToJail();
 		p.setPosition(6);	//Pos 6 er jail på boardet
+		p.setWalkedSquares(6);
 		p.setInJail(true);
 		
 	}
