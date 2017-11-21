@@ -40,6 +40,12 @@ public class Gui {
 	}
 	
 	
+	public void placePlayers(PlayerList playerlist) {
+		for (int i = 0; i < playerlist.getLength(); i++) {
+			GUI.setCar(1, playerlist.getSpecificPlayer(i).getName());
+		}
+	}
+	
 	public void updateBalance(Player player) {
 		GUI.setBalance(player.getName(), player.getBalance());
 	}
@@ -57,4 +63,14 @@ public class Gui {
 		}
 	}
 
+	public void movePlayer(Player p, int newPosition) {
+		GUI.removeCar(p.getPosition()+1, p.getName());
+		GUI.setCar(newPosition+1, p.getName());
+	}
+	
+	
+	public void setOwner(Player p) {
+		GUI.setOwner(p.getPosition()+1, p.getName());
+	}
+	
 }
