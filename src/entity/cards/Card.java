@@ -7,7 +7,7 @@ public abstract class Card {
 	public Card() {	
 	}
 	
-	public void execute(Player p) {
+	public void useCard(Player p) {
 		
 	}
 	

@@ -59,6 +59,14 @@ public class Out {
 	}
 
 	
+	public void chanceText() {
+		String[] outString =
+			{
+					"The chance card reads the following: "
+			};
+		standardOut(outString);
+	}
+	
 	
 	public void moveManuallyCard() {
 		String[] outString =

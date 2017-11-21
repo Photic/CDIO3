@@ -13,7 +13,7 @@ public class Deck {
 	public Deck() {
 		this.cards[0] = new PayCard(); 
 		this.cards[1] = new EarnCard(); 
-		this.cards[2] = null; 
+		this.cards[2] = new MoveManuallyCard(); 
 		this.total = 3; 
 	}
 	
@@ -39,7 +39,8 @@ public class Deck {
 	public void next(Player p) {
 		Card storage = cards[currentCard]; 
 		
-		cards[currentCard].execute(p);
+		//Fejl her, spiller altid det første kort pga currentCard=0
+		cards[currentCard].useCard(p);
 		currentCard++; 
 		
 		// Resets the deck if the last card i drawn. 

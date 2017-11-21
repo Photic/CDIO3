@@ -13,7 +13,7 @@ public class MoveManuallyCard extends Card{
 	Out out = new Out();
 	Keyboard keyboard = new Keyboard();
 	
-	public void execute(Player p) {
+	public void useCard(Player p) {
 		out.moveManuallyCard();
 		int playerChoice = keyboard.getIntRange(1, 5); 
 		p.setPosition(p.getPosition() + playerChoice);
