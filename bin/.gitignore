@@ -1,4 +1,5 @@
-/boundary/
 /entity/
+/boundary/
+/controller/
 /gamelogic/
 /Tests/
