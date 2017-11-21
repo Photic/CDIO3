@@ -16,7 +16,7 @@ public class GameBoard {
 	Color turkies = new Color(31, 94, 90);
 	Color magenta = new Color (229, 70, 0);
 
-	Square[] squares = 
+	private final Square[] squares = 
 		{
 			new Start("Start", "Recieve 10$", standard),
 			new Territory("BurgerJoint", "1", orange, "1"),
