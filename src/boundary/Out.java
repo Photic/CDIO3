@@ -190,7 +190,7 @@ public class Out {
 		String[] winner = 
 			{
 				"***********************",
-				"Congratulations " + p,
+				"Congratulations " + p.getName(),
 				"You are the winner of",
 				"Monopoly Junior EXTREME!!",
 				"**********************"
