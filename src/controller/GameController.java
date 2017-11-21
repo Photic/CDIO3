@@ -84,6 +84,7 @@ public class GameController {
 			{
 				out.announceWinner(playerList.getSpecificPlayer(0));
 				break;
+				// Lister remove player
 			}
 
 
@@ -97,6 +98,7 @@ public class GameController {
 				}
 				else if(playerList.getSpecificPlayer(i).isInJail()) {
 					playerList.getSpecificPlayer(i).setInJail(false);
+					// tilføj remove money fra player
 				} else {
 
 					//Wait for the player to press 5 to roll the dice.
@@ -104,8 +106,8 @@ public class GameController {
 					keyboard.waitForInt(5);
 
 
-
-					diceSum = playerList.getSpecificPlayer(i).rollDice();
+					// ændre rolldice til gamecontroller
+					diceSum = playerList.getSpecificPlayer(i).rollDice(); 
 					gui.setDice(playerList.getSpecificPlayer(i).getD1(), playerList.getSpecificPlayer(i).getD2());
 					out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
 
@@ -119,6 +121,9 @@ public class GameController {
 					//get the current field on the gameboard, based on the player position
 					rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
 
+					
+					
+					//HVIS TID - SMID I EN METODE 
 					//If it is a territory field
 					if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
 					{

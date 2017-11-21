@@ -14,7 +14,7 @@ public class Jail extends Square {
 	}
 
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
-		// TODO Auto-generated method stub
+		// Indsæt out med hvem man besøger som er i jail.
 		
 	}
 
