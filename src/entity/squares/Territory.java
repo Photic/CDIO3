@@ -54,33 +54,26 @@ public class Territory extends Square {
 				if (playerlist.getSpecificPlayer(i).getName() == owner){
 					playerOwner = playerlist.getSpecificPlayer(i);
 				}
+
+				if (playerOwner.getName() == p.getName()) {
+					out.printSelfOwner(p.getName());
+				} else {
+					out.printOwner(owner, rentInt);
+				}
+
+				//Increase the owners money
+				playerOwner.setBalance(playerOwner.getBalance() + rentInt);
+
+				//decrease the landers money.
+				p.setBalance(p.getBalance() - rentInt);	
 			}
-
-			if (playerOwner.getName() == p.getName()) {
-				out.printSelfOwner(p.getName());
-			} else {
-				out.printOwner(owner, rentInt);
-			}
-
-			//Increase the owners money
-			playerOwner.setBalance(playerOwner.getBalance() + rentInt);
-
-
-			//decrease the landers money.
-			p.setBalance(p.getBalance() - rentInt);
-
-
-
 		}
-		else {
-
+		else 
+		{	
 			out.playerWantToBuy(price);
-
-
 		}
-
-
 	}
+
 
 	public boolean isOwned() {
 		return isOwned;
