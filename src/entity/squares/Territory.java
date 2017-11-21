@@ -13,14 +13,6 @@ public class Territory extends Square {
 	private boolean isOwned;
 	public String owner;
 
-
-
-
-
-
-
-
-
 	public Territory(String name, String description, Color color, String rent) 
 	{
 		super(name, description, color);
@@ -42,7 +34,6 @@ public class Territory extends Square {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
 	{
 		Player playerOwner = null;
@@ -54,57 +45,27 @@ public class Territory extends Square {
 			for (int i = 0; i<playerlist.getLength(); i++) 
 			{
 				if (playerlist.getSpecificPlayer(i).getName() == owner)
-=======
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
-
-		Player playerOwner = null;
-
-
-		if (isOwned == true) {
-
-
-			for (int i = 0; i<playerlist.getLength(); i++) {
-				if (playerlist.getSpecificPlayer(i).getName() == owner){
->>>>>>> 0d60cecbb0637f7e0f641361869dafbff56c2481
 					playerOwner = playerlist.getSpecificPlayer(i);
 			}
-
+			
 			if (playerOwner.getName() == p.getName()) {
 				out.printSelfOwner(p.getName());
 			} else {
 				out.printOwner(owner, rentInt);
 			}
-
+			
 			//Increase the owners money
 			playerOwner.setBalance(playerOwner.getBalance() + rentInt);
-<<<<<<< HEAD
 			
 			//decrease the landers money.
-			p.setBalance(p.getBalance() - rentInt);	
-		}
+			p.setBalance(p.getBalance() - rentInt);
+		}	
 		else 
 		{	
 			out.playerWantToBuy(price);
 		}
-=======
 
-
-			//decrease the landers money.
-			p.setBalance(p.getBalance() - rentInt);
-
-
-
-		}
-		else {
-
-			out.playerWantToBuy(price);
-
-
-		}
-
-
->>>>>>> 0d60cecbb0637f7e0f641361869dafbff56c2481
-	}
+	}	
 
 	public boolean isOwned() {
 		return isOwned;
