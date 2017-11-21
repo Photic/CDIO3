@@ -21,17 +21,7 @@ public class Territory extends Square {
 		this.rentInt = Integer.parseInt(rent);
 		this.isOwned = false;
 	}
-
-	public int getPrice() 
-	{
-		return price;
-	}
-
-	public String getRent()
-	{
-		return rent;
-	}
-
+	
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) 
 	{
@@ -57,8 +47,15 @@ public class Territory extends Square {
 
 	}
 
+	public int getPrice() 
+	{
+		return price;
+	}
 
-
+	public String getRent()
+	{
+		return rent;
+	}
 
 	public boolean isOwned() {
 		return isOwned;
