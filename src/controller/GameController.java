@@ -1,8 +1,7 @@
 package controller;
 
-import java.awt.event.KeyEvent;
-import java.util.Arrays;
 
+import java.util.Arrays;
 import boundary.Gui;
 import boundary.Keyboard;
 import boundary.Out;
@@ -59,7 +58,7 @@ public class GameController {
 		playerList = new PlayerList(playerCount, names, rulebook.startMoney(playerCount));
 
 		// Showing a summary the players in the TUI.
-		playerSummary(names);
+		out.printPlayerSummary(names);
 
 		//setting up the gui
 		gui.defineGUI(gameboard);
@@ -166,20 +165,6 @@ public class GameController {
 			}
 		}
 	}
-
-
-
-
-
-
-
-
-
-	private void playerSummary(String[] names) {
-		//Summary on the players participating
-		out.printPlayerSummary(names);// Player names
-	}
-
 
 	/**
 	 * This method asks for players names, and adds iditifiers if the names are the same.
