@@ -8,7 +8,7 @@ public class Deck {
 
 	private Card[] cards = new Card[3]; 
 	private int total; 
-	private int currentCard = 0; 
+	private int randomCard;
 	
 	public Deck() {
 		this.cards[0] = new PayCard(); 
@@ -35,20 +35,13 @@ public class Deck {
 		
 	}
 	
-	// Draws and plays the next card, as well as placing the card at the bottom of the deck. 
-	public void next(Player p) {
-		Card storage = cards[currentCard]; 
+	// Uses a random card from the chance card pool.  
+	public void drawCard(Player p) {
 		
-		//Fejl her, spiller altid det første kort pga currentCard=0
-		cards[currentCard].useCard(p);
-		currentCard++; 
+		this.randomCard = (int)(Math.random()*total)+1;
 		
-		// Resets the deck if the last card i drawn. 
-		if (currentCard == total) {
-			currentCard = 0; 
+		cards[randomCard].useCard(p);
+		
 		}
-		
-	}
-	
-	
+			
 }

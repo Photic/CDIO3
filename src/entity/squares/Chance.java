@@ -18,9 +18,9 @@ public class Chance extends Square {
 	{
 		Deck deck = new Deck(); 
 		
-		deck.shuffle(); 
 		out.chanceText();
-		deck.next(p);
+		
+		deck.drawCard(p);
 		
 		
 	}
