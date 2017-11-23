@@ -19,21 +19,21 @@ public class Deck {
 	
 	Random random = new Random(); 
 	
-	public void shuffle(){
-		
-		for (int i=0; i<1000;i++) {
-			int Card1 = random.nextInt(total); 
-			int Card2 = random.nextInt(total); 
-			
-			// Stores a card before shuffling. 
-			Card storage = cards[Card1]; 
-			
-			// Swaps the cards. 
-			cards[Card1]=cards[Card2]; 
-			cards[Card2]=storage; 
-		}
-		
-	}
+//	public void shuffle(){
+//		
+//		for (int i=0; i<1000;i++) {
+//			int Card1 = random.nextInt(total); 
+//			int Card2 = random.nextInt(total); 
+//			
+//			// Stores a card before shuffling. 
+//			Card storage = cards[Card1]; 
+//			
+//			// Swaps the cards. 
+//			cards[Card1]=cards[Card2]; 
+//			cards[Card2]=storage; 
+//		}
+//		
+//	}
 	
 	// Uses a random card from the chance card pool.  
 	public void drawCard(Player p) {
