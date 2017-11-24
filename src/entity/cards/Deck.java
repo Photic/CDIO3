@@ -19,7 +19,7 @@ public class Deck {
 	// Uses a random card from the chance card pool. 
 	public void drawCard(Player p) {
 		
-		this.randomCard = (int)(Math.random()*total)+1;
+		this.randomCard = (int)(Math.random()*total);
 		
 		cards[randomCard].useCard(p);
 		
