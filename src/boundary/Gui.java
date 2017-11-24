@@ -11,6 +11,7 @@ import desktop_fields.Street;
 import desktop_resources.GUI;
 import entity.Die;
 import entity.PlayerList;
+import entity.cards.Card;
 import entity.squares.GameBoard;
 
 public class Gui {

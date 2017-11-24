@@ -6,14 +6,16 @@ import entity.Player;
 
 public class PayCard extends Card{
 
+	public PayCard() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	int amount = - 2; 
 	
 	Out out = new Out();
 	Keyboard keyboard = new Keyboard();
 	
-	public PayCard() {
-		
-	}
 	
 	public void useCard(Player p) {
 		out.payCardText();

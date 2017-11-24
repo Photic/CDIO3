@@ -52,7 +52,7 @@ public class RuleBook {
 	
 	public void playerLands(GameBoard gameboard, Player player, PlayerList playerlist, Out out)
 	{
-		gameboard.getField(player.getPosition()).whatToDoOnSquare(player, playerlist, out);
+		gameboard.getField(player.getPosition()).whatToDoOnSquare(player, playerlist, out, null);
 	}
 	
 	

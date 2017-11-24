@@ -9,7 +9,6 @@ public class EarnCard extends Card{
 	int amount = 2; 
 	
 	public EarnCard() {
-		
 	}
 	
 	Out out = new Out();

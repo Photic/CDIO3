@@ -113,7 +113,7 @@ public class GameController {
 
 
 						//the player recieves $10 and a message is presented.
-						playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 10);
+						playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 1);
 						out.passedStart(playerList.getSpecificPlayer(i));
 
 						//Update the players balance on the gui.

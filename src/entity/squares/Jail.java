@@ -2,6 +2,7 @@ package entity.squares;
 
 import java.awt.Color;
 
+import boundary.Gui;
 import boundary.Out;
 import entity.Player;
 import entity.PlayerList;
@@ -13,7 +14,7 @@ public class Jail extends Square {
 		super(navn, description, color);
 	}
 
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out) {
+	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) {
 		// Indsæt out med hvem man besøger som er i jail.
 		
 	}

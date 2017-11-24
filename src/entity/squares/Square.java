@@ -2,6 +2,7 @@ package entity.squares;
 
 import java.awt.Color;
 
+import boundary.Gui;
 import boundary.Out;
 import entity.Player;
 import entity.PlayerList;
@@ -43,7 +44,7 @@ public abstract class Square {
 		this.color = color;
 	}
 
-	public abstract void whatToDoOnSquare(Player p, PlayerList playerlist, Out out);
+	public abstract void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui);
 
 	
 }

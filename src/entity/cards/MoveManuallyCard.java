@@ -1,10 +1,12 @@
 package entity.cards;
 
 public class MoveManuallyCard extends Card{
-	
+
 	public MoveManuallyCard() {
-		super();
+		// TODO Auto-generated constructor stub
 	}
+	
+
 	
 //	Out out = new Out();
 //	Keyboard keyboard = new Keyboard();

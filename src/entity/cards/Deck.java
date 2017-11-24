@@ -21,8 +21,7 @@ public class Deck {
 		
 		this.randomCard = (int)(Math.random()*total);
 		
-		cards[randomCard].useCard(p);
-		
+		cards[randomCard].useCard(p);;
 		}
 }
 			
