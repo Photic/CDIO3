@@ -125,7 +125,7 @@ public class Out {
 		
 		String[] outString =
 			{
-					p.getName() + " passed start and recieves $10"
+					p.getName() + " passed start and recieves 1"
 			};
 		standardOut(outString);
 		
