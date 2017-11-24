@@ -30,7 +30,7 @@ public class Keyboard{
 		int temp = 2;
 			do {
 				try{temp = in.nextInt();}
-				catch(Exception e){System.out.println("Er det er tal bøv?"); break;}
+				catch(Exception e){System.out.println("Sure that is a number? \nIll pick for you then!"); break;}
 			}while (temp<min || temp>max); 
 		return temp;
 	}
