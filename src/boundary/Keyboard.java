@@ -1,6 +1,5 @@
 package boundary;
 
-import java.awt.event.KeyEvent;
 import java.util.Scanner;
 /** 
  * Implementerer input fra tastatur
@@ -12,42 +11,26 @@ public class Keyboard{
 	public Keyboard() {
 		in = new Scanner(System.in);
 	}
-
-	public void keyPressed(KeyEvent event) {
-	    switch (event.getKeyCode()) {
-	        case KeyEvent.VK_UP:
-	            System.out.println("OH YA");
-	            break;
-	        case KeyEvent.VK_DOWN:
-	            // down arrow
-	            break;
-	        case KeyEvent.VK_RIGHT:
-	            // right arrow
-	            break;
-	        case KeyEvent.VK_LEFT:
-	            // left arrow
-	            break;
-	    }
-	}
 	
 	
 	/** Venter på en int. Returnerer først når brugeren indtaster den int der ventes på
 	 * @param ind int der ventes på
 	 */
-	
 	public void waitForInt(int ind)
 	{
-		int temp;
+		int temp = 0;
 			do {
-			temp = in.nextInt();
+				try{temp = in.nextInt();}
+				catch (Exception e){	System.out.println("Er det et tal bøv?");}
 			}while (!(ind==temp)); 
 	}
 	
 	public int getIntRange(int min, int max)
 	{
-		int temp;
+		int temp = 2;
 			do {
-			temp = in.nextInt();
+				try{temp = in.nextInt();}
+				catch(Exception e){System.out.println("Er det er tal bøv?"); break;}
 			}while (temp<min || temp>max); 
 		return temp;
 	}
