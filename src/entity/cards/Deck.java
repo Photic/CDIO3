@@ -11,8 +11,8 @@ public class Deck {
 	public Deck() {
 		this.cards[0] = new PayCard(); 
 		this.cards[1] = new EarnCard(); 
-		this.cards[2] = new MoveManuallyCard(); 
-		this.total = 3; 
+//		this.cards[2] = new MoveManuallyCard(); 
+		this.total = 2; 
 	}
 	
 	

@@ -21,15 +21,16 @@ public class Keyboard{
 		int temp = 0;
 			do {
 				try{temp = in.nextInt();}
-				catch (Exception e){	}
+				catch (Exception e){	System.out.println("Er det et tal bøv?");}
 			}while (!(ind==temp)); 
 	}
 	
 	public int getIntRange(int min, int max)
 	{
-		int temp;
+		int temp = 2;
 			do {
-			temp = in.nextInt();
+				try{temp = in.nextInt();}
+				catch(Exception e){System.out.println("Sure that is a number? \nIll pick for you then!"); break;}
 			}while (temp<min || temp>max); 
 		return temp;
 	}
