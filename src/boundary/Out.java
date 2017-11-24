@@ -46,6 +46,22 @@ public class Out {
 		
 	}
 	
+	
+	
+	/**
+	 * This prints a message for the freeParking square.
+	 */
+	public void jailPrint(Player p) {
+		
+		String[] outString =
+			{
+					p.getName() + " is in jail and cannot move.",
+					"Furthermore, you pay 1 to get out of jail."
+			};
+		standardOut(outString);
+		
+	}
+	
 	/**
 	 * Go to jail print
 	 */

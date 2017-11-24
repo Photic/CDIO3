@@ -82,7 +82,9 @@ public class GameController {
 				//First check if the player is in jail.
 				if(playerList.getSpecificPlayer(i).isInJail()) 
 				{
+					out.jailPrint(playerList.getSpecificPlayer(i));
 					playerList.getSpecificPlayer(i).setInJail(false);
+					playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - 1);
 					// tilføj remove money fra player
 				} else {
 
