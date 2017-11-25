@@ -31,12 +31,12 @@ public class PlayerList_Testv2 {
 		PlayerList plist = new PlayerList(3, names, 10);
 		for(int i = 0; i<plist.getLength(); i++){
 			System.out.println("plads "+ i +" " +plist.getSpecificPlayer(i).getName());
-			}
-		
+		}
+
 		plist.getSpecificPlayer(1).setDead(true);
 		plist.removePlayerIfDead2(plist.getSpecificPlayer(1), plist);
 		for(int i = 0; i<=plist.getLength(); i++){
-		System.out.println("plads "+ i +" " +plist.getSpecificPlayer(i).getName());
+			System.out.println("plads "+ i +" " +plist.getSpecificPlayer(i).getName());
 		}
 	}
 	
