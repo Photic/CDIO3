@@ -35,10 +35,11 @@ public class PlayerList_Testv2 {
 		plist.getSpecificPlayer(1).setDead(true);
 		plist.removePlayerIfDead2(plist.getSpecificPlayer(1), plist);
 		System.out.println(plist.getLength());
-		for(int i = 0; i<=plist.getLength()-1; i++){
+		for(int i = 0; i<=3; i++){
 			System.out.println("plads "+ i +" " +plist.getSpecificPlayer(i).getName());
-			System.out.println(i);
+			
 		}
+		
 	}
 	
 	
