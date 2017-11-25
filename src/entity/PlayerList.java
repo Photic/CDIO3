@@ -30,12 +30,13 @@ public class PlayerList {
 	
 	
 	public void removePlayerIfDead2(Player p, PlayerList playerList){
-		Player[] removeDeads = new Player[playerList.getLength()-1];
-		for (int i = 0; i < players.length-1; i++) 
+		Player[] removeDeads = new Player[playerList.getLength()];
+		for (int i = 0; i <= players.length-1; i++) 
 		{
-			if (playerList.getSpecificPlayer(i).isDead()==false)
+			if (playerList.getSpecificPlayer(i).isDead()==false){
 				removeDeads[i] = playerList.getSpecificPlayer(i);
-			else if(playerList.getSpecificPlayer(i).isDead()==true){
+			System.out.println(playerList.getSpecificPlayer(i).getName()+ " Added to the new array");}
+			else{
 				System.out.println("Player: "+ playerList.getSpecificPlayer(i).getName()+ " removed");
 			}
 		}
