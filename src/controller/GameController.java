@@ -265,6 +265,31 @@ public class GameController {
 	 * @param i
 	 * the current iterations variable, to determine player.
 	 */
+	public void territorySituation(int i, boolean test, int answerTest) 
+	{
+		int answer = 0;
+		if (test == false) {
+		answer = keyboard.getIntRange(0, 1);
+		} else {
+			answer = answerTest;
+		}
+
+		if (answer == 1) {
+			gui.setOwner(playerList.getSpecificPlayer(i));
+			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i));
+			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwned(true);
+			out.playerNowOwns(playerList.getSpecificPlayer(i), gameboard);
+			playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - ((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getPrice());
+		} else {
+			out.notBuying();
+		}
+	}
+	
+	/**
+	 * This method checks if the player wants to buy a free territory.
+	 * @param i
+	 * the current iterations variable, to determine player.
+	 */
 	public void territorySituation(int i) 
 	{
 		int answer = keyboard.getIntRange(0, 1);

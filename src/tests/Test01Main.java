@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import boundary.Keyboard;
 import entity.Player;
