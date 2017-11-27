@@ -78,7 +78,10 @@ public class GameController {
 
 			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 			for (int i = 0; i<playerList.getLength(); i++) {
-
+				if(playerList.getSpecificPlayer(i).isDead()==true){
+					
+					
+				}
 				//First check if the player is in jail.
 				if(playerList.getSpecificPlayer(i).isInJail()) 
 				{

@@ -15,26 +15,28 @@ public class PlayerList {
 			players[i]= new Player(names[i], startMoney);	
 	}
 
-	public void removePlayerIfDead(Player p, PlayerList playerList)
-	{
-		Player[] removeDeads = new Player[playerList.getLength()-1];
-		
-		int j = 0;
-		for (int i = 0; i < players.length; i++) 
-		{
-			if (p != playerList.getSpecificPlayer(i))
-				removeDeads[j] = playerList.getSpecificPlayer(i);
-		}
-		setList(removeDeads);
-	}
-	
+//	public void removePlayerIfDead(Player p, PlayerList playerList)
+//	{
+//		Player[] removeDeads = new Player[playerList.getLength()-1];
+//		
+//		int j = 0;
+//		for (int i = 0; i < players.length; i++) 
+//		{
+//			if (p != playerList.getSpecificPlayer(i))
+//				removeDeads[j] = playerList.getSpecificPlayer(i);
+//		}
+//		setList(removeDeads);
+//	}
 //	
+	
 //	public void removePlayerIfDead(Player p, PlayerList playerList){
 //		Player[] removeDeads = new Player[playerList.getLength()];
+//		int count = 0; 
 //		for (int i = 0; i <= players.length-1; i++) 
 //		{
 //			if (playerList.getSpecificPlayer(i).isDead()==false){
-//				removeDeads[i] = playerList.getSpecificPlayer(i);
+//				removeDeads[count] = playerList.getSpecificPlayer(i);
+//				count++;
 //			System.out.println(playerList.getSpecificPlayer(i).getName()+ " Added to the new array");}
 //			else{
 //				System.out.println("Player: "+ playerList.getSpecificPlayer(i).getName()+ " removed");
@@ -43,7 +45,7 @@ public class PlayerList {
 //		
 //		setList(removeDeads);
 //	}
-//	
+	
 	
 	
 	

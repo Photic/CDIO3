@@ -44,7 +44,12 @@ public abstract class Square {
 		this.color = color;
 	}
 
+	
+	
+	
 	public abstract void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui);
+	
+	
 
 	
 }
