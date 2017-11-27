@@ -68,7 +68,7 @@ public class GameController {
 		// Keeps playing the game untill someone dies.
 		while(true) 
 		{
-			
+
 			// If there is only 1 player left, the winner is announced.
 			if (playerList.getLength() == 1)
 			{
@@ -79,93 +79,94 @@ public class GameController {
 			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 			for (int i = 0; i<playerList.getLength(); i++) {
 				if(playerList.getSpecificPlayer(i).isDead()==true){
-					
-					
-				}
-				//First check if the player is in jail.
-				if(playerList.getSpecificPlayer(i).isInJail()) 
-				{
-					out.jailPrint(playerList.getSpecificPlayer(i));
-					playerList.getSpecificPlayer(i).setInJail(false);
-					playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - 1);
-					// tilføj remove money fra player
+					//If the player is dead, nothing happens.
+
 				} else {
-
-
-
-
-
-					//Wait for the player to press 5 to roll the dice.
-					out.wantToRoll(playerList.getSpecificPlayer(i));
-					keyboard.waitForInt(5);
-
-
-					// ændre rolldice til gamecontroller
-					diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2); 
-					gui.setDice(this.d1, this.d2);
-					out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
-
-					//Calculates the new position for the player.
-					newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
-					out.evaluateNewPos(newPosition, gameboard);
-
-
-
-					//check if the player passed start
-					if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
-
-
-						//the player recieves $2 and a message is presented.
-						playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 2);
-						out.passedStart(playerList.getSpecificPlayer(i));
-
-						//Update the players balance on the gui.
-						gui.updateBalance(playerList.getSpecificPlayer(i));
-
-
-					}
-
-					playerList.getSpecificPlayer(i).setPosition(newPosition);
-
-
-
-
-
-
-
-					//get the current field on the gameboard, based on the player position
-					rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
-
-					//Moves the player on the gameboard.
-					gui.movePlayer(playerList.getSpecificPlayer(i));
-
-
-					//HVIS TID - SMID I EN METODE 
-					//If it is a territory field
-					if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
+					//First check if the player is in jail.
+					if(playerList.getSpecificPlayer(i).isInJail()) 
 					{
-						if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).isOwned() == false) 
-						{
-							territorySituation(i);	
+						out.jailPrint(playerList.getSpecificPlayer(i));
+						playerList.getSpecificPlayer(i).setInJail(false);
+						playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - 1);
+						// tilføj remove money fra player
+					} else {
+
+
+
+
+
+						//Wait for the player to press 5 to roll the dice.
+						out.wantToRoll(playerList.getSpecificPlayer(i));
+						keyboard.waitForInt(5);
+
+
+						// ændre rolldice til gamecontroller
+						diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2); 
+						gui.setDice(this.d1, this.d2);
+						out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
+
+						//Calculates the new position for the player.
+						newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
+						out.evaluateNewPos(newPosition, gameboard);
+
+
+
+						//check if the player passed start
+						if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
+
+
+							//the player recieves $2 and a message is presented.
+							playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 2);
+							out.passedStart(playerList.getSpecificPlayer(i));
+
+							//Update the players balance on the gui.
+							gui.updateBalance(playerList.getSpecificPlayer(i));
+
+
 						}
 
+						playerList.getSpecificPlayer(i).setPosition(newPosition);
+
+
+
+
+
+
+
+						//get the current field on the gameboard, based on the player position
+						rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
+
+						//Moves the player on the gameboard.
+						gui.movePlayer(playerList.getSpecificPlayer(i));
+
+
+						//HVIS TID - SMID I EN METODE 
+						//If it is a territory field
+						if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
+						{
+							if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).isOwned() == false) 
+							{
+								territorySituation(i);	
+							}
+
+						}
+
+						//Update the balance of the players on the gui.
+						for (int j = 0; j<playerList.getLength(); j++) {
+							gui.updateBalance(playerList.getSpecificPlayer(j));
+						}
+
+						//Check if the current player died.
+						gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
+
+						//					//Remove all dead players.
+						//					if (playerList.getSpecificPlayer(i).isDead() == true)
+						//					{
+						//						playerList.removePlayerIfDead(playerList.getSpecificPlayer(i), playerList);
+						//					}
+
+
 					}
-
-					//Update the balance of the players on the gui.
-					for (int j = 0; j<playerList.getLength(); j++) {
-						gui.updateBalance(playerList.getSpecificPlayer(j));
-					}
-
-					//Check if the current player died.
-					gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
-
-					//Remove all dead players.
-					if (playerList.getSpecificPlayer(i).isDead() == true)
-					{
-						playerList.removePlayerIfDead(playerList.getSpecificPlayer(i), playerList);
-					}
-
-
 				}
 			}
 		}
