@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controller.GameController;
+import entity.PlayerList;
 
 public class Test_GameController {
 
@@ -14,7 +15,8 @@ public class Test_GameController {
 	public void setUp() throws Exception 
 	{
 		new GameController().gameControl();
-		PlayerList playerList = new playerList();
+		String[] names = {"Stephan","Mathias","Steen"};
+		PlayerList plist = new PlayerList(3, names, 10);
 	}
 	
 	@After
