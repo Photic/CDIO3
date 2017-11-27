@@ -15,7 +15,7 @@ public class RuleBook_Test {
 
 	//Her testes for alle de inkluderede statements i switch casen
 	@Test
-	public void rBookStartMoney(){
+	public void startMoney_Test(){
 		RuleBook rulebook = new RuleBook();
 		assertTrue(rulebook.startMoney(2) == 20);
 		assertTrue(rulebook.startMoney(3) == 18);
