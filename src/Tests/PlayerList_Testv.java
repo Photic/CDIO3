@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import entity.Player;
 import entity.PlayerList;
 
-public class PlayerList_Testv2 {
+public class PlayerList_Testv {
 
 	@Test
 	public void playerList_Test() {
