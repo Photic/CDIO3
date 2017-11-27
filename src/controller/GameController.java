@@ -28,6 +28,7 @@ public class GameController {
 	private Die d1, d2;
 	private int playerCount, newPosition, diceSum;
 	private int amountDead = 0;
+	private boolean playing = true;
 
 	// Creates the entire game environment.
 	public GameController() 
@@ -69,7 +70,7 @@ public class GameController {
 		gui.placePlayers(playerList);
 
 		// Keeps playing the game untill someone dies.
-		while(true) 
+		while(playing == true) 
 		{
 
 			// If there is only 1 player left, the winner is announced.
@@ -80,7 +81,7 @@ public class GameController {
 						out.announceWinner(playerList.getSpecificPlayer(o));
 					}
 				}
-
+				playing = false;
 			}
 			
 			
@@ -179,7 +180,21 @@ public class GameController {
 					}
 				}
 			}
+			// If there is only 1 player left, the winner is announced.
+			if (amountDead == playerList.getLength()-1)
+			{
+				for (int o = 0; o<playerList.getLength(); o++) {
+					if (!(playerList.getSpecificPlayer(o).isDead())) {
+						out.announceWinner(playerList.getSpecificPlayer(o));
+					}
+				}
+				playing = false;
+			}
 		}
+		
+		
+		
+		
 	}
 
 	private void removeDead(Player player, int i) 
