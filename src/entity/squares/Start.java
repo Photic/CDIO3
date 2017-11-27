@@ -9,7 +9,7 @@ import entity.PlayerList;
 
 public class Start extends Square {
 
-	private int getMoney = 10;
+	private final int getMoney = 10;
 	
 	public Start(String navn, String description, Color color) {
 		super(navn, description, color);
@@ -17,10 +17,6 @@ public class Start extends Square {
 
 	public int getGetMoney() {
 		return getMoney;
-	}
-
-	public void setGetMoney(int getMoney) {
-		this.getMoney = getMoney;
 	}
 
 	@Override
