@@ -33,7 +33,7 @@ public class Test_Gamelogic {
 	}
 	
 	@Test
-	public void notDeadPlayer_Test(){
+	public void notDead_Test(){
 		boolean expected = false;
 		boolean actual;
 		GameLogic g1 = new GameLogic();
