@@ -49,13 +49,11 @@ public class GameLogic {
 	{
 		if (player.getBalance() <= DEATH_POINT) {
 			player.setDead(true);
-			
-			
-			
-			
-			
 		}
 	}
+	
+	
+	
 	
 	public void checkWin(PlayerList playerlist) {
 		int count = 0;
