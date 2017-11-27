@@ -14,7 +14,7 @@ public class Test_GameController {
 	public void setUp() throws Exception 
 	{
 		new GameController().gameControl();
-		
+		PlayerList playerList = new playerList();
 	}
 	
 	@After
