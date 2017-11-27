@@ -56,7 +56,7 @@ public class Out {
 		String[] outString =
 			{
 					p.getName() + " is in jail and cannot move.",
-					"Furthermore, you pay 1 to get out of jail."
+					"Furthermore, you pay $1 to get out of jail."
 			};
 		standardOut(outString);
 		
@@ -211,7 +211,7 @@ public class Out {
 	public void printPlayerSummary(String[] names) 
 	{
 		String[] infoMessage = new String[names.length+1];
-		infoMessage[0] = "Enterede Players are: ";
+		infoMessage[0] = "Entered players are: ";
 
 		for (int i = 1; i < infoMessage.length; i++) 
 		{
