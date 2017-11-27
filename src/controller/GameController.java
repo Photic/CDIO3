@@ -6,6 +6,7 @@ import boundary.Gui;
 import boundary.Keyboard;
 import boundary.Out;
 import entity.Die;
+import entity.Player;
 import entity.PlayerList;
 import entity.squares.GameBoard;
 import entity.squares.Square;
@@ -150,7 +151,8 @@ public class GameController {
 						}
 
 
-
+						playerList.getSpecificPlayer(0).setBalance(0);
+						
 						//Update the balance of the players on the gui.
 						for (int j = 0; j<playerList.getLength(); j++) 
 						{
@@ -163,7 +165,7 @@ public class GameController {
 
 
 						if (playerList.getSpecificPlayer(i).isDead()) {
-							removeDead(i);
+							removeDead(playerList.getSpecificPlayer(i), i);
 						}
 					}
 				}
@@ -171,8 +173,9 @@ public class GameController {
 		}
 	}
 
-	private void removeDead(int i) 
+	private void removeDead(Player player, int i) 
 	{
+		gui.removeDeadPlayer(player);
 		for (int p = 0; p<gameboard.getSize();p++) 
 		{
 			if (playerList.getSpecificPlayer(i).isDead())

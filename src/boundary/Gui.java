@@ -100,6 +100,10 @@ public class Gui {
 		GUI.removeOwner(position+1);
 	}
 	
+	public void removeDeadPlayer(Player p) {
+		GUI.removeAllCars(p.getName());
+	}
+	
 	
 	
 	
