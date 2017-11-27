@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import entity.Player;
+import entity.PlayerList;
 import gamelogic.GameLogic;
 
 public class Test_Gamelogic {
@@ -44,6 +45,6 @@ public class Test_Gamelogic {
 	}	
 		
 	
-	
+
 	
 }

@@ -52,25 +52,7 @@ public class GameLogic {
 		}
 	}
 	
-	
-	
-	
-	public void checkWin(PlayerList playerlist) {
-		int count = 0;
-		for (int i = 0; i<playerlist.getLength(); i++) {
-			if (playerlist.getSpecificPlayer(i).isDead()) {
-				count++;
-			}
-		}
-		
-		if (playerlist.getLength() - count == 1) {
-			for (int i = 0; i<playerlist.getLength(); i++) {
-				if (playerlist.getSpecificPlayer(i).isDead() == false) {
-					playerlist.getSpecificPlayer(i).setWinner(true);
-				}
-			}
-		}
-	}
+
 	
 	
 	
