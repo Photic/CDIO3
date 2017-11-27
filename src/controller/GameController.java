@@ -8,6 +8,7 @@ import boundary.Out;
 import entity.Die;
 import entity.PlayerList;
 import entity.squares.GameBoard;
+import entity.squares.Square;
 import entity.squares.Territory;
 import gamelogic.GameLogic;
 import gamelogic.RuleBook;
@@ -68,6 +69,10 @@ public class GameController {
 		// Keeps playing the game untill someone dies.
 		while(true) 
 		{
+
+
+
+
 
 			// If there is only 1 player left, the winner is announced.
 			if (playerList.getLength() == 1)
@@ -151,6 +156,8 @@ public class GameController {
 
 						}
 
+
+
 						//Update the balance of the players on the gui.
 						for (int j = 0; j<playerList.getLength(); j++) {
 							gui.updateBalance(playerList.getSpecificPlayer(j));
@@ -159,18 +166,34 @@ public class GameController {
 						//Check if the current player died.
 						gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
 
-						//					//Remove all dead players.
-						//					if (playerList.getSpecificPlayer(i).isDead() == true)
-						//					{
-						//						playerList.removePlayerIfDead(playerList.getSpecificPlayer(i), playerList);
-						//					}
 
 
+						if (playerList.getSpecificPlayer(i).isDead()) {
+							removeDead(i);
+						}
 					}
 				}
 			}
 		}
 	}
+
+	private void removeDead(int i) {
+
+
+
+		for (int p = 0; p<gameboard.getSize();p++) {
+
+			if (playerList.getSpecificPlayer(i).isDead()){
+				if (gameboard.getField(p) instanceof Territory){
+					((Territory) gameboard.getField(p)).removeDeadOwner(playerList.getSpecificPlayer(i));
+
+					gui.removeDeadOwner(p);
+
+				}
+			}
+		}
+	}
+
 
 	/**
 	 * This method asks for players names, and adds iditifiers if the names are the same.

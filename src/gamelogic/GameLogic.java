@@ -49,7 +49,11 @@ public class GameLogic {
 	{
 		if (player.getBalance() <= DEATH_POINT) {
 			player.setDead(true);
-			//playerlist.playerHasLost(player);
+			
+			
+			
+			
+			
 		}
 	}
 	

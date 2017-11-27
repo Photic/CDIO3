@@ -96,6 +96,12 @@ public class Gui {
 		GUI.setOwner(p.getPosition()+1, p.getName());
 	}
 	
+	public void removeDeadOwner(int position) {
+		GUI.removeOwner(position);
+		GUI.re
+	}
+	
+	
 	
 	
 	

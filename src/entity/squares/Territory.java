@@ -1,4 +1,4 @@
-	package entity.squares;
+package entity.squares;
 
 import java.awt.Color;
 
@@ -22,7 +22,7 @@ public class Territory extends Square {
 		this.rentInt = Integer.parseInt(rent);
 		this.isOwned = false;
 	}
-	
+
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) 
 	{
@@ -33,7 +33,7 @@ public class Territory extends Square {
 			} else {
 				out.printOwner(owner.getName(), rentInt);
 			}
-			
+
 			//Increase the owners money
 			owner.setBalance(owner.getBalance() + rentInt);
 
@@ -74,6 +74,18 @@ public class Territory extends Square {
 	}
 
 
+
+	public void removeDeadOwner(Player p) {
+
+		if (isOwned == true) {
+
+			if (p.getName() == owner.getName()) {
+				owner = null;
+				isOwned = false;
+			}
+		}
+
+	}
 
 
 

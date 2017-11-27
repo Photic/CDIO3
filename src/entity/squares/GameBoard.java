@@ -53,5 +53,10 @@ public class GameBoard {
 	{
 		return squares.length;
 	}
+	
+	
+	
+	
+	
 
 }
