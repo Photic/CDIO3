@@ -270,7 +270,26 @@ public class Out {
 			};
 		standardOut(owner);
 	}
+	
+	/**
+	 * Telling a Player they have lost.
+	 * @param p
+	 */
+	public void youAreDead(Player p) 
+	{
+		String[] lost = 
+			{
+					"Player " +p+ "has died",
+					"Since the player had no living relatives,",
+					"all of their property is now back on the market"
+			};
+		standardOut(lost);
+	}
 
+	/**
+	 * Tell the last person they have won.
+	 * @param p
+	 */
 	public void announceWinner(Player p)
 	{
 		String[] winner = 
