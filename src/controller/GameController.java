@@ -73,7 +73,7 @@ public class GameController {
 		{
 
 			// If there is only 1 player left, the winner is announced.
-			if (amountDead == 3)
+			if (amountDead == playerList.getLength()-1)
 			{
 				for (int o = 0; o<playerList.getLength(); o++) {
 					if (!(playerList.getSpecificPlayer(o).isDead())) {
