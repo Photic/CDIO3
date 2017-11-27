@@ -6,14 +6,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import controller.GameController;
+
 public class Test_GameController {
 
 	@Before
 	public void setUp() throws Exception 
 	{
+		new GameController().gameControl();
 		
 	}
-
+	
 	@After
 	public void tearDown() throws Exception 
 	{
@@ -21,7 +24,8 @@ public class Test_GameController {
 	}
 
 	@Test
-	public void test() {
+	public void test() 
+	{
 
 
 		System.out.println("JUnit version is: " + Version.id());
