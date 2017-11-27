@@ -98,7 +98,6 @@ public class Gui {
 	
 	public void removeDeadOwner(int position) {
 		GUI.removeOwner(position);
-		GUI.re
 	}
 	
 	
