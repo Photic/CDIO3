@@ -71,15 +71,8 @@ public class GameController {
 		{
 
 
-
-
-
 			// If there is only 1 player left, the winner is announced.
-			if (playerList.getLength() == 1)
-			{
-				out.announceWinner(playerList.getSpecificPlayer(0));
-				break;
-			}
+			
 
 			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 			for (int i = 0; i<playerList.getLength(); i++) {
@@ -159,7 +152,8 @@ public class GameController {
 
 
 						//Update the balance of the players on the gui.
-						for (int j = 0; j<playerList.getLength(); j++) {
+						for (int j = 0; j<playerList.getLength(); j++) 
+						{
 							gui.updateBalance(playerList.getSpecificPlayer(j));
 						}
 
@@ -177,18 +171,17 @@ public class GameController {
 		}
 	}
 
-	private void removeDead(int i) {
-
-
-
-		for (int p = 0; p<gameboard.getSize();p++) {
-
-			if (playerList.getSpecificPlayer(i).isDead()){
-				if (gameboard.getField(p) instanceof Territory){
+	private void removeDead(int i) 
+	{
+		for (int p = 0; p<gameboard.getSize();p++) 
+		{
+			if (playerList.getSpecificPlayer(i).isDead())
+			{
+				if (gameboard.getField(p) instanceof Territory)
+				{
 					((Territory) gameboard.getField(p)).removeDeadOwner(playerList.getSpecificPlayer(i));
 
 					gui.removeDeadOwner(p);
-
 				}
 			}
 		}

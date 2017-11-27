@@ -62,24 +62,28 @@ public class Territory extends Square {
 		return isOwned;
 	}
 
-	public void setOwned(boolean isOwned) {
+	public void setOwned(boolean isOwned) 
+	{
 		this.isOwned = isOwned;
 	}
-	public Player getOwner() {
+	public Player getOwner() 
+	{
 		return owner;
 	}
 
-	public void setOwner(Player owner) {
+	public void setOwner(Player owner) 
+	{
 		this.owner = owner;
 	}
 
 
 
-	public void removeDeadOwner(Player p) {
-
-		if (isOwned == true) {
-
-			if (p.getName() == owner.getName()) {
+	public void removeDeadOwner(Player p) 
+	{
+		if (isOwned == true) 
+		{
+			if (p == owner) 
+			{
 				owner = null;
 				isOwned = false;
 			}
