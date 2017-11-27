@@ -27,6 +27,7 @@ public class GameController {
 	private GameLogic gamelogic;
 	private Die d1, d2;
 	private int playerCount, newPosition, diceSum;
+	private int amountDead = 0;
 
 	// Creates the entire game environment.
 	public GameController() 
@@ -71,14 +72,6 @@ public class GameController {
 		while(true) 
 		{
 
-
-			// If there is only 1 player left, the winner is announced.
-			int count = 0;
-			for (int i = 0; i < names.length; i++) 
-			{
-				if (playerList.getSpecificPlayer(i).isDead() == true) count++;
-			}
-	
 			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
 			for (int i = 0; i<playerList.getLength(); i++) {
 				if(playerList.getSpecificPlayer(i).isDead()==true){
@@ -94,11 +87,12 @@ public class GameController {
 						// tilføj remove money fra player
 					} else {
 
-						if (count == 3)
+						// If there is only 1 player left, the winner is announced.
+						if (amountDead == 3)
 						{
 							out.announceWinner(playerList.getSpecificPlayer(i));
 						}
-
+						
 						//Wait for the player to press 5 to roll the dice.
 						out.wantToRoll(playerList.getSpecificPlayer(i));
 						keyboard.waitForInt(5);
@@ -169,7 +163,9 @@ public class GameController {
 
 
 
-						if (playerList.getSpecificPlayer(i).isDead()) {
+						if (playerList.getSpecificPlayer(i).isDead()) 
+						{
+							amountDead++;
 							removeDead(playerList.getSpecificPlayer(i), i);
 						}
 					}
