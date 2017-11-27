@@ -18,7 +18,7 @@ public class GameBoard {
 
 	private final Square[] squares = 
 		{
-			new Start("Start", "Recieve 1", standard),
+			new Start("Start", "Recieve 2", standard),
 			new Territory("BurgerJoint", "1", orange, "1"),
 			new Territory("Pizza Place", "1", orange, "1"),
 			new Chance("CHANCE", "Pick a chance card", standard),
