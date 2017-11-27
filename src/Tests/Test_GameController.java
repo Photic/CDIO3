@@ -1,5 +1,5 @@
 package Tests;
-
+import junit.runner.Version;
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -22,7 +22,9 @@ public class Test_GameController {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+
+
+		System.out.println("JUnit version is: " + Version.id());
 	}
 
 }
