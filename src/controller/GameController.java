@@ -112,8 +112,8 @@ public class GameController {
 					if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
 
 
-						//the player recieves $10 and a message is presented.
-						playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 1);
+						//the player recieves $2 and a message is presented.
+						playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 2);
 						out.passedStart(playerList.getSpecificPlayer(i));
 
 						//Update the players balance on the gui.
