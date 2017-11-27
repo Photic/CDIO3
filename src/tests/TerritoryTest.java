@@ -57,7 +57,8 @@ public class TerritoryTest {
 				" | The Square is not owned                                 \n" + 
 				" | The price is 2                                          \n" + 
 				" | Do you want to buy it? 1=Yes, 0=No  ------------------------------------------------------ \n" + 
-				" | You decided not to buy the square. \n", outContent);
+				" | You decided not to buy the square.                      \n" + 
+				"", outContent.toString());
 	}
 
 }
