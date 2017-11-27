@@ -1,4 +1,4 @@
-package entity.squares;
+	package entity.squares;
 
 import java.awt.Color;
 
