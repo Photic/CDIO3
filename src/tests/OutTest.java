@@ -96,11 +96,13 @@ public class OutTest {
 		
 		
 		assertEquals(" ------------------------------------------------------ \n" + 
-				" | Player "+p+"has died                   \n" + 
+				" | Player TestGuy has died                                 \n" + 
 				" | Since the player had no living relatives,               \n" + 
 				" | all of their property is now back on the market         \n" + 
 				"", outContent.toString());	
 	}
+	
+	
 	
 	@Test
 	public void testPlayerNowOwns() {
