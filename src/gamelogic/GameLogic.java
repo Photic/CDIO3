@@ -6,7 +6,7 @@ import entity.PlayerList;
 public class GameLogic {
 
 
-	private static final int DEATH_POINT = 0;
+	private final int DEATH_POINT = 0;
 
 	/**
 	 * This methods makes sure that the player goes in circles on the gameboard.

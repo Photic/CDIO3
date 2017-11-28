@@ -158,7 +158,7 @@ public class GameController {
 						checkIfTerritory(i); // Check if its a territory, and do the special territory method if it is.
 
 						updateBalance(); // update player balances.
-
+						
 						gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);//Check if the current player died.
 
 						updateDead(i); // Update if the player died.
@@ -197,7 +197,7 @@ public class GameController {
 	 * @param i
 	 */
 	private void checkIfTerritory(int i) {
-		
+
 		if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
 		{
 			if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).isOwned() == false) 
@@ -296,15 +296,18 @@ public class GameController {
 			{
 				if (gameboard.getField(p) instanceof Territory)
 				{
+					if (((Territory) gameboard.getField(p)).isOwned())
+					{
+						if (((Territory) gameboard.getField(p)).getOwner().getName() == player.getName()) 
+							gui.removeDeadOwner(p);
+					}
 					((Territory) gameboard.getField(p)).removeDeadOwner(playerList.getSpecificPlayer(i));
-
-					gui.removeDeadOwner(p);
 				}
 			}
 		}
 	}
-	
-	
+
+
 	/**
 	 * Check if there is a winner
 	 */
@@ -320,7 +323,7 @@ public class GameController {
 			playing = false;
 		}
 	}
-	
+
 	/**
 	 * This method is used to test the method used in the game. It therefor takes in a anwer, and does not ask the keyboard.
 	 * @param i
@@ -344,5 +347,5 @@ public class GameController {
 			out.notBuying();
 		}
 	}
-	
+
 }

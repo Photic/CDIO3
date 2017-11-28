@@ -92,7 +92,7 @@ public class Territory extends Square {
 	{
 		if (isOwned == true) 
 		{
-			if (player == owner) 
+			if (player.getName() == owner.getName()) 
 			{
 				owner = null;
 				isOwned = false;

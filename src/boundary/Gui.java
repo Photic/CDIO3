@@ -136,7 +136,8 @@ public class Gui {
 	 * @param position
 	 * position on the gameboard.
 	 */
-	public void removeDeadOwner(int position) {
+	public void removeDeadOwner(int position) 
+	{
 		GUI.removeOwner(position+1);
 	}
 	
