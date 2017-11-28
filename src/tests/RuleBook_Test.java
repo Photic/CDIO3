@@ -1,15 +1,11 @@
 package tests;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import entity.Player;
 import entity.squares.GameBoard;
 import gamelogic.RuleBook;
-import junit.framework.Assert;
 
 public class RuleBook_Test {
 

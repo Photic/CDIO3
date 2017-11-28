@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import entity.Die;
 
-public class dieTests 
+public class DieTests 
 {
 
 	@Before

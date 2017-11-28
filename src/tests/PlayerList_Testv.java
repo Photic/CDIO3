@@ -1,11 +1,9 @@
 package tests;
 
-import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
+import org.junit.Test;
 
-import entity.Player;
 import entity.PlayerList;
 
 public class PlayerList_Testv {
@@ -45,7 +43,7 @@ public class PlayerList_Testv {
 			System.out.println("Nope");
 		}
 		
-		assertTrue(actual = expected);
+		assertTrue(actual == expected);
 	}
 	
 
