@@ -50,7 +50,6 @@ public class OutTest {
 	@Test
 	public void testPrintOwner() {
 		Out out = new Out();
-		Player p = new Player("TestGuy", 20);
 		
 		out.printOwner("Mathias", 10);
 		
@@ -120,7 +119,6 @@ public class OutTest {
 	@Test
 	public void testWelcome() {
 		Out out = new Out();
-		Player p = new Player("TestGuy", 20);
 		
 		out.welcome();
 		
@@ -160,7 +158,6 @@ public class OutTest {
 	@Test
 	public void testplayerCount() {
 		Out out = new Out();
-		Player p = new Player("TestGuy", 20);
 		
 		out.playerCount(2);
 		
