@@ -2,7 +2,7 @@ package boundary;
 
 import java.util.Scanner;
 /** 
- * Implementerer input fra tastatur
+ * Implementing inputs from keyboard, using the scanner class.
  *
  */
 public class Keyboard{
@@ -13,18 +13,27 @@ public class Keyboard{
 	}
 	
 	
-	/** Venter på en int. Returnerer først når brugeren indtaster den int der ventes på
-	 * @param ind int der ventes på
+	/** Wait until the int is inputtet.
+	 * @param input
+	 * int describing the input to wait for.
 	 */
-	public void waitForInt(int ind)
+	public void waitForInt(int input)
 	{
 		int temp = 0;
 			do {
 				try{temp = in.nextInt();}
 				catch (Exception e){	System.out.println("Er det et tal bøv?");}
-			}while (!(ind==temp)); 
+			}while (!(input==temp)); 
 	}
 	
+	/**
+	 * Wait until inputtet integer is between min and max.
+	 * @param min
+	 * @param max
+	 * 
+	 * @return
+	 * The inputtet integer
+	 */
 	public int getIntRange(int min, int max)
 	{
 		int temp = 2;
@@ -35,22 +44,16 @@ public class Keyboard{
 		return temp;
 	}
 	
-	
+	/**
+	 * Input a string
+	 * @return
+	 * The inputtet string
+	 */
 	public String getString() 
 	{
 		return in.nextLine();
 	}
-	
-	
-	/** Venter p� at der tastes ENTER
-	 */
-	public void waitForEnter()
-	{
-		String temp;
-		do {
-		temp = in.next();
-		}while (temp != ""); 
-	}
+
 
 
 }
