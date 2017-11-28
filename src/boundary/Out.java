@@ -267,7 +267,7 @@ public class Out {
 	{
 		String[] lost = 
 			{
-					"Player " +player+ "has died",
+					"Player "+player.getName()+" has died",
 					"Since the player had no living relatives,",
 					"all of their property is now back on the market"
 			};
