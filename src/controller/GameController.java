@@ -321,8 +321,6 @@ public class GameController {
 		}
 	}
 	
-	
-	
 	/**
 	 * This method is used to test the method used in the game. It therefor takes in a anwer, and does not ask the keyboard.
 	 * @param i
