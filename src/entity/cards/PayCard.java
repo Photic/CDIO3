@@ -1,27 +1,26 @@
 package entity.cards;
 
-import boundary.Keyboard;
 import boundary.Out;
 import entity.Player;
 
-public class PayCard extends Card{
+public class PayCard extends ChanceCard{
 
-	public PayCard() {
-		// TODO Auto-generated constructor stub
+	
+	private int amount; 
+	private Out out;
+	
+	
+	public PayCard(Out out) {
+		this.amount = -2;
+		this.out = out;
+		
 	}
-
-
-	int amount = - 2; 
-	
-	Out out = new Out();
-	Keyboard keyboard = new Keyboard();
-	
-	
+	/**
+	 * Use the paycard on the player.
+	 */
 	public void useCard(Player p) {
 		out.payCardText();
 		p.setBalance(p.getBalance() + amount);
 	}
-	
-	
 	
 }

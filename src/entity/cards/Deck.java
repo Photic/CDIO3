@@ -1,45 +1,32 @@
 package entity.cards;
 
+import boundary.Out;
 import entity.Player;
 
+/**
+ * Deck containing an array of chancecards
+ *
+ */
 public class Deck {
 
-	private Card[] cards = new Card[3]; 
-	private int total; 
-	private int randomCard;
+	private ChanceCard[] cards = new ChanceCard[3]; 
+	private int total, randomCard;
 	
-	public Deck() {
-		this.cards[0] = new PayCard(); 
-		this.cards[1] = new EarnCard(); 
-//		this.cards[2] = new MoveManuallyCard(); 
+	public Deck(Out out) {
+		this.cards[0] = new PayCard(out); 
+		this.cards[1] = new EarnCard(out);  
 		this.total = 2; 
 	}
 	
-	
-	// Uses a random card from the chance card pool. 
-	public void drawCard(Player p) {
+	/**
+	 * Draw a card using math.random.
+	 * @param player
+	 * The player who should have the card.
+	 */
+	public void drawCard(Player player) {
 		
 		this.randomCard = (int)(Math.random()*total);
 		
-		cards[randomCard].useCard(p);;
+		cards[randomCard].useCard(player);;
 		}
 }
-			
-
-//		Random random = new Random(); 
-//
-//public void shuffle(){
-//	
-//	for (int i=0; i<1000;i++) {
-//		int Card1 = random.nextInt(total); 
-//		int Card2 = random.nextInt(total); 
-//		
-//		// Stores a card before shuffling. 
-//		Card storage = cards[Card1]; 
-//		
-//		// Swaps the cards. 
-//		cards[Card1]=cards[Card2]; 
-//		cards[Card2]=storage; 
-//	}
-//	
-//}

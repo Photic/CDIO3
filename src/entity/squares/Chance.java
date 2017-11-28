@@ -26,7 +26,7 @@ public class Chance extends Square {
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) 
 	{
-		Deck deck = new Deck(); 
+		Deck deck = new Deck(out); 
 		
 		out.chanceText();
 		

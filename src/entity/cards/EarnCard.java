@@ -4,21 +4,29 @@ import boundary.Keyboard;
 import boundary.Out;
 import entity.Player;
 
-public class EarnCard extends Card{
+/**
+ * A chancecard where the players gets 2$
+ * @author milter
+ *
+ */
+public class EarnCard extends ChanceCard{
 
-	int amount = 2; 
-	
-	public EarnCard() {
+	private int amount;
+	private Out out;
+
+	public EarnCard(Out out) {
+		this.amount = 2;
+		this.out = out;
 	}
-	
-	Out out = new Out();
-	Keyboard keyboard = new Keyboard();
-	
+
+	/**
+	 * Use the card on the player
+	 */
 	public void useCard(Player p) {
 		out.earnCardText();
 		p.setBalance(p.getBalance() + amount);
 	}
-	
-	
-	
+
+
+
 }
