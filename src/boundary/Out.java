@@ -448,9 +448,5 @@ public class Out {
 		System.out.print(" ------------------------------------------------------ ");
 	}
 
-	public void printLine()
-	{
-		System.out.println("");
-	}
 
 }

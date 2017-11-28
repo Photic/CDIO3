@@ -14,13 +14,22 @@ import entity.PlayerList;
 import entity.cards.Card;
 import entity.squares.GameBoard;
 
+
+
+/**
+ * 
+ * This class controls the interaction with the GUI provided by DTU.
+ * @author milter
+ *
+ */
+
 public class Gui {
 	
 	
 	/**
 	 * Use the GUI given by the teachers to create a GUI.
-	 * @param game
-	 * An instance of the player class
+	 * @param gameboard
+	 * An instance of the gameboard class, used to set up the gameboard visually
 	 */
 	public void defineGUI(GameBoard gameboard) {
 		Field[] fields = new Field[gameboard.getSize()];
@@ -42,22 +51,40 @@ public class Gui {
 	}
 	
 	
+	/**
+	 * This method initially places players on the gameboard, when the game is beginning.
+	 * @param playerlist
+	 * An instance of the playerlist, containing all the players
+	 */
 	public void placePlayers(PlayerList playerlist) {
 		for (int i = 0; i < playerlist.getLength(); i++) {
 			GUI.setCar(1, playerlist.getSpecificPlayer(i).getName());
 		}
 	}
 	
+	
+	/**
+	 * Updates the players balance on the gameboard.
+	 * @param player
+	 * instance of the player class
+	 */
 	public void updateBalance(Player player) {
 		GUI.setBalance(player.getName(), player.getBalance());
 	}
 	
-	
+	/**
+	 * Visually setting the dice on the gui
+	 * @param d1
+	 * @param d2
+	 */
 	public void setDice(Die d1, Die d2) {
 		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
 	}
 	
-	
+	/**
+	 * set the player names on the gameboard. It also makes sure that everybody gets different car colors.
+	 * @param playerList
+	 */
 	public void setNames(PlayerList playerList) {
         Car blue = new Car.Builder()
         		.typeUfo()
@@ -86,22 +113,42 @@ public class Gui {
 		}
 	}
 
-	public void movePlayer(Player p) {
-		GUI.removeAllCars(p.getName());
-		GUI.setCar(p.getPosition()+1, p.getName());
+	/**
+	 * Moves a player by removing his car, and placing a new at his position. 
+	 * @param player 
+	 * An instance of player
+	 */
+	public void movePlayer(Player player) {
+		GUI.removeAllCars(player.getName());
+		GUI.setCar(player.getPosition()+1, player.getName());
 	}
 	
 	
-	public void setOwner(Player p) {
-		GUI.setOwner(p.getPosition()+1, p.getName());
+	/**
+	 * Set an territory owner visually.
+	 * @param player
+	 * Player instance.
+	 */
+	public void setOwner(Player player) {
+		GUI.setOwner(player.getPosition()+1, player.getName());
 	}
 	
+	/**
+	 * Removes an owner on a position. Should only be used if the player is dead.
+	 * @param position
+	 * position on the gameboard.
+	 */
 	public void removeDeadOwner(int position) {
 		GUI.removeOwner(position+1);
 	}
 	
-	public void removeDeadPlayer(Player p) {
-		GUI.removeAllCars(p.getName());
+	/**
+	 * Remove the car of a dead player.
+	 * @param player
+	 * Player instance.
+	 */
+	public void removeDeadPlayer(Player player) {
+		GUI.removeAllCars(player.getName());
 	}
 	
 	

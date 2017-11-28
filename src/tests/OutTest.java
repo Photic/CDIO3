@@ -97,7 +97,7 @@ public class OutTest {
 		
 		
 		assertEquals(" ------------------------------------------------------ \n" + 
-				" | Player entity.Player@5e91993fhas died                   \n" + 
+				" | Player "+p+"has died                   \n" + 
 				" | Since the player had no living relatives,               \n" + 
 				" | all of their property is now back on the market         \n" + 
 				"", outContent.toString());	
@@ -116,6 +116,61 @@ public class OutTest {
 				" | TestGuy is now the owner of the Start                   \n" + 
 				"", outContent.toString());	
 	}
+	
+	@Test
+	public void testWelcome() {
+		Out out = new Out();
+		Player p = new Player("TestGuy", 20);
+		
+		out.welcomeNew();
+		
+		
+		assertEquals(" ------------------------------------------------------ \n" + 
+				" | Welcome to Menopoly Junior                              \n" + 
+				" | Please enter the nunmber of players.                    \n" + 
+				" | Has to be between 2-4: ", outContent.toString());	
+	}
+	@Test
+	public void testWantToBuy() {
+		Out out = new Out();
+		Player p = new Player("TestGuy", 20);
+		
+		out.wantToBuy(p.getName(), 10);
+		
+		
+		assertEquals(" ------------------------------------------------------ \n" + 
+				" | TestGuy is for sale. The price is: 10                   \n" + 
+				" | Do you wanna buy it? Y/N                                \n" + 
+				"", outContent.toString());	
+	}
+	
+	@Test
+	public void testJailPrint() {
+		Out out = new Out();
+		Player p = new Player("TestGuy", 20);
+		
+		out.jailPrint(p);
+		
+		
+		assertEquals(" ------------------------------------------------------ \n" + 
+				" | TestGuy is in jail and cannot move.                     \n" + 
+				" | Furthermore, you pay $1 to get out of jail.             \n" + 
+				"", outContent.toString());	
+	}
+	@Test
+	public void testplayerCount() {
+		Out out = new Out();
+		Player p = new Player("TestGuy", 20);
+		
+		out.playerCount(2);
+		
+		
+		assertEquals(" ------------------------------------------------------ \n" + 
+				" | Ahhh, you are: 2 players, nice!                         \n" + 
+				" | Please enter player names                               \n" + 
+				"", outContent.toString());	
+	}
+	
 	
 
 }
