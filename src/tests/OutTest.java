@@ -122,7 +122,7 @@ public class OutTest {
 		Out out = new Out();
 		Player p = new Player("TestGuy", 20);
 		
-		out.welcomeNew();
+		out.welcome();
 		
 		
 		assertEquals(" ------------------------------------------------------ \n" + 

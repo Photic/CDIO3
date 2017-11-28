@@ -47,9 +47,9 @@ public class GameController {
 	public void gameControl() 
 	{
 		//Welcome messages
-		out.welcomeNew();
+		out.welcome();
 		playerCount = keyboard.getIntRange(2, 4);
-		out.setAmountPlayers(playerCount);
+//		out.setAmountPlayers(playerCount);
 		out.playerCount(playerCount);
 
 		//make the names array as long as the number of players.
@@ -158,8 +158,6 @@ public class GameController {
 
 						}
 
-
-						playerList.getSpecificPlayer(0).setBalance(0);
 						
 						//Update the balance of the players on the gui.
 						for (int j = 0; j<playerList.getLength(); j++) 

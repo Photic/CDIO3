@@ -3,21 +3,22 @@ package boundary;
 import entity.Player;
 import entity.squares.GameBoard;
 
+
+/**
+ * This class controls outputs for the TUI
+ * @author milter
+ *
+ */
 public class Out {
 
-
-	Screen s;
-	private int amountOfPlayers;
-
 	public Out() {
-		s = new Screen();
 	}
 
 
 	/**
 	 *  Post a Welcome message at the start of the game.
 	 */
-	public void welcomeNew() 
+	public void welcome() 
 	{
 		String[] welcome = 	
 			{
@@ -34,7 +35,7 @@ public class Out {
 
 	
 	/**
-	 * This prints a message for the freeParking square.
+	 * Prints a message for the freeParking square.
 	 */
 	public void freeParking() {
 		
@@ -49,7 +50,7 @@ public class Out {
 	
 	
 	/**
-	 * This prints a message for the freeParking square.
+	 * Prints a message for the freeParking square.
 	 */
 	public void jailPrint(Player p) {
 		
@@ -74,7 +75,9 @@ public class Out {
 		standardOut(outString);
 	}
 
-	
+	/**
+	 * Chance card print
+	 */
 	public void chanceText() {
 		String[] outString =
 			{
@@ -83,21 +86,9 @@ public class Out {
 		standardOut(outString);
 	}
 	
-	
-	public void moveManuallyCard() {
-		String[] outString =
-			{
-					"You can now choose to move between 1 and 5 squares."
-			};
-		standardOut(outString);
-		String[] playerChoice =
-			{
-					"Enter a number between 1 and 5: "
-			};
-		outWithInput(playerChoice);
-	}
-	
-	
+	/**
+	 * pay card print
+	 */
 	public void payCardText() {
 		String[] outString =
 			{
@@ -107,7 +98,9 @@ public class Out {
 		standardOut(outString);
 	}
 
-	
+	/**
+	 * earn card print
+	 */
 	public void earnCardText() {
 		String[] outString =
 			{
@@ -132,8 +125,9 @@ public class Out {
 	}
 	
 	/**
-	 * Ask the player for the number if players playing.
+	 * Prints a message stating the number of players playing
 	 * @param n
+	 * Number of players playing
 	 */
 	public void playerCount(int n) 
 	{
@@ -147,7 +141,7 @@ public class Out {
 
 
 	/**
-	 * As the user to enter player names.
+	 * Ask the user to enter player names.
 	 * @param playerNumber
 	 */
 	public void askForName(int playerNumber) 
@@ -160,24 +154,11 @@ public class Out {
 
 
 	/**
-	 *  Print the players name.
-	 * @param playerNumber
-	 * @param name
-	 */
-	public void printName(int playerNumber, String name) 
-	{
-		String[] allNameEntrys = 
-			{
-					"Player "+playerNumber+": "+name  
-			};
-		standardOut(allNameEntrys);
-	}
-
-
-	/**
 	 * Telling the users that a field is already owned.
 	 * @param name
+	 * Owners name
 	 * @param rent
+	 * Rent price of square
 	 */
 	public void printOwner(String name, int rent) 
 	{
@@ -191,7 +172,11 @@ public class Out {
 	}
 	
 	
-	
+	/**
+	 * A print if the square is owned by self.
+	 * @param name
+	 * Owner
+	 */
 	
 	public void printSelfOwner(String name) 
 	{
@@ -205,8 +190,9 @@ public class Out {
 
 
 	/**
-	 * Print a list of 
+	 * A player summary print
 	 * @param names
+	 * Playernames
 	 */
 	public void printPlayerSummary(String[] names) 
 	{
@@ -224,6 +210,7 @@ public class Out {
 	/**
 	 *  Does the player want to buy a square ?
 	 *  @param price
+	 *  the price of the square
 	 */
 	public void playerWantToBuy(int price)
 	{
@@ -273,13 +260,14 @@ public class Out {
 	
 	/**
 	 * Telling a Player they have lost.
-	 * @param p
+	 * @param player
+	 * The player who died
 	 */
-	public void youAreDead(Player p) 
+	public void youAreDead(Player player) 
 	{
 		String[] lost = 
 			{
-					"Player " +p+ "has died",
+					"Player " +player+ "has died",
 					"Since the player had no living relatives,",
 					"all of their property is now back on the market"
 			};
@@ -288,14 +276,15 @@ public class Out {
 
 	/**
 	 * Tell the last person they have won.
-	 * @param p
+	 * @param player
+	 * The winning player
 	 */
-	public void announceWinner(Player p)
+	public void announceWinner(Player player)
 	{
 		String[] winner = 
 			{
 				"***********************",
-				"Congratulations " + p.getName(),
+				"Congratulations " + player.getName(),
 				"You are the winner of",
 				"Monopoly Junior EXTREME!!",
 				"**********************"
@@ -305,7 +294,7 @@ public class Out {
 	}
 
 	/**
-	 * If the player says no.
+	 * Print if player doesn't buy square
 	 */
 	public void notBuying() {
 		String[] outprint = {
@@ -314,6 +303,13 @@ public class Out {
 		standardOut(outprint);
 	}
 
+	/**
+	 * Pay rent print
+	 * @param owner
+	 * Owner of square
+	 * @param rent
+	 * Rent of square
+	 */
 	public void payRent(Player owner, int rent) {
 		String[] outString = 
 			{
@@ -322,6 +318,13 @@ public class Out {
 		standardOut(outString);
 	}
 
+	/**
+	 * Square for sale print
+	 * @param name
+	 * Square name
+	 * @param price
+	 * Square price
+	 */
 	public void wantToBuy(String name, int price) {
 		String[] outString = 
 			{
@@ -335,7 +338,9 @@ public class Out {
 	/**
 	 * Telling the users what have been rolled.
 	 * @param name
+	 * Playername
 	 * @param sum
+	 * Sum of dice
 	 */
 	public void evaluateDice(String name, int sum) 
 	{
@@ -346,6 +351,13 @@ public class Out {
 		standardOut(outString);
 	}
 
+	/**
+	 * evaluate the new position
+	 * @param newPosition
+	 * new position
+	 * @param gameboard
+	 * the gameboard
+	 */
 	public void evaluateNewPos(int newPosition, GameBoard gameboard)
 	{
 		String[] outString = 
@@ -354,32 +366,18 @@ public class Out {
 			};
 		standardOut(outString);
 	}
-
-
-	/**
-	 *  Use in the code to display the amount of players.
-	 *  @return
-	 */
-	public int getAmountPlayers() 
-	{
-		return amountOfPlayers;
-	}
-
-	public void setAmountPlayers(int amountPlayers) 
-	{
-		this.amountOfPlayers = amountPlayers;
-	}
-
+	
 	/**
 	 * Standard output, use for tekst field that does not require an output.
-	 * @param a
+	 * @param outputText
+	 * The text to be outputtet
 	 */
-	public void standardOut(String[] a)
+	public void standardOut(String[] outputText)
 	{
 		System.out.println(" ------------------------------------------------------ ");
 		int k = 0;
 
-		for (int i = 0; i < a.length; i++) 
+		for (int i = 0; i < outputText.length; i++) 
 		{
 			for (int j = 0; j < 60; j++) 
 			{
@@ -389,8 +387,8 @@ public class Out {
 					System.out.print("|");
 					break;
 				case 3:
-					j += a[k].length();
-					System.out.print(a[k]); k++;
+					j += outputText[k].length();
+					System.out.print(outputText[k]); k++;
 					break;
 					//				case 55:
 					//					System.out.print("|");
@@ -401,7 +399,7 @@ public class Out {
 				}
 
 			}
-			if (a.length > k)
+			if (outputText.length > k)
 			{
 				System.out.println("");
 			}
@@ -413,14 +411,15 @@ public class Out {
 
 	/**
 	 * Output with a field for players to input to the system.
-	 * @param a
+	 * @param outputText
+	 * Text to be outputtet
 	 */
-	public void outWithInput(String[] a)
+	public void outWithInput(String[] outputText)
 	{
 		int k = 0;
 		int j = 0;
 
-		for (int i = 0; i < a.length; i++) 
+		for (int i = 0; i < outputText.length; i++) 
 		{
 			int lengthOfString = 25;
 			for (j = 0; j < lengthOfString; j++) 
@@ -431,8 +430,8 @@ public class Out {
 					System.out.print("|");
 					break;
 				case 3:
-					j += a[k].length();
-					System.out.print(a[k]); k++;
+					j += outputText[k].length();
+					System.out.print(outputText[k]); k++;
 					break;
 				default:
 					System.out.print(" ");
@@ -442,7 +441,9 @@ public class Out {
 		}
 	}
 
-	
+	/**
+	 * Used as the last line.
+	 */
 	public void endEntry()
 	{
 		System.out.print(" ------------------------------------------------------ ");
