@@ -170,77 +170,19 @@ public class GameController {
 					}
 				}
 			}
-			checkwinner();
+			checkWinner();
 		}
 	}
 
 
-	/**
-	 * Check if there is a winner
-	 */
-	private void checkWinner() {
-		// If there is only 1 player left, the winner is announced.
-		if (amountDead == playerList.getLength()-1)
-		{
-			for (int o = 0; o<playerList.getLength(); o++) {
-				if (!(playerList.getSpecificPlayer(o).isDead())) {
-					out.announceWinner(playerList.getSpecificPlayer(o));
-				}
-			}
-			playing = false;
-		}
-	}
+
 
 
 	/**
-	 * This method removes dead players from the gameboard
-	 * @param player
+	 * Check if the player passed start
 	 * @param i
+	 * current player index
 	 */
-	private void removeDead(Player player, int i) 
-	{
-		out.youAreDead(player);
-		gui.removeDeadPlayer(player);
-		for (int p = 0; p<gameboard.getSize();p++) 
-		{
-			if (playerList.getSpecificPlayer(i).isDead())
-			{
-				if (gameboard.getField(p) instanceof Territory)
-				{
-					((Territory) gameboard.getField(p)).removeDeadOwner(playerList.getSpecificPlayer(i));
-
-					gui.removeDeadOwner(p);
-				}
-			}
-		}
-	}
-
-	/**
-	 * This method is used to test the method used in the game. It therefor takes in a anwer, and does not ask the keyboard.
-	 * @param i
-	 * the current iterations variable, to determine player.
-	 */
-	public void territorySituation(int i, boolean test, int answerTest) 
-	{
-		int answer = 0;
-		if (test == false) {
-			answer = keyboard.getIntRange(0, 1);
-		} else {
-			answer = answerTest;
-		}
-
-		if (answer == 1) {
-			gui.setOwner(playerList.getSpecificPlayer(i));
-			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i));
-			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwned(true);
-			out.playerNowOwns(playerList.getSpecificPlayer(i), gameboard);
-			playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - ((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getPrice());
-		} else {
-			out.notBuying();
-		}
-	}
-
-
 	private void checkStartPassed(int i) {
 		//check if the player passed start
 		if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
@@ -260,6 +202,10 @@ public class GameController {
 		playerList.getSpecificPlayer(i).setPosition(newPosition);
 	}
 
+	/**
+	 * check if the square is a territory
+	 * @param i
+	 */
 	private void checkIfTerritory(int i) {
 		//If it is a territory field
 		if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
@@ -272,13 +218,19 @@ public class GameController {
 		}
 	}
 
-
+	/**
+	 * Check if the player is in jail
+	 * @param i
+	 */
 	private void inJail(int i) {
 		out.jailPrint(playerList.getSpecificPlayer(i));
 		playerList.getSpecificPlayer(i).setInJail(false);
 		playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - 1);
 	}
 
+	/**
+	 * Update the players balances
+	 */
 	private void updateBalance() {
 		//Update the balance of the players on the gui.
 		for (int j = 0; j<playerList.getLength(); j++) 
@@ -287,6 +239,10 @@ public class GameController {
 		}
 	}
 
+	/**
+	 * Update if a player has died.
+	 * @param i
+	 */
 	private void updateDead(int i) {
 		if (playerList.getSpecificPlayer(i).isDead()) 
 		{
@@ -295,19 +251,10 @@ public class GameController {
 		}
 	}
 
-	private void checkwinner() {
-		// If there is only 1 player left, the winner is announced.
-		if (amountDead == playerList.getLength()-1)
-		{
-			for (int o = 0; o<playerList.getLength(); o++) {
-				if (!(playerList.getSpecificPlayer(o).isDead())) {
-					out.announceWinner(playerList.getSpecificPlayer(o));
-				}
-			}
-			playing = false;
-		}
-	}
-
+	/**
+	 * roll dice and calculate new position
+	 * @param i
+	 */
 	private void rollDiceAndMove(int i) {
 
 		//Wait for the player to press 5 to roll the dice.
@@ -345,4 +292,71 @@ public class GameController {
 		}
 	}
 
+	/**
+	 * This method removes dead players from the gameboard
+	 * @param player
+	 * @param i
+	 */
+	private void removeDead(Player player, int i) 
+	{
+		out.youAreDead(player);
+		gui.removeDeadPlayer(player);
+		for (int p = 0; p<gameboard.getSize();p++) 
+		{
+			if (playerList.getSpecificPlayer(i).isDead())
+			{
+				if (gameboard.getField(p) instanceof Territory)
+				{
+					((Territory) gameboard.getField(p)).removeDeadOwner(playerList.getSpecificPlayer(i));
+
+					gui.removeDeadOwner(p);
+				}
+			}
+		}
+	}
+	
+	
+	/**
+	 * Check if there is a winner
+	 */
+	private void checkWinner() {
+		// If there is only 1 player left, the winner is announced.
+		if (amountDead == playerList.getLength()-1)
+		{
+			for (int o = 0; o<playerList.getLength(); o++) {
+				if (!(playerList.getSpecificPlayer(o).isDead())) {
+					out.announceWinner(playerList.getSpecificPlayer(o));
+				}
+			}
+			playing = false;
+		}
+	}
+	
+	
+	
+	/**
+	 * This method is used to test the method used in the game. It therefor takes in a anwer, and does not ask the keyboard.
+	 * @param i
+	 * the current iterations variable, to determine player.
+	 */
+	public void territorySituation(int i, boolean test, int answerTest) 
+	{
+		int answer = 0;
+		if (test == false) {
+			answer = keyboard.getIntRange(0, 1);
+		} else {
+			answer = answerTest;
+		}
+
+		if (answer == 1) {
+			gui.setOwner(playerList.getSpecificPlayer(i));
+			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i));
+			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwned(true);
+			out.playerNowOwns(playerList.getSpecificPlayer(i), gameboard);
+			playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - ((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).getPrice());
+		} else {
+			out.notBuying();
+		}
+	}
+	
 }
