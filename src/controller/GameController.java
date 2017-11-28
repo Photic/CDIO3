@@ -62,10 +62,6 @@ public class GameController {
 		setUpGui(); // Set up the gui
 
 		playGame(); // Play the game
-
-
-
-
 	}
 
 	/**
@@ -92,7 +88,6 @@ public class GameController {
 			do {currentName = keyboard.getString();
 			}
 			while (currentName.length()==0);
-
 
 			if (!(Arrays.asList(names).contains(currentName))) {
 				names[i] = currentName;
@@ -187,18 +182,13 @@ public class GameController {
 		//check if the player passed start
 		if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
 
-
 			//the player recieves $2 and a message is presented.
 			playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 2);
 			out.passedStart(playerList.getSpecificPlayer(i));
 
 			//Update the players balance on the gui.
 			gui.updateBalance(playerList.getSpecificPlayer(i));
-
-
 		}
-
-
 		playerList.getSpecificPlayer(i).setPosition(newPosition);
 	}
 
@@ -207,14 +197,13 @@ public class GameController {
 	 * @param i
 	 */
 	private void checkIfTerritory(int i) {
-		//If it is a territory field
+		
 		if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
 		{
 			if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).isOwned() == false) 
 			{
 				territorySituation(i);	
 			}
-
 		}
 	}
 
@@ -347,7 +336,6 @@ public class GameController {
 		} else {
 			answer = answerTest;
 		}
-
 		if (answer == 1) {
 			gui.setOwner(playerList.getSpecificPlayer(i));
 			((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).setOwner(playerList.getSpecificPlayer(i));
