@@ -7,7 +7,10 @@ import boundary.Out;
 import entity.Player;
 import entity.PlayerList;
 
-
+/**
+ * GoToJail square
+ *
+ */
 public class GoToJail extends Square {
 
 	
@@ -16,15 +19,16 @@ public class GoToJail extends Square {
 		super(navn, description, color);
 	}
 
+	/**
+	 * print a message and position the player at the jail square.
+	 */
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) 
 	{
-		
 		out.goToJail();
 		p.setPosition(6);	//Position 6 er jail på boardet
 		p.setWalkedSquares(6); 
 		p.setInJail(true);
-		
 	}
 
 

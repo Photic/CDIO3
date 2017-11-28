@@ -10,11 +10,8 @@ public class Player {
 		
 	
 	private String name;
-	private int money;
-	private boolean isDead;
-	private boolean inJail;
-	private int walkedSquares;
-	private int position;
+	private int money, position, walkedSquares;
+	private boolean isDead, inJail;
 
 	public Player(String n, int startMoney)
 	{

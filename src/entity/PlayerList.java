@@ -1,8 +1,12 @@
 package entity;
 
+
+/**
+ * A playerlist containing all the players. Primary used to loop through players.
+ *
+ */
 public class PlayerList {
 
-	
 	private Player[] players;
 	
 	
@@ -18,7 +22,6 @@ public class PlayerList {
 	public Player getSpecificPlayer(int n) {
 		return players[n];
 	}
-	
 	
 	public int getLength() {
 		return players.length;

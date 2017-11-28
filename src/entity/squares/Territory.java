@@ -7,6 +7,10 @@ import boundary.Out;
 import entity.Player;
 import entity.PlayerList;
 
+/**
+ * The territory describes the squares players can own and pay rent to.
+ *
+ */
 public class Territory extends Square {
 
 	private int price, rentInt;
@@ -23,6 +27,9 @@ public class Territory extends Square {
 		this.isOwned = false;
 	}
 
+	/**
+	 * If the territory is owned, get and the owner is not the player landing there, make him pay rent.
+	 */
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) 
 	{
@@ -76,13 +83,16 @@ public class Territory extends Square {
 		this.owner = owner;
 	}
 
-
-
-	public void removeDeadOwner(Player p) 
+	/**
+	 * remove the owner of the square. Used if the player dies.
+	 * @param player
+	 * The dead player.
+	 */
+	public void removeDeadOwner(Player player) 
 	{
 		if (isOwned == true) 
 		{
-			if (p == owner) 
+			if (player == owner) 
 			{
 				owner = null;
 				isOwned = false;

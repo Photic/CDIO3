@@ -7,6 +7,10 @@ import boundary.Out;
 import entity.Player;
 import entity.PlayerList;
 
+/**
+ * The Jail square.
+ *
+ */
 public class Jail extends Square {
 
 	public Jail(String navn, String description, Color color) 
@@ -15,7 +19,6 @@ public class Jail extends Square {
 	}
 
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) {
-		// Indsæt out med hvem man besøger som er i jail.
 		
 	}
 

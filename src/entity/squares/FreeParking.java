@@ -7,7 +7,10 @@ import boundary.Out;
 import entity.Player;
 import entity.PlayerList;
 
-
+/**
+ * Free parking square
+ *
+ */
 public class FreeParking extends Square {
 
 
@@ -16,13 +19,13 @@ public class FreeParking extends Square {
 		super(navn, description, color);
 	}
 
+	/**
+	 * Print a message.
+	 */
 	@Override
 	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) 
 	{
-		
 		out.freeParking();
-		
-		
 	}
-	
+
 }

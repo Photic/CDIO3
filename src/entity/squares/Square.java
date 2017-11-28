@@ -7,6 +7,10 @@ import boundary.Out;
 import entity.Player;
 import entity.PlayerList;
 
+/**
+ * The abstract class square, used through polymorphism to loop through squares on the gameboard.
+ *
+ */
 public abstract class Square {
 
 	private String name;
