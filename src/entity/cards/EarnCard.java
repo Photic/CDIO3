@@ -1,6 +1,5 @@
 package entity.cards;
 
-import boundary.Keyboard;
 import boundary.Out;
 import entity.Player;
 
