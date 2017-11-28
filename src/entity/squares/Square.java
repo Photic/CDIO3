@@ -51,7 +51,7 @@ public abstract class Square {
 	
 	
 	
-	public abstract void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui);
+	public abstract void squareLogic(Player p, PlayerList playerlist, Out out, Gui gui);
 	
 	
 

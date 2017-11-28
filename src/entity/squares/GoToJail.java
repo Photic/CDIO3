@@ -23,7 +23,7 @@ public class GoToJail extends Square {
 	 * print a message and position the player at the jail square.
 	 */
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) 
+	public void squareLogic(Player p, PlayerList playerlist, Out out, Gui gui) 
 	{
 		out.goToJail();
 		p.setPosition(6);	//Position 6 er jail på boardet

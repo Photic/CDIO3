@@ -24,7 +24,7 @@ public class Chance extends Square {
 	 * Draw a chanceCard from the deck of chancecard. Then print a message and show the card.
 	 */
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) 
+	public void squareLogic(Player p, PlayerList playerlist, Out out, Gui gui) 
 	{
 		Deck deck = new Deck(out); 
 		

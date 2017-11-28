@@ -18,7 +18,7 @@ public class Jail extends Square {
 		super(navn, description, color);
 	}
 
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) {
+	public void squareLogic(Player p, PlayerList playerlist, Out out, Gui gui) {
 		
 	}
 

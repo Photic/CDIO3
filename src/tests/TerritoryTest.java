@@ -47,7 +47,7 @@ public class TerritoryTest {
 		
 		
 		Territory t = new Territory("Swimming Pool", "2", Color.blue, "2");
-		t.whatToDoOnSquare(p, playerlist, out, gui);
+		t.squareLogic(p, playerlist, out, gui);
 		
 
 		new GameController().territorySituation(0, true, 0);

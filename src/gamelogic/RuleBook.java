@@ -7,7 +7,6 @@ import entity.squares.GameBoard;
 
 public class RuleBook {
 	
-	
 	/**
 	 * This method that determines how much money the players will recieve at the beginning of the game, based on the number of players. 
 	 * @param playercount
@@ -16,7 +15,6 @@ public class RuleBook {
 	 * Returns an integer descriping how much money each player will start with. 
 	 * 
 	 */
-	
 	public int startMoney(int playercount) 
 	{	
 		int out;
@@ -39,7 +37,15 @@ public class RuleBook {
 		return out;
 	}
 	
-	
+	/**
+	 * Check if the player has passed start, based on the number of squares walked.
+	 * @param player
+	 * The player.
+	 * @param gameboard
+	 * The gameboard
+	 * @return
+	 * True if the player has passed, false if not.
+	 */
 	public boolean checkIfPassedStart(Player player, GameBoard gameboard) {
 		if (player.getWalkedSquares() > gameboard.getSize()) {
 			player.setWalkedSquares(player.getWalkedSquares() - gameboard.getSize());
@@ -49,10 +55,16 @@ public class RuleBook {
 		}
 	}
 	
-	
+	/**
+	 * Used to evalute the logic through the abstract method whatToDoOnSquare().
+	 * @param gameboard
+	 * @param player
+	 * @param playerlist
+	 * @param out
+	 */
 	public void playerLands(GameBoard gameboard, Player player, PlayerList playerlist, Out out)
 	{
-		gameboard.getField(player.getPosition()).whatToDoOnSquare(player, playerlist, out, null);
+		gameboard.getField(player.getPosition()).squareLogic(player, playerlist, out, null);
 	}
 	
 	

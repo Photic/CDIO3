@@ -5,14 +5,9 @@ import entity.PlayerList;
 
 public class GameLogic {
 
-	
+
 	private static final int DEATH_POINT = 0;
-	
-	
-	
-	
-	
-	
+
 	/**
 	 * This methods makes sure that the player goes in circles on the gameboard.
 	 * @param currentField
@@ -25,7 +20,6 @@ public class GameLogic {
 	 * Returns an integer descriping the new field location.
 	 * 
 	 */
-	
 	public int newPosition(int currentField, int faceValues, int fieldCount) {
 		if (currentField+faceValues >= fieldCount) {
 			return (currentField+faceValues)-fieldCount;
@@ -33,9 +27,8 @@ public class GameLogic {
 			return currentField+faceValues;
 		}
 	}
-	
-	
-	
+
+
 	/**
 	 * Checks if a player dies.
 	 * @param newMoney
@@ -50,13 +43,5 @@ public class GameLogic {
 		if (player.getBalance() <= DEATH_POINT) {
 			player.setDead(true);
 		}
-	}
-	
-
-	
-	
-	
-	
-	
-	
+	}	
 }

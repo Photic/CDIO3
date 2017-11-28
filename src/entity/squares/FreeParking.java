@@ -23,7 +23,7 @@ public class FreeParking extends Square {
 	 * Print a message.
 	 */
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) 
+	public void squareLogic(Player p, PlayerList playerlist, Out out, Gui gui) 
 	{
 		out.freeParking();
 	}

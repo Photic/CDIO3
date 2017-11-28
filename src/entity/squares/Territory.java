@@ -31,7 +31,7 @@ public class Territory extends Square {
 	 * If the territory is owned, get and the owner is not the player landing there, make him pay rent.
 	 */
 	@Override
-	public void whatToDoOnSquare(Player p, PlayerList playerlist, Out out, Gui gui) 
+	public void squareLogic(Player p, PlayerList playerlist, Out out, Gui gui) 
 	{
 		if (isOwned == true)
 		{
