@@ -2,6 +2,7 @@ package controller;
 
 
 import java.util.Arrays;
+
 import boundary.Gui;
 import boundary.Keyboard;
 import boundary.Out;
@@ -9,11 +10,15 @@ import entity.Die;
 import entity.Player;
 import entity.PlayerList;
 import entity.squares.GameBoard;
-import entity.squares.Square;
 import entity.squares.Territory;
 import gamelogic.GameLogic;
 import gamelogic.RuleBook;
 
+
+/**
+ * The central gamecontroller, that controls the game.
+ *
+ */
 public class GameController {
 
 	private Out out;
@@ -30,7 +35,9 @@ public class GameController {
 	private int amountDead = 0;
 	private boolean playing = true;
 
-	// Creates the entire game environment.
+	/**
+	 * Constructor setting up the gamecontroller.
+	 */
 	public GameController() 
 	{
 		gui = new Gui();
@@ -43,180 +50,40 @@ public class GameController {
 		gamelogic = new GameLogic();
 	}
 
-	// Controls the game.
+	/**
+	 * The central method controlling the game.
+	 */
 	public void gameControl() 
 	{
+		welcomeMessage(); // Print a welcome message
+
+		askForNames(); // Ask for player names
+
+		setUpGui(); // Set up the gui
+
+		playGame(); // Play the game
+
+
+
+
+	}
+
+	/**
+	 * Print a welcome message.
+	 */
+	private void welcomeMessage() {
 		//Welcome messages
 		out.welcome();
 		playerCount = keyboard.getIntRange(2, 4);
-//		out.setAmountPlayers(playerCount);
 		out.playerCount(playerCount);
 
 		//make the names array as long as the number of players.
 		names = new String[playerCount];
-
-		//Ask for player names.
-		askForNames();
-
-		// Creates an array of players
-		playerList = new PlayerList(playerCount, names, rulebook.startMoney(playerCount));
-
-		// Showing a summary the players in the TUI.
-		out.printPlayerSummary(names);
-
-		//setting up the gui
-		gui.defineGUI(gameboard);
-		gui.setNames(playerList);
-		gui.placePlayers(playerList);
-
-		// Keeps playing the game untill someone dies.
-		while(playing == true) 
-		{
-
-			// If there is only 1 player left, the winner is announced.
-			if (amountDead == playerList.getLength()-1)
-			{
-				for (int o = 0; o<playerList.getLength(); o++) {
-					if (!(playerList.getSpecificPlayer(o).isDead())) {
-						out.announceWinner(playerList.getSpecificPlayer(o));
-					}
-				}
-				playing = false;
-			}
-			
-			
-			//Now we just need to put in all the game code here. Remember: logic code needs to be in the gamelogic package!!!
-			for (int i = 0; i<playerList.getLength(); i++) {
-				if(playerList.getSpecificPlayer(i).isDead()==true){
-					//If the player is dead, nothing happens.
-
-				} else {
-					//First check if the player is in jail.
-					if(playerList.getSpecificPlayer(i).isInJail()) 
-					{
-						out.jailPrint(playerList.getSpecificPlayer(i));
-						playerList.getSpecificPlayer(i).setInJail(false);
-						playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - 1);
-						// tilføj remove money fra player
-					} else {
-
-
-						
-						//Wait for the player to press 5 to roll the dice.
-						out.wantToRoll(playerList.getSpecificPlayer(i));
-						keyboard.waitForInt(5);
-
-
-						// ændre rolldice til gamecontroller
-						diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2); 
-						gui.setDice(this.d1, this.d2);
-						out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
-
-						//Calculates the new position for the player.
-						newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
-						out.evaluateNewPos(newPosition, gameboard);
-
-
-
-						//check if the player passed start
-						if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
-
-
-							//the player recieves $2 and a message is presented.
-							playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 2);
-							out.passedStart(playerList.getSpecificPlayer(i));
-
-							//Update the players balance on the gui.
-							gui.updateBalance(playerList.getSpecificPlayer(i));
-
-
-						}
-
-						playerList.getSpecificPlayer(i).setPosition(newPosition);
-
-
-
-
-
-
-
-						//get the current field on the gameboard, based on the player position
-						rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out);
-
-						//Moves the player on the gameboard.
-						gui.movePlayer(playerList.getSpecificPlayer(i));
-
-
-						//HVIS TID - SMID I EN METODE 
-						//If it is a territory field
-						if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
-						{
-							if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).isOwned() == false) 
-							{
-								territorySituation(i);	
-							}
-
-						}
-
-						
-						//Update the balance of the players on the gui.
-						for (int j = 0; j<playerList.getLength(); j++) 
-						{
-							gui.updateBalance(playerList.getSpecificPlayer(j));
-						}
-
-						//Check if the current player died.
-						gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);
-
-
-
-						if (playerList.getSpecificPlayer(i).isDead()) 
-						{
-							amountDead++;
-							removeDead(playerList.getSpecificPlayer(i), i);
-						}
-					}
-				}
-			}
-			// If there is only 1 player left, the winner is announced.
-			if (amountDead == playerList.getLength()-1)
-			{
-				for (int o = 0; o<playerList.getLength(); o++) {
-					if (!(playerList.getSpecificPlayer(o).isDead())) {
-						out.announceWinner(playerList.getSpecificPlayer(o));
-					}
-				}
-				playing = false;
-			}
-		}
-		
-		
-		
-		
-	}
-
-	private void removeDead(Player player, int i) 
-	{
-		out.youAreDead(player);
-		gui.removeDeadPlayer(player);
-		for (int p = 0; p<gameboard.getSize();p++) 
-		{
-			if (playerList.getSpecificPlayer(i).isDead())
-			{
-				if (gameboard.getField(p) instanceof Territory)
-				{
-					((Territory) gameboard.getField(p)).removeDeadOwner(playerList.getSpecificPlayer(i));
-
-					gui.removeDeadOwner(p);
-				}
-			}
-		}
 	}
 
 
 	/**
 	 * This method asks for players names, and adds iditifiers if the names are the same.
-	 * 
 	 * @author Mathias
 	 */
 	private void askForNames() {
@@ -245,21 +112,111 @@ public class GameController {
 
 		}
 
+		// Creates an array of players
+		playerList = new PlayerList(playerCount, names, rulebook.startMoney(playerCount));
+
+		// Showing a summary the players in the TUI.
+		out.printPlayerSummary(names);
+	}
+
+	/**
+	 * Set up the gui.
+	 */
+	private void setUpGui() {
+		//setting up the gui
+		gui.defineGUI(gameboard);
+		gui.setNames(playerList);
+		gui.placePlayers(playerList);
+	}
+
+	/**
+	 * Playing the game
+	 */
+	private void playGame() {
+
+		while(playing == true) // Keeps playing the game a winner is found.
+		{
+
+			checkWinner(); // First we check if a player has won.
+
+			for (int i = 0; i<playerList.getLength(); i++) { // Loop through the players.
 
 
+				if(playerList.getSpecificPlayer(i).isDead()==true){ //If the player is dead, nothing happens.	
+
+				} else {
+
+					if(playerList.getSpecificPlayer(i).isInJail()) // If the player is in jail, he doesn't get his turn.
+					{
+						inJail(i);
+					} else { //This is the "normal" routine of the game.
 
 
+						rollDiceAndMove(i); // Roll the dice and get ready to move the player
 
+						checkStartPassed(i); // Check if the player passed start and then set his new position
 
+						rulebook.playerLands(gameboard, playerList.getSpecificPlayer(i), playerList, out); // Evaulate square logic on current square.
 
+						gui.movePlayer(playerList.getSpecificPlayer(i)); // Move the player on the GUI.
 
-		//make the playerlist as long as the number of players, and give them the name, that was inputtet.
+						checkIfTerritory(i); // Check if its a territory, and do the special territory method if it is.
 
+						updateBalance(); // update player balances.
+
+						gamelogic.checkIfDead(playerList.getSpecificPlayer(i), playerList);//Check if the current player died.
+
+						updateDead(i); // Update if the player died.
+					}
+				}
+			}
+			checkwinner();
+		}
 	}
 
 
 	/**
-	 * This method checks if the player wants to buy a free territory.
+	 * Check if there is a winner
+	 */
+	private void checkWinner() {
+		// If there is only 1 player left, the winner is announced.
+		if (amountDead == playerList.getLength()-1)
+		{
+			for (int o = 0; o<playerList.getLength(); o++) {
+				if (!(playerList.getSpecificPlayer(o).isDead())) {
+					out.announceWinner(playerList.getSpecificPlayer(o));
+				}
+			}
+			playing = false;
+		}
+	}
+
+
+	/**
+	 * This method removes dead players from the gameboard
+	 * @param player
+	 * @param i
+	 */
+	private void removeDead(Player player, int i) 
+	{
+		out.youAreDead(player);
+		gui.removeDeadPlayer(player);
+		for (int p = 0; p<gameboard.getSize();p++) 
+		{
+			if (playerList.getSpecificPlayer(i).isDead())
+			{
+				if (gameboard.getField(p) instanceof Territory)
+				{
+					((Territory) gameboard.getField(p)).removeDeadOwner(playerList.getSpecificPlayer(i));
+
+					gui.removeDeadOwner(p);
+				}
+			}
+		}
+	}
+
+	/**
+	 * This method is used to test the method used in the game. It therefor takes in a anwer, and does not ask the keyboard.
 	 * @param i
 	 * the current iterations variable, to determine player.
 	 */
@@ -267,7 +224,7 @@ public class GameController {
 	{
 		int answer = 0;
 		if (test == false) {
-		answer = keyboard.getIntRange(0, 1);
+			answer = keyboard.getIntRange(0, 1);
 		} else {
 			answer = answerTest;
 		}
@@ -282,7 +239,92 @@ public class GameController {
 			out.notBuying();
 		}
 	}
-	
+
+
+	private void checkStartPassed(int i) {
+		//check if the player passed start
+		if (rulebook.checkIfPassedStart(playerList.getSpecificPlayer(i), gameboard) == true) {
+
+
+			//the player recieves $2 and a message is presented.
+			playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() + 2);
+			out.passedStart(playerList.getSpecificPlayer(i));
+
+			//Update the players balance on the gui.
+			gui.updateBalance(playerList.getSpecificPlayer(i));
+
+
+		}
+
+
+		playerList.getSpecificPlayer(i).setPosition(newPosition);
+	}
+
+	private void checkIfTerritory(int i) {
+		//If it is a territory field
+		if (gameboard.getField(playerList.getSpecificPlayer(i).getPosition()).getClass() == gameboard.getField(1).getClass()) 
+		{
+			if (((Territory)gameboard.getField(playerList.getSpecificPlayer(i).getPosition())).isOwned() == false) 
+			{
+				territorySituation(i);	
+			}
+
+		}
+	}
+
+
+	private void inJail(int i) {
+		out.jailPrint(playerList.getSpecificPlayer(i));
+		playerList.getSpecificPlayer(i).setInJail(false);
+		playerList.getSpecificPlayer(i).setBalance(playerList.getSpecificPlayer(i).getBalance() - 1);
+	}
+
+	private void updateBalance() {
+		//Update the balance of the players on the gui.
+		for (int j = 0; j<playerList.getLength(); j++) 
+		{
+			gui.updateBalance(playerList.getSpecificPlayer(j));
+		}
+	}
+
+	private void updateDead(int i) {
+		if (playerList.getSpecificPlayer(i).isDead()) 
+		{
+			amountDead++;
+			removeDead(playerList.getSpecificPlayer(i), i);
+		}
+	}
+
+	private void checkwinner() {
+		// If there is only 1 player left, the winner is announced.
+		if (amountDead == playerList.getLength()-1)
+		{
+			for (int o = 0; o<playerList.getLength(); o++) {
+				if (!(playerList.getSpecificPlayer(o).isDead())) {
+					out.announceWinner(playerList.getSpecificPlayer(o));
+				}
+			}
+			playing = false;
+		}
+	}
+
+	private void rollDiceAndMove(int i) {
+
+		//Wait for the player to press 5 to roll the dice.
+		out.wantToRoll(playerList.getSpecificPlayer(i));
+		keyboard.waitForInt(5);
+
+
+		diceSum = playerList.getSpecificPlayer(i).rollDice(d1, d2); 
+		gui.setDice(this.d1, this.d2);
+		out.evaluateDice(playerList.getSpecificPlayer(i).getName(), diceSum);
+
+		//Calculates the new position for the player.
+		newPosition = gamelogic.newPosition(playerList.getSpecificPlayer(i).getPosition(), diceSum, gameboard.getSize());
+		out.evaluateNewPos(newPosition, gameboard);
+	}
+
+
 	/**
 	 * This method checks if the player wants to buy a free territory.
 	 * @param i
@@ -301,17 +343,6 @@ public class GameController {
 		} else {
 			out.notBuying();
 		}
-	}
-
-
-	public Gui getGui() 
-	{
-		return gui;
-	}
-
-	public void setGui(Gui gui) 
-	{
-		this.gui = gui;
 	}
 
 }
