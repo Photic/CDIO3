@@ -21,11 +21,10 @@ public class GameLogic {
 	 * 
 	 */
 	public int newPosition(int currentField, int faceValues, int fieldCount) {
-		if (currentField+faceValues >= fieldCount) {
+		if (currentField+faceValues >= fieldCount)
 			return (currentField+faceValues)-fieldCount;
-		} else {
-			return currentField+faceValues;
-		}
+
+		return currentField+faceValues;
 	}
 
 
